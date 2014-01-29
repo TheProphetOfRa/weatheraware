@@ -24,11 +24,10 @@ static AssetHandler *_sharedAssetHandler = nil;
 }
 
 - (void) initTPages {
-    //_objectAtlas = [SKTextureAtlas atlasNamed:@"objects"];
-    //_shadowAtlas = [SKTextureAtlas atlasNamed:@"shadows"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
 }
-//- (SKTexture*) getTextureWithName:(NSString *)textureName fromPageWithName:(NSString *)pageName {
-//    return ([pageName isEqualToString:@"shadow"]) ? [_shadowAtlas textureNamed:[NSString stringWithFormat:@"%@-shadow", textureName]] : [_objectAtlas textureNamed:textureName];
-//}
+- (CCSpriteFrame*) getTextureWithName:(NSString *)textureName {
+    return [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:textureName];
+}
 
 @end

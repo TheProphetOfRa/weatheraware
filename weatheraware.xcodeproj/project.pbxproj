@@ -229,6 +229,13 @@
 		5F905AC218987D9A00FBE122 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AB918987D9A00FBE122 /* BackgroundLayer.m */; };
 		5F905AC318987D9A00FBE122 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905ABB18987D9A00FBE122 /* MainScene.m */; };
 		5F905AC518987F4200FBE122 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F905AC418987F4200FBE122 /* CoreLocation.framework */; };
+		5FE26D9C189943680058FA0A /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE26D9B189943680058FA0A /* Object.m */; };
+		5FE26DA31899463B0058FA0A /* spritesheet-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26D9D1899463B0058FA0A /* spritesheet-hd.plist */; };
+		5FE26DA41899463B0058FA0A /* spritesheet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26D9E1899463B0058FA0A /* spritesheet-hd.png */; };
+		5FE26DA51899463B0058FA0A /* spritesheet-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26D9F1899463B0058FA0A /* spritesheet-ipadhd.plist */; };
+		5FE26DA61899463B0058FA0A /* spritesheet-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */; };
+		5FE26DA71899463B0058FA0A /* spritesheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26DA11899463B0058FA0A /* spritesheet.plist */; };
+		5FE26DA81899463B0058FA0A /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26DA21899463B0058FA0A /* spritesheet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -692,6 +699,14 @@
 		5F905ABA18987D9A00FBE122 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		5F905ABB18987D9A00FBE122 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		5F905AC418987F4200FBE122 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5FE26D9A189943680058FA0A /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		5FE26D9B189943680058FA0A /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
+		5FE26D9D1899463B0058FA0A /* spritesheet-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "spritesheet-hd.plist"; path = "Resources/spritesheet-hd.plist"; sourceTree = "<group>"; };
+		5FE26D9E1899463B0058FA0A /* spritesheet-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spritesheet-hd.png"; path = "Resources/spritesheet-hd.png"; sourceTree = "<group>"; };
+		5FE26D9F1899463B0058FA0A /* spritesheet-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "spritesheet-ipadhd.plist"; path = "Resources/spritesheet-ipadhd.plist"; sourceTree = "<group>"; };
+		5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spritesheet-ipadhd.png"; path = "Resources/spritesheet-ipadhd.png"; sourceTree = "<group>"; };
+		5FE26DA11899463B0058FA0A /* spritesheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = spritesheet.plist; path = Resources/spritesheet.plist; sourceTree = "<group>"; };
+		5FE26DA21899463B0058FA0A /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spritesheet.png; path = Resources/spritesheet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -765,6 +780,12 @@
 		5F66FC161898715A00869EA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5FE26D9D1899463B0058FA0A /* spritesheet-hd.plist */,
+				5FE26D9E1899463B0058FA0A /* spritesheet-hd.png */,
+				5FE26D9F1899463B0058FA0A /* spritesheet-ipadhd.plist */,
+				5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */,
+				5FE26DA11899463B0058FA0A /* spritesheet.plist */,
+				5FE26DA21899463B0058FA0A /* spritesheet.png */,
 				5F66FED51898728700869EA4 /* Default-Landscape~ipad@2x.png */,
 				5F66FED61898728700869EA4 /* Default~ipad.png */,
 				5F66FED3189871E300869EA4 /* Default-Landscape@2x~ipad.png */,
@@ -1629,6 +1650,8 @@
 		5F905AB218987D9A00FBE122 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5FE26D9A189943680058FA0A /* Object.h */,
+				5FE26D9B189943680058FA0A /* Object.m */,
 			);
 			name = model;
 			path = Classes/model;
@@ -1736,6 +1759,7 @@
 				5F66FED81898728700869EA4 /* Default~ipad.png in Resources */,
 				5F66FC2D1898715A00869EA4 /* Icon-120.png in Resources */,
 				5F66FE311898715C00869EA4 /* LICENSE_CCBReader.txt in Resources */,
+				5FE26DA81899463B0058FA0A /* spritesheet.png in Resources */,
 				5F66FEC41898715C00869EA4 /* newton-ipad.plist in Resources */,
 				5F66FEC01898715C00869EA4 /* newton-ipadhd.plist in Resources */,
 				5F66FC231898715A00869EA4 /* Icon@2x.png in Resources */,
@@ -1743,6 +1767,7 @@
 				5F66FEC81898715C00869EA4 /* newton.plist in Resources */,
 				5F66FC271898715A00869EA4 /* Icon-72@2x.png in Resources */,
 				5F66FC181898715A00869EA4 /* Default.png in Resources */,
+				5FE26DA31899463B0058FA0A /* spritesheet-hd.plist in Resources */,
 				5F66FC211898715A00869EA4 /* Icon.png in Resources */,
 				5F66FC2F1898715A00869EA4 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				5F66FED4189871E300869EA4 /* Default-Landscape@2x~ipad.png in Resources */,
@@ -1750,6 +1775,7 @@
 				5F66FC331898715A00869EA4 /* Icon-Small.png in Resources */,
 				5F66FC311898715A00869EA4 /* Icon-Small-50.png in Resources */,
 				5F66FEBC1898715C00869EA4 /* fire.plist in Resources */,
+				5FE26DA71899463B0058FA0A /* spritesheet.plist in Resources */,
 				5F66FEBE1898715C00869EA4 /* fire.png in Resources */,
 				5F66FEC61898715C00869EA4 /* newton-ipad.png in Resources */,
 				5F66FE1A1898715C00869EA4 /* LICENSE_Kazmath.txt in Resources */,
@@ -1757,7 +1783,9 @@
 				5F66FD731898715B00869EA4 /* LICENSE_cocos2d.txt in Resources */,
 				5F66FEC21898715C00869EA4 /* newton-ipadhd.png in Resources */,
 				5F66FC1C1898715A00869EA4 /* Default-568h@2x.png in Resources */,
+				5FE26DA61899463B0058FA0A /* spritesheet-ipadhd.png in Resources */,
 				5F66FC3C1898715A00869EA4 /* iTunesArtwork in Resources */,
+				5FE26DA41899463B0058FA0A /* spritesheet-hd.png in Resources */,
 				5F66FECA1898715C00869EA4 /* newton.png in Resources */,
 				5F66FC371898715A00869EA4 /* Icon-Spotlight-iOS7.png in Resources */,
 				5F66FED71898728700869EA4 /* Default-Landscape~ipad@2x.png in Resources */,
@@ -1767,6 +1795,7 @@
 				5F66FC291898715A00869EA4 /* Icon-76.png in Resources */,
 				5F66FDFF1898715C00869EA4 /* ChangeLog in Resources */,
 				5F66FC3E1898715A00869EA4 /* iTunesArtwork@2x in Resources */,
+				5FE26DA51899463B0058FA0A /* spritesheet-ipadhd.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1819,6 +1848,7 @@
 				5F66FD791898715B00869EA4 /* OALAction.m in Sources */,
 				5F66FD0F1898715B00869EA4 /* CCTexturePVR.m in Sources */,
 				5F66FE1E1898715C00869EA4 /* CCBAnimationManager.m in Sources */,
+				5FE26D9C189943680058FA0A /* Object.m in Sources */,
 				5F66FE021898715C00869EA4 /* mat4stack.c in Sources */,
 				5F66FCA11898715A00869EA4 /* CCNode.m in Sources */,
 				5F66FC8C1898715A00869EA4 /* CCLabelBMFont.m in Sources */,

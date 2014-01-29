@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SpriteKit/SpriteKit.h>
+#import "CCSpriteFrameCache.h"
 
 @interface AssetHandler : NSObject {
-    //SKTextureAtlas *_objectAtlas, *_shadowAtlas;
+
 }
 
 
 + (AssetHandler*) sharedAssetHandler;
 
 - (void) initTPages;
-//- (SKTexture*) getTextureWithName:(NSString*) textureName fromPageWithName:(NSString*) pageName;
+- (CCSpriteFrame*) getTextureWithName:(NSString*) textureName;
 
 @end

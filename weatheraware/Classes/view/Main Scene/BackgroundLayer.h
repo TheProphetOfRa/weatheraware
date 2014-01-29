@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@class Object;
+
 @interface BackgroundLayer : CCNodeColor {
     
     //scene components
+    Object* _house;
+    
     CCLabelTTF           *_label;
 }
 
