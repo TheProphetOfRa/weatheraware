@@ -8,31 +8,39 @@
 
 #import "BackgroundLayer.h"
 
-#import "Object.h"
+#import "AssetHandler.h"
+
 
 @implementation BackgroundLayer
 
 - (id) init {
     
-    if (self = [super init]) {
-        
-        CCColor* color = [[CCColor alloc] initWithCcColor4b:ccc4(0.0f, 120.0f, 64.0f, 0.0f)];
-        
-        [self setColor:color];
-        
-        _house = [[Object alloc] initWithTextureName:@"greensquare.png"];
-        
-        [_house setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
+    CCColor* color = [[CCColor alloc] initWithCcColor4b:ccc4(0.0f, 0.0f, 0.0f, 255.0f)];
+    
+    if (self = [super initWithColor:color]) {
         
         _label = [CCLabelTTF labelWithString:@"Hello, world" fontName:@"Helvetica" fontSize:24];
         
         [_label setPosition:ccp([self contentSize].width/2, [_label contentSize].height)];
-         
-        //add objects
-        [self addChild:_house];
+        
+        CCSprite *grassSprite;
+        
+        for (int i = 0 ; i < [self contentSize].width / [grassSprite contentSize].width ; i++){
+            for (int j = 0 ; j < [self contentSize].height / [grassSprite contentSize].height ; j++){
+                if (rand()%5 <= 1){
+                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"flower.png"]];
+                }
+                else {
+                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"grass.png"]];
+                }
+                [grassSprite setPosition:ccp([grassSprite contentSize].width/2 + ([grassSprite contentSize].width * i), [grassSprite contentSize].height/2 + ([grassSprite contentSize].height * j))];
+                [self addChild:grassSprite];
+            }
+        }
         
         //add UI
         [self addChild:_label];
+
     }
     return self;
 }

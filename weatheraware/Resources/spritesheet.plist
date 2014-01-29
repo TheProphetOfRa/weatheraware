@@ -108,32 +108,6 @@
                 <key>sourceSize</key>
                 <string>{24,24}</string>
             </dict>
-            <key>firtree.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{106,8},{4,4}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{4,4}}</string>
-                <key>sourceSize</key>
-                <string>{4,4}</string>
-            </dict>
-            <key>flowersquare.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{118,2},{4,4}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{4,4}}</string>
-                <key>sourceSize</key>
-                <string>{4,4}</string>
-            </dict>
             <key>frame1.png</key>
             <dict>
                 <key>frame</key>
@@ -237,32 +211,6 @@
                 <string>{{0,0},{24,24}}</string>
                 <key>sourceSize</key>
                 <string>{24,24}</string>
-            </dict>
-            <key>grasssquare.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{112,2},{4,4}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{4,4}}</string>
-                <key>sourceSize</key>
-                <string>{4,4}</string>
-            </dict>
-            <key>greensquare.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{106,2},{4,4}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{4,4}}</string>
-                <key>sourceSize</key>
-                <string>{4,4}</string>
             </dict>
             <key>lilly1.png</key>
             <dict>
@@ -378,7 +326,7 @@
             <key>size</key>
             <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a5ce28c785a8368f4c15b9b3a476352d:3e815f95e3ca87673ad13bc5f730c837:ed4222f1d24a3c8678b382d341162271$</string>
+            <string>$TexturePacker:SmartUpdate:39a2a5e4443b0575b9585ab8c21877e6:8742969a432eda416a9f1c6dfa8c4e55:ed4222f1d24a3c8678b382d341162271$</string>
             <key>textureFileName</key>
             <string>spritesheet.png</string>
         </dict>

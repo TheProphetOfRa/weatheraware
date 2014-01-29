@@ -14,9 +14,9 @@
 @interface BackgroundLayer : CCNodeColor {
     
     //scene components
-    Object* _house;
+    NSMutableArray      *_backgroundArray;
     
-    CCLabelTTF           *_label;
+    CCLabelTTF          *_label;
 }
 
 @property (retain) CCLabelTTF *label;
