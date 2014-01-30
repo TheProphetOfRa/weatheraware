@@ -25,6 +25,10 @@
         
         CCSprite *grassSprite;
         
+        
+        //Should be torn out and replaced with a JSON loaded implementation
+        srand(1234123);
+        
         for (int i = 0 ; i < [self contentSize].width / [grassSprite contentSize].width ; i++){
             for (int j = 0 ; j < [self contentSize].height / [grassSprite contentSize].height ; j++){
                 if (rand()%5 <= 1){

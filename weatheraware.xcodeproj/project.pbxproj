@@ -727,6 +727,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F386EBC189B0A3500C9CC57 /* TabletNormal */ = {
+			isa = PBXGroup;
+			children = (
+				5FE26DA11899463B0058FA0A /* spritesheet.plist */,
+				5FE26DA21899463B0058FA0A /* spritesheet.png */,
+				5F386EB41899713400C9CC57 /* background.plist */,
+				5F386EB51899713400C9CC57 /* background.png */,
+			);
+			name = TabletNormal;
+			sourceTree = "<group>";
+		};
+		5F386EBD189B0A4300C9CC57 /* TabletHDPI */ = {
+			isa = PBXGroup;
+			children = (
+				5F386EB21899713400C9CC57 /* background-ipadhd.plist */,
+				5F386EB31899713400C9CC57 /* background-ipadhd.png */,
+				5FE26D9F1899463B0058FA0A /* spritesheet-ipadhd.plist */,
+				5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */,
+			);
+			name = TabletHDPI;
+			sourceTree = "<group>";
+		};
+		5F386EBF189B0A5600C9CC57 /* HIDPI */ = {
+			isa = PBXGroup;
+			children = (
+				5F386EB01899713400C9CC57 /* background-hd.plist */,
+				5F386EB11899713400C9CC57 /* background-hd.png */,
+				5FE26D9D1899463B0058FA0A /* spritesheet-hd.plist */,
+				5FE26D9E1899463B0058FA0A /* spritesheet-hd.png */,
+			);
+			name = HIDPI;
+			sourceTree = "<group>";
+		};
+		5F386EC0189B0AB800C9CC57 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5F66FED51898728700869EA4 /* Default-Landscape~ipad@2x.png */,
+				5F66FED61898728700869EA4 /* Default~ipad.png */,
+				5F66FED3189871E300869EA4 /* Default-Landscape@2x~ipad.png */,
+				5F66FC171898715A00869EA4 /* Default.png */,
+				5F66FC191898715A00869EA4 /* Default@2x.png */,
+				5F66FC1B1898715A00869EA4 /* Default-568h@2x.png */,
+				5F66FC1D1898715A00869EA4 /* Default-Landscape~ipad.png */,
+				5F66FC3A1898715A00869EA4 /* Info.plist */,
+				5F66FC3B1898715A00869EA4 /* iTunesArtwork */,
+				5F66FC3D1898715A00869EA4 /* iTunesArtwork@2x */,
+				5F66FC1F1898715A00869EA4 /* Icons */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		5F66FBF11898715A00869EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -776,29 +827,10 @@
 		5F66FC161898715A00869EA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5F386EB01899713400C9CC57 /* background-hd.plist */,
-				5F386EB11899713400C9CC57 /* background-hd.png */,
-				5F386EB21899713400C9CC57 /* background-ipadhd.plist */,
-				5F386EB31899713400C9CC57 /* background-ipadhd.png */,
-				5F386EB41899713400C9CC57 /* background.plist */,
-				5F386EB51899713400C9CC57 /* background.png */,
-				5FE26D9D1899463B0058FA0A /* spritesheet-hd.plist */,
-				5FE26D9E1899463B0058FA0A /* spritesheet-hd.png */,
-				5FE26D9F1899463B0058FA0A /* spritesheet-ipadhd.plist */,
-				5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */,
-				5FE26DA11899463B0058FA0A /* spritesheet.plist */,
-				5FE26DA21899463B0058FA0A /* spritesheet.png */,
-				5F66FED51898728700869EA4 /* Default-Landscape~ipad@2x.png */,
-				5F66FED61898728700869EA4 /* Default~ipad.png */,
-				5F66FED3189871E300869EA4 /* Default-Landscape@2x~ipad.png */,
-				5F66FC171898715A00869EA4 /* Default.png */,
-				5F66FC191898715A00869EA4 /* Default@2x.png */,
-				5F66FC1B1898715A00869EA4 /* Default-568h@2x.png */,
-				5F66FC1D1898715A00869EA4 /* Default-Landscape~ipad.png */,
-				5F66FC3A1898715A00869EA4 /* Info.plist */,
-				5F66FC3B1898715A00869EA4 /* iTunesArtwork */,
-				5F66FC3D1898715A00869EA4 /* iTunesArtwork@2x */,
-				5F66FC1F1898715A00869EA4 /* Icons */,
+				5F386EC0189B0AB800C9CC57 /* App */,
+				5F386EBF189B0A5600C9CC57 /* HIDPI */,
+				5F386EBD189B0A4300C9CC57 /* TabletHDPI */,
+				5F386EBC189B0A3500C9CC57 /* TabletNormal */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

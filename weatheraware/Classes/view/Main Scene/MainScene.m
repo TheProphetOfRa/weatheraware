@@ -50,7 +50,7 @@
     // Store for later use
     _lastKnownLocation = location;
     
-    NSString *query = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f", location.location.coordinate.latitude, location.location.coordinate.longitude];
+    NSString *query = [NSString stringWithFormat:@"http://mruniverse.theprophetofra.com/~theprophetofra/forward/weather?lat=%f&lon=%f", location.location.coordinate.latitude, location.location.coordinate.longitude];
     
     WeatherController *controller = [[WeatherController alloc] initWithQuery:query];
         
