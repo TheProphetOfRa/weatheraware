@@ -43,16 +43,12 @@
 //		CCSetupTabletScale2X: @(YES),
 	}];
     
-    NSLog(@"Looog");
-	
 	return YES;
 }
 
 -(CCScene *)startScene
 {
-    
-    NSLog(@"starting");
-	// This method should return the very first scene to be run when your app starts.
+    // This method should return the very first scene to be run when your app starts.
 	return [MainScene scene];
 }
 

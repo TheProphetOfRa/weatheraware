@@ -234,6 +234,7 @@
 		5FE26DA61899463B0058FA0A /* spritesheet-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */; };
 		5FE26DA71899463B0058FA0A /* spritesheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26DA11899463B0058FA0A /* spritesheet.plist */; };
 		5FE26DA81899463B0058FA0A /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE26DA21899463B0058FA0A /* spritesheet.png */; };
+		5FEE325418A15D9400FA95BE /* Actor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE325318A15D9400FA95BE /* Actor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -703,6 +704,8 @@
 		5FE26DA01899463B0058FA0A /* spritesheet-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spritesheet-ipadhd.png"; path = "Resources/spritesheet-ipadhd.png"; sourceTree = "<group>"; };
 		5FE26DA11899463B0058FA0A /* spritesheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = spritesheet.plist; path = Resources/spritesheet.plist; sourceTree = "<group>"; };
 		5FE26DA21899463B0058FA0A /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spritesheet.png; path = Resources/spritesheet.png; sourceTree = "<group>"; };
+		5FEE325218A15D9400FA95BE /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Actor.h; sourceTree = "<group>"; };
+		5FEE325318A15D9400FA95BE /* Actor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Actor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1678,6 +1681,8 @@
 			children = (
 				5FE26D9A189943680058FA0A /* Object.h */,
 				5FE26D9B189943680058FA0A /* Object.m */,
+				5FEE325218A15D9400FA95BE /* Actor.h */,
+				5FEE325318A15D9400FA95BE /* Actor.m */,
 			);
 			name = model;
 			path = Classes/model;
@@ -1871,6 +1876,7 @@
 				5F66FD521898715B00869EA4 /* CCProfiling.m in Sources */,
 				5F66FD791898715B00869EA4 /* OALAction.m in Sources */,
 				5F66FD0F1898715B00869EA4 /* CCTexturePVR.m in Sources */,
+				5FEE325418A15D9400FA95BE /* Actor.m in Sources */,
 				5F66FE1E1898715C00869EA4 /* CCBAnimationManager.m in Sources */,
 				5FE26D9C189943680058FA0A /* Object.m in Sources */,
 				5F66FE021898715C00869EA4 /* mat4stack.c in Sources */,

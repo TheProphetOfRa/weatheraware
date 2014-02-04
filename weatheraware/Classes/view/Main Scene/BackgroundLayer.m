@@ -25,7 +25,6 @@
         
         CCSprite *grassSprite;
         
-        
         //Should be torn out and replaced with a JSON loaded implementation
         srand(1234123);
         

@@ -7,11 +7,12 @@
 //
 
 #import "CCScene.h"
+
 #import "LocationManager.h"
 #import "WeatherController.h"
 
 @class BackgroundLayer;
-@class ShadowedObject;
+@class Actor;
 
 @interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate> {
     
@@ -21,6 +22,14 @@
     
     //Layers
     BackgroundLayer *_background;
+    
+    Actor           *_actor;
+    
+    //Corners of the screen
+    CGPoint _a;
+    CGPoint _b;
+    CGPoint _c;
+    CGPoint _d;
     
 }
 
