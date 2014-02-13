@@ -15,6 +15,7 @@
 		5F386EBB1899713400C9CC57 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F386EB51899713400C9CC57 /* background.png */; };
 		5F586B8118AD3E1A00F1F201 /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8018AD3E1A00F1F201 /* BattleScene.m */; };
 		5F586B8418AD3E6900F1F201 /* GrassLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8318AD3E6900F1F201 /* GrassLayer.mm */; };
+		5F586B8718AD580400F1F201 /* LongGrass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8618AD580400F1F201 /* LongGrass.m */; };
 		5F66FBFE1898715A00869EA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFD1898715A00869EA4 /* QuartzCore.framework */; };
 		5F66FC001898715A00869EA4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFF1898715A00869EA4 /* OpenGLES.framework */; };
 		5F66FC021898715A00869EA4 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FC011898715A00869EA4 /* OpenAL.framework */; };
@@ -260,6 +261,8 @@
 		5F586B8018AD3E1A00F1F201 /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
 		5F586B8218AD3E6900F1F201 /* GrassLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrassLayer.h; sourceTree = "<group>"; };
 		5F586B8318AD3E6900F1F201 /* GrassLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrassLayer.mm; sourceTree = "<group>"; };
+		5F586B8518AD580400F1F201 /* LongGrass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongGrass.h; sourceTree = "<group>"; };
+		5F586B8618AD580400F1F201 /* LongGrass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongGrass.m; sourceTree = "<group>"; };
 		5F66FBFA1898715A00869EA4 /* weatheraware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatheraware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F66FBFD1898715A00869EA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5F66FBFF1898715A00869EA4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1698,6 +1701,8 @@
 				5FE26D9B189943680058FA0A /* Object.m */,
 				5FEE325218A15D9400FA95BE /* Actor.h */,
 				5FEE325318A15D9400FA95BE /* Actor.m */,
+				5F586B8518AD580400F1F201 /* LongGrass.h */,
+				5F586B8618AD580400F1F201 /* LongGrass.m */,
 			);
 			name = model;
 			path = Classes/model;
@@ -1931,6 +1936,7 @@
 				5F66FE0C1898715C00869EA4 /* plane.c in Sources */,
 				5F66FD8F1898715B00869EA4 /* OALSimpleAudio.m in Sources */,
 				5F66FC811898715A00869EA4 /* CCGLProgram.m in Sources */,
+				5F586B8718AD580400F1F201 /* LongGrass.m in Sources */,
 				5F66FEA31898715C00869EA4 /* main.m in Sources */,
 				5F66FDB61898715B00869EA4 /* OALAudioSession.m in Sources */,
 				5F66FE2D1898715C00869EA4 /* CCBLocalizationManager.m in Sources */,
