@@ -26,7 +26,7 @@
         // get physical location
         _locationManager = [[LocationGetter alloc] init];
         [_locationManager setDelegate:self];
-        //[_locationManager startUpdates];
+        [_locationManager startUpdates];
         
         self.userInteractionEnabled = YES;
         

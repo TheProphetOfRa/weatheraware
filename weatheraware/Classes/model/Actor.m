@@ -24,24 +24,25 @@
 
 - (void) moveInDirection: (enum Direction) dir {
     
-    const float x = [[_tile sprite] position].x;
-    const float y = [[_tile sprite] position].y;
-    
     const float tileSizeW = [[_tile sprite] contentSize].width;
     const float tileSizeH = [[_tile sprite] contentSize].height;
     
     switch (dir) {
         case eUp:
-            [[_tile sprite] runAction:[CCActionMoveBy actionWithDuration:5.0f position:ccp(x, y - tileSizeH)]];
+            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(0, tileSizeH)]];
+            NSLog(@"Up");
             break;
         case eDown:
-            [[_tile sprite] runAction:[CCActionMoveBy actionWithDuration:5.0f position:ccp(x, y + tileSizeH)]];
+            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(0, -tileSizeH)]];
+            NSLog(@"Down");
             break;
         case eLeft:
-            [[_tile sprite] runAction:[CCActionMoveBy actionWithDuration:5.0f position:ccp(x - tileSizeW, y)]];
+            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(-tileSizeW, 0)]];
+            NSLog(@"Left");
             break;
         case eRight:
-            [[_tile sprite] runAction:[CCActionMoveBy actionWithDuration:5.0f position:ccp(x + tileSizeW, y)]];
+            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(tileSizeW, 0)]];
+            NSLog(@"Right");
             break;
     }
     
