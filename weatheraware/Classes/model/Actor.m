@@ -12,6 +12,8 @@
 
 @implementation Actor
 
+const static int kMoveTag = 2352352;
+
 - (id) initWithFilename: (NSString*) filename {
 
     if (self = [super init]) {
@@ -24,27 +26,39 @@
 
 - (void) moveInDirection: (enum Direction) dir {
     
+    //Check that previous move action has completed
+    if ([_tile getActionByTag:kMoveTag]) {
+        return;
+    }
+    
+    //Get size of sprite for movement
     const float tileSizeW = [[_tile sprite] contentSize].width;
     const float tileSizeH = [[_tile sprite] contentSize].height;
     
+    CCAction *action;
+    
+    //Create action to be in correct direction
     switch (dir) {
         case eUp:
-            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(0, tileSizeH)]];
-            NSLog(@"Up");
+            action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, tileSizeH)];
+            [action setTag:kMoveTag];
             break;
         case eDown:
-            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(0, -tileSizeH)]];
-            NSLog(@"Down");
+            action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, -tileSizeH)];
+            [action setTag:kMoveTag];
             break;
         case eLeft:
-            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(-tileSizeW, 0)]];
-            NSLog(@"Left");
+            action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(-tileSizeW, 0)];
+            [action setTag:kMoveTag];
             break;
         case eRight:
-            [_tile runAction:[CCActionMoveBy actionWithDuration:0.5f position:ccp(tileSizeW, 0)]];
-            NSLog(@"Right");
+            action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(tileSizeW, 0)];
+            [action setTag:kMoveTag];
             break;
     }
+    
+    //Move sprite
+    [_tile runAction:action];
     
 }
 

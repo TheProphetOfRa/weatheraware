@@ -13,6 +13,7 @@
 
 @class BackgroundLayer;
 @class Actor;
+@class GrassLayer;
 
 @interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate> {
     
@@ -22,6 +23,7 @@
     
     //Layers
     BackgroundLayer *_background;
+    GrassLayer      *_grass;
     
     Actor           *_actor;
     

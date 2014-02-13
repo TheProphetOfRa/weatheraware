@@ -15,6 +15,7 @@
  *@param condition String representing the new weather condition
  */
 - (void) newWeatherCondition:(NSString *) condition;
+- (void) tryNextServer;
 @end
 
 @interface WeatherController : NSObject {

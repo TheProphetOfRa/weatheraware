@@ -20,7 +20,7 @@
     };
     
     Object* _tile;
-    
+        
 }
 
 - (id) initWithFilename: (NSString*) filename;

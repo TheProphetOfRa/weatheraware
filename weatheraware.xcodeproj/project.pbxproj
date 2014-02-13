@@ -13,6 +13,8 @@
 		5F386EB91899713400C9CC57 /* background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F386EB31899713400C9CC57 /* background-ipadhd.png */; };
 		5F386EBA1899713400C9CC57 /* background.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F386EB41899713400C9CC57 /* background.plist */; };
 		5F386EBB1899713400C9CC57 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F386EB51899713400C9CC57 /* background.png */; };
+		5F586B8118AD3E1A00F1F201 /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8018AD3E1A00F1F201 /* BattleScene.m */; };
+		5F586B8418AD3E6900F1F201 /* GrassLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8318AD3E6900F1F201 /* GrassLayer.mm */; };
 		5F66FBFE1898715A00869EA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFD1898715A00869EA4 /* QuartzCore.framework */; };
 		5F66FC001898715A00869EA4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFF1898715A00869EA4 /* OpenGLES.framework */; };
 		5F66FC021898715A00869EA4 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FC011898715A00869EA4 /* OpenAL.framework */; };
@@ -254,6 +256,10 @@
 		5F386EB31899713400C9CC57 /* background-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ipadhd.png"; path = "Resources/background-ipadhd.png"; sourceTree = "<group>"; };
 		5F386EB41899713400C9CC57 /* background.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = background.plist; path = Resources/background.plist; sourceTree = "<group>"; };
 		5F386EB51899713400C9CC57 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
+		5F586B7F18AD3E1A00F1F201 /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
+		5F586B8018AD3E1A00F1F201 /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
+		5F586B8218AD3E6900F1F201 /* GrassLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrassLayer.h; sourceTree = "<group>"; };
+		5F586B8318AD3E6900F1F201 /* GrassLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrassLayer.mm; sourceTree = "<group>"; };
 		5F66FBFA1898715A00869EA4 /* weatheraware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatheraware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F66FBFD1898715A00869EA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5F66FBFF1898715A00869EA4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -779,6 +785,15 @@
 				5F66FC1F1898715A00869EA4 /* Icons */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		5F586B7E18AD3E0900F1F201 /* Battle Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5F586B7F18AD3E1A00F1F201 /* BattleScene.h */,
+				5F586B8018AD3E1A00F1F201 /* BattleScene.m */,
+			);
+			path = "Battle Scene";
 			sourceTree = "<group>";
 		};
 		5F66FBF11898715A00869EA4 = {
@@ -1691,6 +1706,7 @@
 		5F905AB318987D9A00FBE122 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5F586B7E18AD3E0900F1F201 /* Battle Scene */,
 				5F905AB418987D9A00FBE122 /* Intro Scene */,
 				5F905AB718987D9A00FBE122 /* Main Scene */,
 			);
@@ -1714,6 +1730,8 @@
 				5F905AB918987D9A00FBE122 /* BackgroundLayer.m */,
 				5F905ABA18987D9A00FBE122 /* MainScene.h */,
 				5F905ABB18987D9A00FBE122 /* MainScene.m */,
+				5F586B8218AD3E6900F1F201 /* GrassLayer.h */,
+				5F586B8318AD3E6900F1F201 /* GrassLayer.mm */,
 			);
 			path = "Main Scene";
 			sourceTree = "<group>";
@@ -1881,6 +1899,7 @@
 				5FE26D9C189943680058FA0A /* Object.m in Sources */,
 				5F66FE021898715C00869EA4 /* mat4stack.c in Sources */,
 				5F66FCA11898715A00869EA4 /* CCNode.m in Sources */,
+				5F586B8118AD3E1A00F1F201 /* BattleScene.m in Sources */,
 				5F66FC8C1898715A00869EA4 /* CCLabelBMFont.m in Sources */,
 				5F66FC4A1898715A00869EA4 /* CCActionEase.m in Sources */,
 				5F66FC591898715A00869EA4 /* CCActionTween.m in Sources */,
@@ -1908,6 +1927,7 @@
 				5F66FCBC1898715A00869EA4 /* CCPhysicsBody.m in Sources */,
 				5F66FD411898715B00869EA4 /* CCWindow.m in Sources */,
 				5F66FC561898715A00869EA4 /* CCActionProgressTimer.m in Sources */,
+				5F586B8418AD3E6900F1F201 /* GrassLayer.mm in Sources */,
 				5F66FE0C1898715C00869EA4 /* plane.c in Sources */,
 				5F66FD8F1898715B00869EA4 /* OALSimpleAudio.m in Sources */,
 				5F66FC811898715A00869EA4 /* CCGLProgram.m in Sources */,

@@ -28,28 +28,29 @@
     NSData *data= [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:_query] options:NSDataReadingMappedIfSafe error:&error];
     
     if (!data) {
-        [_delegate newWeatherCondition:@"Unable to pull data"];
+        [_delegate tryNextServer];
         return;
     }
     
     NSDictionary *dataArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
 
     if (! dataArray) {
-        [_delegate newWeatherCondition:@"Unable to parse data"];
+        [_delegate tryNextServer];
         return;
     }
     
     NSArray *weather = [dataArray objectForKey:@"weather"];
     
     if (!weather) {
-        [_delegate newWeatherCondition:@"Unable to extract weather information"];
+        [_delegate tryNextServer];
         return;
     }
         
     NSDictionary *weatherInfo = [weather objectAtIndex:0];
     
     if (!weatherInfo) {
-        [_delegate newWeatherCondition:@"Unable to extract main weather condition"];
+        [_delegate tryNextServer];
+        return;
     }
     
     _condition = [weatherInfo objectForKey:@"main"];

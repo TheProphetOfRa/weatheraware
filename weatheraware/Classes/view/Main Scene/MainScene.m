@@ -10,6 +10,7 @@
 
 #import "Actor.h"
 #import "BackgroundLayer.h"
+#import "GrassLayer.h"
 
 @implementation MainScene
 
@@ -23,32 +24,61 @@
     
     if ((self = [super init])) {
         
-        // get physical location
-        _locationManager = [[LocationGetter alloc] init];
-        [_locationManager setDelegate:self];
-        [_locationManager startUpdates];
+        [self initLocation];
         
-        self.userInteractionEnabled = YES;
+        [self initBackground];
         
-        _background = [[BackgroundLayer alloc] init];
-        [self addChild:_background z:0];
+        [self initGrass];
         
+        [self initPlayer];
         
-        _actor = [[Actor alloc] initWithFilename:@"longgrass.png"];
-        [_actor setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
-        [self addChild:_actor z:1];
-        
-        _a = ccp(0, [self contentSize].height);
-        _b = ccp([self contentSize].width, [self contentSize].height);
-        _c = ccp([self contentSize].width, 0);
-        _d = ccp (0, 0);
+        [self initMisc];
         
     }
     return self;
 }
 
+- (void) initLocation {
+    // get physical location
+    _locationManager = [[LocationGetter alloc] init];
+    [_locationManager setDelegate:self];
+    [_locationManager startUpdates];
+}
+
+- (void) initBackground {
+    //Create background layer and add it to scene
+    _background = [[BackgroundLayer alloc] init];
+    [self addChild:_background z:0];
+}
+
+- (void) initGrass {
+    //Create grass layer and add it to scene
+    _grass = [[GrassLayer alloc] initWithScreenSize:[self contentSize]];
+    [self addChild:_grass z:1];
+}
+
+- (void) initPlayer {
+    //Create actor and add it to middle of scene
+    _actor = [[Actor alloc] initWithFilename:@"longgrass.png"];
+    [_actor setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
+    [self addChild:_actor z:2];
+}
+
+- (void) initMisc {
+    
+    //Enable user interaction
+    self.userInteractionEnabled = YES;
+
+    //Store the corners for the movement code
+    _a = ccp(0, [self contentSize].height);
+    _b = ccp([self contentSize].width, [self contentSize].height);
+    _c = ccp([self contentSize].width, 0);
+    _d = ccp (0, 0);
+}
+
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     
+    //Create two diagonal lines from corner to corner
     bool isAboveAC = ((_c.x - _a.x) * (touch.locationInWorld.y - _a.y) - (_c.y - _a.y) * (touch.locationInWorld.x - _a.x)) > 0;
     bool isAboveDB = ((_b.x - _d.x) * (touch.locationInWorld.y - _d.y) - (_b.y - _d.y) * (touch.locationInWorld.x - _d.x)) > 0;
     
@@ -58,13 +88,11 @@
         {
             //top edge has intersected
             [_actor moveInDirection:0];
-            NSLog(@"Moving Up");
         }
         else
         {
             //right edge intersected
             [_actor moveInDirection:3];
-            NSLog(@"Moving Right");
         }
     }
     else
@@ -73,13 +101,11 @@
         {
             //left edge has intersected
             [_actor moveInDirection:2];
-            NSLog(@"Moving Left");
         }
         else
         {
             //bottom edge intersected
             [_actor moveInDirection:1];
-            NSLog(@"Moving Down");
         }
     }
 }
@@ -116,6 +142,20 @@
 - (void) newWeatherCondition:(NSString*)condition {
     //print location
     [[_background label] setString:condition];
+}
+
+-(void) tryNextServer {
+    //create query string
+    NSString *query = [NSString stringWithFormat:@"http://www.paperweightsolutions.co.uk/DavidHodgkinson/weather?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
+    
+    //allocate a weather controller and hand it the query string
+    WeatherController *controller = [[WeatherController alloc] initWithQuery:query];
+    
+    //give the weather controller something to call back to when the hrrp request completes
+    [controller setDelegate:self];
+    
+    //run the query
+    [controller runQuery];
 }
 
 @end

@@ -23,29 +23,34 @@
         
         [_label setPosition:ccp([self contentSize].width/2, [_label contentSize].height)];
         
-        CCSprite *grassSprite;
-        
-        //Should be torn out and replaced with a JSON loaded implementation
-        srand(1234123);
-        
-        for (int i = 0 ; i < [self contentSize].width / [grassSprite contentSize].width ; i++){
-            for (int j = 0 ; j < [self contentSize].height / [grassSprite contentSize].height ; j++){
-                if (rand()%5 <= 1){
-                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"flower.png"]];
-                }
-                else {
-                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"grass.png"]];
-                }
-                [grassSprite setPosition:ccp([grassSprite contentSize].width/2 + ([grassSprite contentSize].width * i), [grassSprite contentSize].height/2 + ([grassSprite contentSize].height * j))];
-                [self addChild:grassSprite];
-            }
-        }
+        [self initBackgroundSprites];
         
         //add UI
         [self addChild:_label];
 
     }
     return self;
+}
+
+- (void) initBackgroundSprites {
+    
+    CCSprite *grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"flower.png"]];
+    
+    //Should be torn out and replaced with a JSON loaded implementation
+    srand(1234123);
+    
+    for (int i = 0 ; i < [self contentSize].width / [grassSprite contentSize].width ; i++){
+        for (int j = 0 ; j < [self contentSize].height / [grassSprite contentSize].height ; j++){
+            if (rand()%5 <= 1){
+                grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"flower.png"]];
+            }
+            else {
+                grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"grass.png"]];
+            }
+            [grassSprite setPosition:ccp([grassSprite contentSize].width/2 + ([grassSprite contentSize].width * i), [grassSprite contentSize].height/2 + ([grassSprite contentSize].height * j))];
+            [self addChild:grassSprite];
+        }
+    }
 }
 
 @end
