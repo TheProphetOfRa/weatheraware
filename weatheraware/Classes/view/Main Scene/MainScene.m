@@ -11,6 +11,7 @@
 #import "Actor.h"
 #import "BackgroundLayer.h"
 #import "GrassLayer.h"
+#import "LongGrass.h"
 
 @implementation MainScene
 
@@ -111,7 +112,20 @@
 }
 
 -(void)update {
-    /* Called before each frame is rendered */
+    
+    NSMutableArray *gArray = [_grass grassArray];
+    
+    LongGrass *grass = [gArray firstObject];
+    
+    CGPoint playerGridPos;
+    playerGridPos.x = ([_actor position].x - [grass contentSize].width/2)/[grass contentSize].width;
+    playerGridPos.y = ([_actor position].y - [grass contentSize].height/2)/[grass contentSize].height;
+    
+    for (LongGrass* g in gArray) {
+        if (CGPointEqualToPoint([g gridPos], playerGridPos)) {
+            NSLog(@"Colliding");
+        }
+    }
 }
 
 #pragma mark -

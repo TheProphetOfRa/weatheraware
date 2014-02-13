@@ -16,4 +16,6 @@
 
 - (id) initWithScreenSize: (CGSize) size;
 
+@property (nonatomic, retain) NSMutableArray *grassArray;
+
 @end

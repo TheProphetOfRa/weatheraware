@@ -20,4 +20,6 @@
 
 - (id) initWithGridPos: (CGPoint) gPos;
 
+@property (nonatomic, readonly) CGPoint gridPos;
+
 @end

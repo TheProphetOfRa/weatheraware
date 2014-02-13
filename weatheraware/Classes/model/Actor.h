@@ -12,7 +12,7 @@
 
 @interface Actor : CCNode {
     
-    enum Direction{
+    enum Direction : int{
         eUp,
         eDown,
         eLeft,
@@ -20,6 +20,8 @@
     };
     
     Object* _tile;
+    
+    CGPoint _gridPos;
         
 }
 

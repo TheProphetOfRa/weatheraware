@@ -19,10 +19,8 @@
         [_sprite setPosition:ccp([_sprite contentSize].width/2, [_sprite contentSize].height/2)];
         [self addChild:_sprite];
         [self setContentSize:[_sprite contentSize]];
-    }
-    
+    }    
     return self;
-    
 }
 
 @end
