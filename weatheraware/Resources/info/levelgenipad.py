@@ -5,15 +5,15 @@ from random import randint
 x = 0
 y = 0
 
-width = 17
-height = 9
+width = 15
+height = 11
 
 output = "{ \"map\":["
-for y in range(0,10):
+for y in range(0,12):
     if y > 0:
         output += "],"
     output += "["
-    for x in range(0,18):
+    for x in range(0,16):
         if x == 0: 
            output += str(0) + "," 
         elif y == 0 and x != width:
@@ -31,6 +31,6 @@ for y in range(0,10):
 
 output += "]]}"
 
-file = open("mainscene-iphone.json", "w")
+file = open("mainscene-ipad.json", "w")
 file.write(output)
 file.close()

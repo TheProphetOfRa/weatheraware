@@ -9,6 +9,7 @@
 #import "BackgroundLayer.h"
 
 #import "AssetHandler.h"
+#import "DeviceInformation.h"
 #import "JsonLoader.h"
 
 
@@ -36,7 +37,16 @@
 {
     CCSprite *grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"GrassAlt128.png"]];
     
-    NSDictionary *levelData = [[JsonLoader sharedJsonLoader] loadJsonFromFile:@"mainscene.json"];
+    NSDictionary *levelData;
+    
+    if ([[[DeviceInformation sharedDeviceInformation] getDeviceType] isEqual: @"iPad"])
+    {
+        levelData = [[JsonLoader sharedJsonLoader] loadJsonFromFile:@"mainscene-ipad.json"];
+    }
+    else
+    {
+        levelData = [[JsonLoader sharedJsonLoader] loadJsonFromFile:@"mainscene-iphone.json"];
+    }    
     
     NSArray *map = [levelData objectForKey:@"map"];
     

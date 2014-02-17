@@ -244,7 +244,9 @@
 		5FE53E1D18B261290014B15F /* environment-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E1B18B261290014B15F /* environment-ipadhd.png */; };
 		5FE53E2018B26C270014B15F /* JsonLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE53E1F18B26C270014B15F /* JsonLoader.m */; };
 		5FE53E2718B270260014B15F /* creatureinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2318B270260014B15F /* creatureinfo.json */; };
-		5FE53E2918B270260014B15F /* mainscene.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2518B270260014B15F /* mainscene.json */; };
+		5FE53E2C18B279FA0014B15F /* DeviceInformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FE53E2B18B279FA0014B15F /* DeviceInformation.mm */; };
+		5FE53E2F18B27DB30014B15F /* mainscene-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2D18B27DB30014B15F /* mainscene-ipad.json */; };
+		5FE53E3018B27DB30014B15F /* mainscene-iphone.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2E18B27DB30014B15F /* mainscene-iphone.json */; };
 		5FEE325418A15D9400FA95BE /* Actor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE325318A15D9400FA95BE /* Actor.m */; };
 /* End PBXBuildFile section */
 
@@ -732,7 +734,10 @@
 		5FE53E1E18B26C270014B15F /* JsonLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonLoader.h; sourceTree = "<group>"; };
 		5FE53E1F18B26C270014B15F /* JsonLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonLoader.m; sourceTree = "<group>"; };
 		5FE53E2318B270260014B15F /* creatureinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = creatureinfo.json; sourceTree = "<group>"; };
-		5FE53E2518B270260014B15F /* mainscene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainscene.json; sourceTree = "<group>"; };
+		5FE53E2A18B279FA0014B15F /* DeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformation.h; sourceTree = "<group>"; };
+		5FE53E2B18B279FA0014B15F /* DeviceInformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInformation.mm; sourceTree = "<group>"; };
+		5FE53E2D18B27DB30014B15F /* mainscene-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mainscene-ipad.json"; sourceTree = "<group>"; };
+		5FE53E2E18B27DB30014B15F /* mainscene-iphone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mainscene-iphone.json"; sourceTree = "<group>"; };
 		5FEE325218A15D9400FA95BE /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Actor.h; sourceTree = "<group>"; };
 		5FEE325318A15D9400FA95BE /* Actor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Actor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1698,6 +1703,8 @@
 				5F905AA818987D9900FBE122 /* AppDelegate.m */,
 				5F905AA918987D9900FBE122 /* ViewController.h */,
 				5F905AAA18987D9900FBE122 /* ViewController.m */,
+				5FE53E2A18B279FA0014B15F /* DeviceInformation.h */,
+				5FE53E2B18B279FA0014B15F /* DeviceInformation.mm */,
 			);
 			name = app;
 			path = Classes/app;
@@ -1775,8 +1782,9 @@
 		5FE53E2118B270260014B15F /* info */ = {
 			isa = PBXGroup;
 			children = (
+				5FE53E2D18B27DB30014B15F /* mainscene-ipad.json */,
+				5FE53E2E18B27DB30014B15F /* mainscene-iphone.json */,
 				5FE53E2318B270260014B15F /* creatureinfo.json */,
-				5FE53E2518B270260014B15F /* mainscene.json */,
 			);
 			name = info;
 			path = Resources/info;
@@ -1870,11 +1878,13 @@
 				5F66FC311898715A00869EA4 /* Icon-Small-50.png in Resources */,
 				5FE53E1518B256700014B15F /* background-hd.png in Resources */,
 				5FE26DA71899463B0058FA0A /* spritesheet.plist in Resources */,
+				5FE53E3018B27DB30014B15F /* mainscene-iphone.json in Resources */,
 				5F66FE1A1898715C00869EA4 /* LICENSE_Kazmath.txt in Resources */,
 				5F66FC251898715A00869EA4 /* Icon-72.png in Resources */,
 				5F66FD731898715B00869EA4 /* LICENSE_cocos2d.txt in Resources */,
 				5F66FC1C1898715A00869EA4 /* Default-568h@2x.png in Resources */,
 				5FE26DA61899463B0058FA0A /* spritesheet-ipadhd.png in Resources */,
+				5FE53E2F18B27DB30014B15F /* mainscene-ipad.json in Resources */,
 				5F66FC3C1898715A00869EA4 /* iTunesArtwork in Resources */,
 				5FE26DA41899463B0058FA0A /* spritesheet-hd.png in Resources */,
 				5FE53E2718B270260014B15F /* creatureinfo.json in Resources */,
@@ -1883,7 +1893,6 @@
 				5F386EBB1899713400C9CC57 /* background.png in Resources */,
 				5FE53E1C18B261290014B15F /* environment-ipadhd.plist in Resources */,
 				5F66FC2B1898715A00869EA4 /* Icon-76@2x.png in Resources */,
-				5FE53E2918B270260014B15F /* mainscene.json in Resources */,
 				5F386EBA1899713400C9CC57 /* background.plist in Resources */,
 				5F66FE9F1898715C00869EA4 /* LICENSE_Chipmunk.txt in Resources */,
 				5F66FC391898715A00869EA4 /* Icon-Spotlight-iOS7@2x.png in Resources */,
@@ -2024,6 +2033,7 @@
 				5F905AC318987D9A00FBE122 /* MainScene.m in Sources */,
 				5F66FE0E1898715C00869EA4 /* quaternion.c in Sources */,
 				5F66FCC21898715A00869EA4 /* CCPhysicsNode.m in Sources */,
+				5FE53E2C18B279FA0014B15F /* DeviceInformation.mm in Sources */,
 				5F66FDA81898715B00869EA4 /* ALSoundSourcePool.m in Sources */,
 				5F66FCB71898715A00869EA4 /* CCParticleSystemBase.m in Sources */,
 				5F66FD4E1898715B00869EA4 /* CCColor.m in Sources */,
