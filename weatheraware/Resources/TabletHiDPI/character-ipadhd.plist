@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Character128.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{68,108}}</string>
+                <key>offset</key>
+                <string>{-2,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{28,12},{68,108}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>character-ipadhd.png</string>
+            <key>size</key>
+            <string>{128,128}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:86bab3083e0cca96ba63cd3a7bb4575f:5309291aec42b857ae990543fc370931:6b28e604c04b208fba9392037c3db309$</string>
+            <key>textureFileName</key>
+            <string>character-ipadhd.png</string>
+        </dict>
+    </dict>
+</plist>

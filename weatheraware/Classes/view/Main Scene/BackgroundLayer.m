@@ -35,23 +35,20 @@
 
 - (void) initBackgroundSprites
 {
-    CCSprite *grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"GrassAlt128.png"]];
+    CCSprite *grassSprite;
     
     NSDictionary *levelData;
     
-    if ([[[DeviceInformation sharedDeviceInformation] getDeviceType] isEqual: @"iPad"])
+    //Detect which device and load appropriate JSON data
+    if ([[DeviceInformation getDeviceType] isEqual: @"iPad"])
     {
-        levelData = [[JsonLoader sharedJsonLoader] loadJsonFromFile:@"mainscene-ipad.json"];
+        levelData = [JsonLoader loadJsonFromFile:@"mainscene-ipad.json"];
     }
     else
     {
-        levelData = [[JsonLoader sharedJsonLoader] loadJsonFromFile:@"mainscene-iphone.json"];
+        levelData = [JsonLoader loadJsonFromFile:@"mainscene-iphone.json"];
     }    
-    
     NSArray *map = [levelData objectForKey:@"map"];
-    
-    //Should be torn out and replaced with a JSON loaded implementation
-    srand(1234123);
     
     for (int i = 0 ; i < [map count] ; i++)
     {

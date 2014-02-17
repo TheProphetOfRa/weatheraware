@@ -28,9 +28,8 @@ static AssetHandler *_sharedAssetHandler = nil;
 
 - (void) initTPages
 {
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"background.plist"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"environment.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"character.plist"];
 }
 - (CCSpriteFrame*) getTextureWithName:(NSString *)textureName
 {

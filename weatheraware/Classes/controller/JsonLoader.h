@@ -9,14 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface JsonLoader : NSObject
-{
-    JsonLoader *_sharedLoader;
-    
-    
-}
 
-+ (JsonLoader*) sharedJsonLoader;
-
-- (NSDictionary*) loadJsonFromFile: (NSString*) filename;
++ (NSDictionary*) loadJsonFromFile: (NSString*) filename;
 
 @end

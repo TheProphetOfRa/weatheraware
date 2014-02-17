@@ -15,7 +15,7 @@
 
 static DeviceInformation *_sharedInfo = nil;
 
-NSString* convertToSaneOutput(NSString *model)
++ (NSString*) convertToSaneOutput:(NSString*) model
 {
     if ([model isEqualToString:@"iPhone1,1"])
     {
@@ -101,16 +101,7 @@ NSString* convertToSaneOutput(NSString *model)
     return model;
 }
 
-+ (DeviceInformation*) sharedDeviceInformation
-{
-    if (_sharedInfo == nil)
-    {
-        _sharedInfo = [[DeviceInformation alloc] init];
-    }
-    return _sharedInfo;
-}
-
-- (NSString*) getDeviceModel
++ (NSString*) getDeviceModel
 {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
@@ -118,10 +109,10 @@ NSString* convertToSaneOutput(NSString *model)
     sysctlbyname("hw.machine", machine, &size, NULL, 0);
     NSString *platform = [NSString stringWithUTF8String:machine];
     free(machine);
-    return convertToSaneOutput(platform);
+    return [self convertToSaneOutput:platform];
 }
 
-- (NSString*) getDeviceType
++ (NSString*) getDeviceType
 {
     return [[UIDevice currentDevice] model];
 }

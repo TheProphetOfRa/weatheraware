@@ -14,16 +14,7 @@
 
 static JsonLoader* _sharedLoader = nil;
 
-+ (JsonLoader*) sharedJsonLoader
-{
-    if (_sharedLoader == nil)
-    {
-        _sharedLoader = [[JsonLoader alloc] init];
-    }
-    return _sharedLoader;
-}
-
-- (NSDictionary*) loadJsonFromFile:(NSString *)filename
++ (NSDictionary*) loadJsonFromFile:(NSString *)filename
 {
     
     NSDictionary *jsonData;

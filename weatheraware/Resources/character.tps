@@ -70,7 +70,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>background{v}.png</filename>
+        <filename>character{v}.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -161,7 +161,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>background{v}.plist</filename>
+                <filename>character{v}.plist</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -200,7 +200,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>assets</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Character128.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -9,12 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface DeviceInformation : NSObject
-{
-    DeviceInformation *_sharedInfo;
-}
 
-+ (DeviceInformation*) sharedDeviceInformation;
-- (NSString*) getDeviceType;
-- (NSString*) getDeviceModel;
++ (NSString*) getDeviceType;
++ (NSString*) getDeviceModel;
 
 @end

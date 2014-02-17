@@ -8,10 +8,10 @@ y = 0
 width = 17
 height = 9
 
-output = "{ \"map\":["
+output = "{ \n\t \"map\":[\n\t\t"
 for y in range(0,10):
     if y > 0:
-        output += "],"
+        output += "],\n\t\t"
     output += "["
     for x in range(0,18):
         if x == 0: 
@@ -29,7 +29,7 @@ for y in range(0,10):
         else:
            output += str(randint(1,10)) + ","
 
-output += "]]}"
+output += "]\n\t]\n}"
 
 file = open("mainscene-iphone.json", "w")
 file.write(output)

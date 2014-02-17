@@ -203,6 +203,15 @@
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/Grass128.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/GrassAlt128.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/Tree128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceDL128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceDR128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceEndH128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceEndV128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceHorizontal128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceUL128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceUR128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceVertical128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/LongGrass128.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

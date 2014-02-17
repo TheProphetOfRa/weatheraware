@@ -28,7 +28,7 @@
         
         [self initBackground];
         
-        //[self initGrass];
+        [self initGrass];
         
         [self initPlayer];
         
