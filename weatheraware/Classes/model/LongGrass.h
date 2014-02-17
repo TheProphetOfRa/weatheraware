@@ -10,8 +10,8 @@
 
 @class Object;
 
-@interface LongGrass : CCNode {
-    
+@interface LongGrass : CCNode
+{
     Object    *_tile;
     
     CGPoint   _gridPos;

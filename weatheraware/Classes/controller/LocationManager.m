@@ -15,7 +15,8 @@ BOOL didUpdate = NO;
 - (void)startUpdates
 {
     //create a CoreLoation manager instance if one doesn't exist
-    if (_locationManager == nil) {
+    if (_locationManager == nil)
+    {
         _locationManager = [[CLLocationManager alloc] init];
     }
     
@@ -31,7 +32,8 @@ BOOL didUpdate = NO;
     [_locationManager startUpdatingLocation];
 }
 
-- (void) updateLocation {
+- (void) updateLocation
+{
     //update the location if the location manager has been instansiated
     if (_locationManager != nil) [_locationManager startUpdatingLocation];
 }
@@ -68,8 +70,10 @@ BOOL didUpdate = NO;
     
     //create a CoreLocation geocoder object to reverse geocode the location
     const CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (!error) {
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error)
+    {
+        if (!error)
+        {
             [_delegate newPhysicalLocation:[placemarks objectAtIndex:0]];
         }
         else
@@ -83,7 +87,6 @@ BOOL didUpdate = NO;
     
     // Disable future updates to save power.
     [_locationManager stopUpdatingLocation];
-    
 }
 
 @end

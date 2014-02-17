@@ -18,7 +18,8 @@
 - (void) newPhysicalLocation:(CLPlacemark *)location;
 @end
 
-@interface LocationGetter : NSObject <CLLocationManagerDelegate>  {
+@interface LocationGetter : NSObject <CLLocationManagerDelegate>
+{
     ///CoreLocation manager instance
     CLLocationManager *_locationManager;
     ///Currently saved coordinates

@@ -8,8 +8,8 @@
 
 #import "CCNode.h"
 
-@interface GrassLayer : CCNode {
- 
+@interface GrassLayer : CCNode
+{
     NSMutableArray *_grassArray;
 
 }

@@ -15,8 +15,8 @@
 @class Actor;
 @class GrassLayer;
 
-@interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate> {
-    
+@interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate>
+{
     //location information
     LocationGetter  *_locationManager;
     CLPlacemark     *_lastKnownLocation;

@@ -8,8 +8,14 @@
 
 #import "CCNode.h"
 
-@interface BattleScene : CCNode {
-    
+@class Creature;
+@class BattleUILayer;
+
+@interface BattleScene : CCNode
+{
+    Creature      *_creature;
+
+    BattleUILayer *_ui;
 }
 
 + (BattleScene*) scene;

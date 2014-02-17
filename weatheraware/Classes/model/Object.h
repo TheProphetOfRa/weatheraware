@@ -10,12 +10,11 @@
 
 #import "CCSprite.h"
 
-@interface Object : CCNode {
-    
+@interface Object : CCNode
+{
     CCSprite* _sprite;
     
     NSString* _filename;
-    
 }
 
 - (id) initWithTextureName:(NSString*) textureName;

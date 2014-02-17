@@ -12,9 +12,12 @@
 
 static AssetHandler *_sharedAssetHandler = nil;
 
-+ (AssetHandler*) sharedAssetHandler {
-    @synchronized([AssetHandler class]) {
-        if (!_sharedAssetHandler) {
++ (AssetHandler*) sharedAssetHandler
+{
+    @synchronized([AssetHandler class])
+    {
+        if (!_sharedAssetHandler)
+        {
             _sharedAssetHandler = [[self alloc] init];
             [_sharedAssetHandler initTPages];
         }
@@ -23,11 +26,14 @@ static AssetHandler *_sharedAssetHandler = nil;
     return nil;
 }
 
-- (void) initTPages {
+- (void) initTPages
+{
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spritesheet.plist"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"background.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"environment.plist"];
 }
-- (CCSpriteFrame*) getTextureWithName:(NSString *)textureName {
+- (CCSpriteFrame*) getTextureWithName:(NSString *)textureName
+{
     return [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:textureName];
 }
 

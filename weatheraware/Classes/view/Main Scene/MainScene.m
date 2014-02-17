@@ -15,58 +15,60 @@
 
 @implementation MainScene
 
-+ (MainScene *) scene {
-    
++ (MainScene *) scene
+{
     return [[self alloc] init];
-    
 }
 
-- (id)init {
-    
-    if ((self = [super init])) {
-        
+- (id)init
+{
+    if ((self = [super init]))
+    {
         [self initLocation];
         
         [self initBackground];
         
-        [self initGrass];
+        //[self initGrass];
         
         [self initPlayer];
         
         [self initMisc];
-        
     }
     return self;
 }
 
-- (void) initLocation {
+- (void) initLocation
+{
     // get physical location
     _locationManager = [[LocationGetter alloc] init];
     [_locationManager setDelegate:self];
     [_locationManager startUpdates];
 }
 
-- (void) initBackground {
+- (void) initBackground
+{
     //Create background layer and add it to scene
     _background = [[BackgroundLayer alloc] init];
     [self addChild:_background z:0];
 }
 
-- (void) initGrass {
+- (void) initGrass
+{
     //Create grass layer and add it to scene
     _grass = [[GrassLayer alloc] initWithScreenSize:[self contentSize]];
     [self addChild:_grass z:1];
 }
 
-- (void) initPlayer {
+- (void) initPlayer
+{
     //Create actor and add it to middle of scene
     _actor = [[Actor alloc] initWithFilename:@"longgrass.png"];
     [_actor setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
     [self addChild:_actor z:2];
 }
 
-- (void) initMisc {
-    
+- (void) initMisc
+{
     //Enable user interaction
     self.userInteractionEnabled = YES;
 
@@ -77,8 +79,8 @@
     _d = ccp (0, 0);
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
     //Create two diagonal lines from corner to corner
     bool isAboveAC = ((_c.x - _a.x) * (touch.locationInWorld.y - _a.y) - (_c.y - _a.y) * (touch.locationInWorld.x - _a.x)) > 0;
     bool isAboveDB = ((_b.x - _d.x) * (touch.locationInWorld.y - _d.y) - (_b.y - _d.y) * (touch.locationInWorld.x - _d.x)) > 0;
@@ -111,8 +113,8 @@
     }
 }
 
--(void)update {
-    
+-(void)update
+{
     NSMutableArray *gArray = [_grass grassArray];
     
     LongGrass *grass = [gArray firstObject];
@@ -121,8 +123,10 @@
     playerGridPos.x = ([_actor position].x - [grass contentSize].width/2)/[grass contentSize].width;
     playerGridPos.y = ([_actor position].y - [grass contentSize].height/2)/[grass contentSize].height;
     
-    for (LongGrass* g in gArray) {
-        if (CGPointEqualToPoint([g gridPos], playerGridPos)) {
+    for (LongGrass* g in gArray)
+    {
+        if (CGPointEqualToPoint([g gridPos], playerGridPos))
+        {
             NSLog(@"Colliding");
         }
     }
@@ -131,7 +135,8 @@
 #pragma mark -
 #pragma mark LocationManagerDelegateMethod
 
-- (void)newPhysicalLocation:(CLPlacemark *)location {
+- (void)newPhysicalLocation:(CLPlacemark *)location
+{
     
     // Store for later use
     _lastKnownLocation = location;
@@ -153,12 +158,14 @@
 #pragma mark - 
 #pragma mark WeatherControllerDelegateMethod
 
-- (void) newWeatherCondition:(NSString*)condition {
+- (void) newWeatherCondition:(NSString*)condition
+{
     //print location
     [[_background label] setString:condition];
 }
 
--(void) tryNextServer {
+-(void) tryNextServer
+{
     //create query string
     NSString *query = [NSString stringWithFormat:@"http://www.paperweightsolutions.co.uk/DavidHodgkinson/weather?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
     

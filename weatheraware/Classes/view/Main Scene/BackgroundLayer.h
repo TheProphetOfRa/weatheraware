@@ -11,8 +11,8 @@
 
 @class Object;
 
-@interface BackgroundLayer : CCNodeColor {
-    
+@interface BackgroundLayer : CCNodeColor
+{
     //scene components
     NSMutableArray      *_backgroundArray;
     

@@ -18,7 +18,8 @@
 - (void) tryNextServer;
 @end
 
-@interface WeatherController : NSObject {
+@interface WeatherController : NSObject
+{
     /// The current weather condition
     NSString *_condition;
     /// The URL string to query for a weather condition

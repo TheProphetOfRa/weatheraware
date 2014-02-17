@@ -10,8 +10,8 @@
 
 @class Object;
 
-@interface Actor : CCNode {
-    
+@interface Actor : CCNode
+{
     enum Direction : int{
         eUp,
         eDown,

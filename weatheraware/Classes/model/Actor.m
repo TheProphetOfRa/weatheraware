@@ -14,9 +14,10 @@
 
 const static int kMoveTag = 2352352;
 
-- (id) initWithFilename: (NSString*) filename {
-
-    if (self = [super init]) {
+- (id) initWithFilename: (NSString*) filename
+{
+    if (self = [super init])
+    {
         _tile = [[Object alloc] initWithTextureName:filename];
         [_tile setPosition:ccp(0, 0)];
         [self addChild:_tile];
@@ -24,10 +25,11 @@ const static int kMoveTag = 2352352;
     return self;
 }
 
-- (void) moveInDirection: (enum Direction) dir {
-    
+- (void) moveInDirection: (enum Direction) dir
+{
     //Check that previous move action has completed
-    if ([_tile getActionByTag:kMoveTag]) {
+    if ([_tile getActionByTag:kMoveTag])
+    {
         return;
     }
     
@@ -38,7 +40,8 @@ const static int kMoveTag = 2352352;
     CCAction *action;
     
     //Create action to be in correct direction
-    switch (dir) {
+    switch (dir)
+    {
         case eUp:
             action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, tileSizeH)];
             [action setTag:kMoveTag];
@@ -55,11 +58,9 @@ const static int kMoveTag = 2352352;
             action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(tileSizeW, 0)];
             [action setTag:kMoveTag];
             break;
-    }
-    
+    }    
     //Move sprite
     [_tile runAction:action];
-    
 }
 
 @end
