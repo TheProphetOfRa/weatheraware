@@ -98,10 +98,9 @@
     
     CGPoint relativeTouchPoint;
     
+    //Calculate touch point relative to sprite relative to center
     relativeTouchPoint.x = ([self contentSize].width/2) - ([_actor position].x - [touch locationInNode:self].x);
     relativeTouchPoint.y = ([self contentSize].height/2) - ([_actor position].y - [touch locationInNode:self].y);
-    
-    printf("Touch: %f, %f\n Sprite: %f, %f\n Relative: %f, %f\n", touch.locationInWorld.x, touch.locationInWorld.y, [_actor position].x, [_actor position].y, relativeTouchPoint.x, relativeTouchPoint.y);
     
     //Create two diagonal lines from corner to corner
     bool isAboveAC = ((_c.x - _a.x) * (relativeTouchPoint.y - _a.y) - (_c.y - _a.y) * (relativeTouchPoint.x - _a.x)) > 0;

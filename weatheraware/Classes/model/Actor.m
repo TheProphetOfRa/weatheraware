@@ -28,7 +28,7 @@ const static int kMoveTag = 2352352;
 - (void) moveInDirection: (enum Direction) dir
 {
     //Check that previous move action has completed
-    if ([_tile getActionByTag:kMoveTag])
+    if ([self getActionByTag:kMoveTag])
     {
         return;
     }
