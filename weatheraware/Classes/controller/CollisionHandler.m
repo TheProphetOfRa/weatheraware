@@ -15,9 +15,9 @@
 
 @implementation CollisionHandler
 
-+ (BOOL) player:(Actor*) player collidesWithObject:(CCSprite*) object
++ (BOOL) player:(Actor*) player willCollideWithObject:(CCSprite*) object
 {
-    
+    //instead of taking the min take the max so we are checking the min of the tile it's about to move into
     const float playerMinX = [player position].x - [player contentSize].width/2;
     const float playerMinY = [player position].y - [player contentSize].height/2;
     const float playerMaxX = playerMinX + [player contentSize].width;
@@ -30,10 +30,10 @@
     
     bool temp = true;
     
-    if (playerMinX > objectMaxX) temp =  false;
-    if (objectMinX > playerMaxX) temp =  false;
-    if (playerMinY > objectMaxY) temp =  false;
-    if (objectMinY > playerMaxY) temp =  false;
+    if (playerMinX > objectMaxX) temp = false;
+    if (objectMinX > playerMaxX) temp = false;
+    if (playerMinY > objectMaxY) temp = false;
+    if (objectMinY > playerMaxY) temp = false;
     
     return temp;
     

@@ -31,7 +31,7 @@
     if ((self = [super init]))
     {
         [self initLocation];
-        
+                
         NSDictionary* levelData;
         
         //Detect which device and load appropriate JSON data
@@ -134,7 +134,7 @@
     }
     for (CCSprite* t in tArray) //Trees
     {
-        if ([CollisionHandler player:_actor collidesWithObject:t])
+        if ([CollisionHandler player:_actor willCollideWithObject:t])
         {
             _touchIsDown = false;
             _currentTouch = nil;
@@ -142,7 +142,7 @@
     }
     for (CCSprite* f in fArray) //Fence
     {
-        if ([CollisionHandler player:_actor collidesWithObject:f])
+        if ([CollisionHandler player:_actor willCollideWithObject:f])
         {
             _touchIsDown = false;
             _currentTouch = nil;

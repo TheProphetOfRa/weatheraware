@@ -15,7 +15,7 @@
 
 @interface CollisionHandler : NSObject
 
-+ (BOOL) player:(Actor*) player collidesWithObject:(CCSprite*) object;
++ (BOOL) player:(Actor*) player willCollideWithObject:(CCSprite*) object;
 + (BOOL) player:(Actor*) player isInGrass:(LongGrass*) grass;
 
 @end

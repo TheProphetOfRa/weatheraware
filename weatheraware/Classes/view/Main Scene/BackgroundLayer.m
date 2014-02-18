@@ -10,6 +10,7 @@
 
 #import "AssetHandler.h"
 #import "DeviceInformation.h"
+#import "Grid.h"
 #import "JsonLoader.h"
 #import "LongGrass.h"
 
@@ -48,22 +49,29 @@
     {
         for (int j = 0 ; j < [[map objectAtIndex:i] count] ; j++)
         {
-            int tile = [[[map objectAtIndex:i] objectAtIndex:j] intValue];
-            switch (tile)
+            grassSprite = nil;
+            NSString* tile = (NSString*)[[map objectAtIndex:i] objectAtIndex:j];
+            if ([tile  isEqual: @"x"])
             {
-                case 0:
                     grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Tree128.png"]];
                     [_treeArray addObject:grassSprite];
-                    break;
-                case 1:
-                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"GrassAlt128.png"]];
-                    break;
-                default:
-                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Grass128.png"]];
-                    break;
             }
-            [grassSprite setPosition:ccp([grassSprite contentSize].width/2 + ([grassSprite contentSize].width * j), [grassSprite contentSize].height/2 + ([grassSprite contentSize].height * i))];
-            [self addChild:grassSprite];
+            if ([tile  isEqual: @"b"])
+            {
+                if (rand() % 8 == 1)
+                {
+                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"GrassAlt128.png"]];
+                }
+                else
+                {
+                    grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Grass128.png"]];
+                }
+            }
+            if (grassSprite != nil)
+            {
+                [grassSprite setPosition:ccp([grassSprite contentSize].width/2 + ([grassSprite contentSize].width * j), [grassSprite contentSize].height/2 + ([grassSprite contentSize].height * i))];
+                [self addChild:grassSprite];
+            }
         }
     }
 }
@@ -74,14 +82,15 @@
     
     _grassArray = [[NSMutableArray alloc] init];
     
-    NSArray *map = [data objectForKey:@"grassmap"];
+    NSArray *map = [data objectForKey:@"map"];
     
     for (int i = 0 ; i < [map count] ; i++)
     {
         for (int j = 0 ; j < [[map objectAtIndex:i] count] ; j++)
         {
-            int tile = [[[map objectAtIndex:i] objectAtIndex:j] intValue];
-            if (tile == 1)
+            grassSprite = nil;
+            NSString* tile = (NSString*)[[map objectAtIndex:i] objectAtIndex:j];
+            if ([tile  isEqual: @"g"])
             {
                 grassSprite = [[LongGrass alloc] initWithPosition:ccp(j,i)];
                 [_grassArray addObject:grassSprite];
@@ -97,40 +106,45 @@
     
     _fenceArray = [[NSMutableArray alloc] init];
     
-    NSArray *map = [data objectForKey:@"fencemap"];
+    NSArray *map = [data objectForKey:@"map"];
     
     for (int i = 0 ; i < [map count] ; i++)
     {
         for (int j = 0 ; j < [[map objectAtIndex:i] count] ; j++)
         {
             fenceSprite = nil;
-            int tile = [[[map objectAtIndex:i] objectAtIndex:j] intValue];
-            switch (tile)
+            NSString* tile = (NSString*)[[map objectAtIndex:i] objectAtIndex:j];
+            if ([tile  isEqual: @"v"])
             {
-                case 1:
-                    fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceVertical128.png"]];
-                    break;
-                case 2:
+                fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceVertical128.png"]];
+            }
+            if ([tile  isEqual: @"l"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceUL128.png"]];
-                    break;
-                case 3:
+            }
+            if ([tile  isEqual: @"h"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceHorizontal128.png"]];
-                    break;
-                case 4:
+            }
+            if ([tile  isEqual: @"u"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceUR128.png"]];
-                    break;
-                case 5:
+            }
+            if ([tile  isEqual: @"r"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceDR128.png"]];
-                    break;
-                case 6:
+            }
+            if ([tile  isEqual: @"d"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceDL128.png"]];
-                    break;
-                case 7:
+            }
+            if ([tile  isEqual: @"n"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceEndH128.png"]];
-                    break;
-                case 8:
+            }
+            if ([tile  isEqual: @"w"])
+            {
                     fenceSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"FenceEndV128.png"]];
-                    break;
             }
             if (fenceSprite != nil)
             {

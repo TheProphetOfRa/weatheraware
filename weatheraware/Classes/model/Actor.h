@@ -28,4 +28,6 @@
 - (id) initWithFilename: (NSString*) filename;
 - (void) moveInDirection: (enum Direction) dir;
 
+@property (readonly) CGPoint gridPos;
+
 @end
