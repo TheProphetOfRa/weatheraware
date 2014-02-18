@@ -30,7 +30,7 @@ for y in range(0,maxy):
         elif x == width:
            output += str(0)
         else:
-           output += str(randint(1,9)) + ","
+           output += str(randint(1,6)) + ","
 
 output += "]\n\t],\n\t\"grassmap\":[\n\t\t"
 
@@ -39,7 +39,9 @@ for y in range(0,maxy):
         output += "],\n\t\t"
     output += "["
     for x in range(0,maxx):
-        if x != width:
+        if y > 3 and y < height-1 and x > 2 and x < width-2:
+            output += str(1) + ","
+        elif x != width:
             output += str(0) + ","
         else:
             output += str(0)

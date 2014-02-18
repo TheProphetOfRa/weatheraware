@@ -19,6 +19,8 @@
     CCLabelTTF          *_label;
 }
 
+-(id) initWithJSONData:(NSDictionary*) data;
+
 @property (retain) CCLabelTTF *label;
 
 @end

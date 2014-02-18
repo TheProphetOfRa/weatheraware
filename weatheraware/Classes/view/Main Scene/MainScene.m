@@ -10,7 +10,9 @@
 
 #import "Actor.h"
 #import "BackgroundLayer.h"
+#import "DeviceInformation.h"
 #import "GrassLayer.h"
+#import "JsonLoader.h"
 #import "LongGrass.h"
 
 @implementation MainScene
@@ -26,9 +28,21 @@
     {
         [self initLocation];
         
-        [self initBackground];
+        NSDictionary* levelData;
         
-        [self initGrass];
+        //Detect which device and load appropriate JSON data
+        if ([[DeviceInformation getDeviceType] isEqual: @"iPad"])
+        {
+            levelData = [JsonLoader loadJsonFromFile:@"mainscene-ipad.json"];
+        }
+        else
+        {
+            levelData = [JsonLoader loadJsonFromFile:@"mainscene-iphone.json"];
+        }
+        
+        [self initBackgroundFromData:levelData];
+        
+        //[self initGrassFromData:levelData];
         
         [self initPlayer];
         
@@ -45,24 +59,24 @@
     [_locationManager startUpdates];
 }
 
-- (void) initBackground
+- (void) initBackgroundFromData:(NSDictionary*) data
 {
     //Create background layer and add it to scene
-    _background = [[BackgroundLayer alloc] init];
+    _background = [[BackgroundLayer alloc] initWithJSONData:data];
     [self addChild:_background z:0];
 }
 
-- (void) initGrass
+- (void) initGrassFromData:(NSDictionary*) data
 {
     //Create grass layer and add it to scene
-    _grass = [[GrassLayer alloc] initWithScreenSize:[self contentSize]];
+    _grass = [[GrassLayer alloc] initWithScreenSize:[self contentSize] andJSONData:data];
     [self addChild:_grass z:1];
 }
 
 - (void) initPlayer
 {
     //Create actor and add it to middle of scene
-    _actor = [[Actor alloc] initWithFilename:@"longgrass.png"];
+    _actor = [[Actor alloc] initWithFilename:@"Character128.png"];
     [_actor setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
     [self addChild:_actor z:2];
 }

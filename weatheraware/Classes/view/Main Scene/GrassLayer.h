@@ -14,7 +14,7 @@
 
 }
 
-- (id) initWithScreenSize: (CGSize) size;
+- (id) initWithScreenSize:(CGSize) size andJSONData:(NSDictionary*) data;
 
 @property (nonatomic, retain) NSMutableArray *grassArray;
 
