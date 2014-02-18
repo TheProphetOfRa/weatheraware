@@ -53,7 +53,21 @@ for y in range(0,maxy):
         output += "],\n\t\t"
     output += "["
     for x in range(0,maxx):
-        if x != width:
+        if x == 2 and y == 3:
+            output += str(8) + ","
+        elif x == 2 and y > 3 and y < height-1:
+            output += str(1) + ","
+        elif x == width - 2 and y > 3 and y < height - 1:
+            output += str(1) + ","
+        elif y == height-1 and x == 2:
+            output += str(2) + ","
+        elif y == height-1 and x > 1 and x < width - 2:
+            output += str(3) + ","
+        elif y == height-1 and x == width - 2:
+            output += str(4) + ","
+        elif y == 3 and x == width -2:
+            output += str(8) + ","
+        elif x != width:
             output += str(0) + ","
         else:
             output += str(0)
