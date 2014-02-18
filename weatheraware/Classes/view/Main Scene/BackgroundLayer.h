@@ -15,11 +15,19 @@
 {
     //scene components
     NSMutableArray      *_backgroundArray;
+    NSMutableArray      *_grassArray;
+    NSMutableArray      *_treeArray;
+    NSMutableArray      *_fenceArray;
     
     CCLabelTTF          *_label;
 }
 
 -(id) initWithJSONData:(NSDictionary*) data;
+
+
+@property (retain, readonly) NSMutableArray* grassArray;
+@property (retain, readonly) NSMutableArray* treeArray;
+@property (retain, readonly) NSMutableArray* fenceArray;
 
 @property (retain) CCLabelTTF *label;
 

@@ -10,6 +10,7 @@
 
 #import "Actor.h"
 #import "BackgroundLayer.h"
+#import "CollisionHandler.h"
 #import "DeviceInformation.h"
 #import "GrassLayer.h"
 #import "JsonLoader.h"
@@ -21,6 +22,9 @@
 {
     return [[self alloc] init];
 }
+
+#pragma mark -
+#pragma mark Initialisation
 
 - (id)init
 {
@@ -42,8 +46,6 @@
         
         [self initBackgroundFromData:levelData];
         
-        //[self initGrassFromData:levelData];
-        
         [self initPlayer];
         
         [self initMisc];
@@ -56,7 +58,7 @@
     // get physical location
     _locationManager = [[LocationGetter alloc] init];
     [_locationManager setDelegate:self];
-    [_locationManager startUpdates];
+    //[_locationManager startUpdates];
 }
 
 - (void) initBackgroundFromData:(NSDictionary*) data
@@ -64,13 +66,6 @@
     //Create background layer and add it to scene
     _background = [[BackgroundLayer alloc] initWithJSONData:data];
     [self addChild:_background z:0];
-}
-
-- (void) initGrassFromData:(NSDictionary*) data
-{
-    //Create grass layer and add it to scene
-    _grass = [[GrassLayer alloc] initWithScreenSize:[self contentSize] andJSONData:data];
-    [self addChild:_grass z:1];
 }
 
 - (void) initPlayer
@@ -93,14 +88,82 @@
     _d = ccp (0, 0);
 }
 
+#pragma mark -
+#pragma mark TouchDetection
+
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    _touchIsDown = true;
+    _currentTouch = touch;
+    printf("Touch");
+}
+- (void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
     
+}
+-(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    _touchIsDown = false;
+    _currentTouch = nil;
+    printf("Touch ended");
+}
+-(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    _touchIsDown = false;
+    _currentTouch = nil;
+    printf("Touch cancelled");
+}
+
+#pragma mark -
+#pragma mark Update
+
+-(void)update:(CCTime)delta
+{
+    NSMutableArray *gArray = [_background grassArray];
+    NSMutableArray *tArray = [_background treeArray];
+    NSMutableArray *fArray = [_background fenceArray];
+    
+    bool playerIsInGrass = false;
+    
+    for (LongGrass* g in gArray) //Long Grass
+    {
+        if ([CollisionHandler player:_actor isInGrass:g])
+        {
+            playerIsInGrass = true;
+        }
+    }
+    for (CCSprite* t in tArray) //Trees
+    {
+        if ([CollisionHandler player:_actor collidesWithObject:t])
+        {
+            _touchIsDown = false;
+            _currentTouch = nil;
+        }
+    }
+    for (CCSprite* f in fArray) //Fence
+    {
+        if ([CollisionHandler player:_actor collidesWithObject:f])
+        {
+            _touchIsDown = false;
+            _currentTouch = nil;
+        }
+    }
+    
+    if (_currentTouch != nil) {
+        [self movePlayer];
+    }
+}
+
+#pragma mark -
+#pragma mark Movement
+
+- (void) movePlayer
+{
     CGPoint relativeTouchPoint;
     
     //Calculate touch point relative to sprite relative to center
-    relativeTouchPoint.x = ([self contentSize].width/2) - ([_actor position].x - [touch locationInNode:self].x);
-    relativeTouchPoint.y = ([self contentSize].height/2) - ([_actor position].y - [touch locationInNode:self].y);
+    relativeTouchPoint.x = ([self contentSize].width/2) - ([_actor position].x - [_currentTouch locationInNode:self].x);
+    relativeTouchPoint.y = ([self contentSize].height/2) - ([_actor position].y - [_currentTouch locationInNode:self].y);
     
     //Create two diagonal lines from corner to corner
     bool isAboveAC = ((_c.x - _a.x) * (relativeTouchPoint.y - _a.y) - (_c.y - _a.y) * (relativeTouchPoint.x - _a.x)) > 0;
@@ -130,25 +193,6 @@
         {
             //bottom edge intersected
             [_actor moveInDirection:1];
-        }
-    }
-}
-
--(void)update
-{
-    NSMutableArray *gArray = [_grass grassArray];
-    
-    LongGrass *grass = [gArray firstObject];
-    
-    CGPoint playerGridPos;
-    playerGridPos.x = ([_actor position].x - [grass contentSize].width/2)/[grass contentSize].width;
-    playerGridPos.y = ([_actor position].y - [grass contentSize].height/2)/[grass contentSize].height;
-    
-    for (LongGrass* g in gArray)
-    {
-        if (CGPointEqualToPoint([g gridPos], playerGridPos))
-        {
-            NSLog(@"Colliding");
         }
     }
 }

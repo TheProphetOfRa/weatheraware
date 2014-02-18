@@ -11,6 +11,7 @@
 #import "AssetHandler.h"
 #import "DeviceInformation.h"
 #import "JsonLoader.h"
+#import "LongGrass.h"
 
 
 @implementation BackgroundLayer
@@ -38,6 +39,8 @@
 - (void) initBackgroundSpritesFromData:(NSDictionary*) data
 {
     CCSprite *grassSprite;
+    
+    _treeArray = [[NSMutableArray alloc] init];
 
     NSArray *map = [data objectForKey:@"map"];
     
@@ -50,6 +53,7 @@
             {
                 case 0:
                     grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Tree128.png"]];
+                    [_treeArray addObject:grassSprite];
                     break;
                 case 1:
                     grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"GrassAlt128.png"]];
@@ -66,7 +70,9 @@
 
 -(void) initGrassSpritesWithData:(NSDictionary*) data
 {
-    CCSprite *grassSprite;
+    LongGrass *grassSprite;
+    
+    _grassArray = [[NSMutableArray alloc] init];
     
     NSArray *map = [data objectForKey:@"grassmap"];
     
@@ -77,8 +83,8 @@
             int tile = [[[map objectAtIndex:i] objectAtIndex:j] intValue];
             if (tile == 1)
             {
-                grassSprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"LongGrass128.png"]];
-                [grassSprite setPosition:ccp([grassSprite contentSize].width/2 + ([grassSprite contentSize].width * j), [grassSprite contentSize].height/2 + ([grassSprite contentSize].height * i))];
+                grassSprite = [[LongGrass alloc] initWithPosition:ccp(j,i)];
+                [_grassArray addObject:grassSprite];
                 [self addChild:grassSprite];
             }
         }
@@ -88,6 +94,8 @@
 -(void) initFenceWithData:(NSDictionary*) data
 {
     CCSprite *fenceSprite;
+    
+    _fenceArray = [[NSMutableArray alloc] init];
     
     NSArray *map = [data objectForKey:@"fencemap"];
     
@@ -127,6 +135,7 @@
             if (fenceSprite != nil)
             {
                 [fenceSprite setPosition:ccp([fenceSprite contentSize].width/2 + ([fenceSprite contentSize].width * j), [fenceSprite contentSize].height/2 + ([fenceSprite contentSize].height * i))];
+                [_fenceArray addObject:fenceSprite];
                 [self addChild:fenceSprite];
             }
         }

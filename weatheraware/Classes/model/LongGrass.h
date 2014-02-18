@@ -13,13 +13,10 @@
 @interface LongGrass : CCNode
 {
     Object    *_tile;
-    
-    CGPoint   _gridPos;
-    
 }
 
-- (id) initWithGridPos: (CGPoint) gPos;
+- (id) initWithPosition:(CGPoint) pos;
 
-@property (nonatomic, readonly) CGPoint gridPos;
+@property (nonatomic, readonly) Object* tile;
 
 @end

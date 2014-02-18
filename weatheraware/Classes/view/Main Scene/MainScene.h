@@ -23,7 +23,6 @@
     
     //Layers
     BackgroundLayer *_background;
-    GrassLayer      *_grass;
     
     Actor           *_actor;
     
@@ -32,6 +31,10 @@
     CGPoint _b;
     CGPoint _c;
     CGPoint _d;
+    
+    //Movement
+    UITouch *_currentTouch;
+    bool _touchIsDown;
     
 }
 

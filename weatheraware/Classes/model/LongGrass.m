@@ -12,25 +12,22 @@
 
 @implementation LongGrass
 
-- (id) initWithGridPos:(CGPoint)gPos
+- (id) initWithPosition:(CGPoint) pos
 {
     if (self = [super init])
     {
-        _gridPos = gPos;
-        
-        [self initTile];
-        
+        [self initTileWithPos:pos];
     }
     return self;
 }
 
-- (void) initTile
+- (void) initTileWithPos:(CGPoint) pos
 {
-    _tile = [[Object alloc] initWithTextureName:@"longgrass.png"];
-    CGPoint pos;
-    pos.x = [[_tile sprite] contentSize].width/2  + (_gridPos.x * [[_tile sprite] contentSize].width);
-    pos.y = [[_tile sprite] contentSize].height/2 + (_gridPos.y * [[_tile sprite] contentSize].height);
-    [_tile setPosition:pos];
+    _tile = [[Object alloc] initWithTextureName:@"LongGrass128.png"];
+    CGPoint truePoint;
+    truePoint.x = ([_tile contentSize].width * pos.x);
+    truePoint.y = ([_tile contentSize].height * pos.y);
+    [_tile setPosition:truePoint];
     [self addChild:_tile];
 }
 

@@ -20,7 +20,6 @@
 		5F3A07B918B2D44800E15A48 /* environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A07AD18B2D44800E15A48 /* environment.plist */; };
 		5F3A07BA18B2D44800E15A48 /* environment.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A07AE18B2D44800E15A48 /* environment.png */; };
 		5F586B8118AD3E1A00F1F201 /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8018AD3E1A00F1F201 /* BattleScene.m */; };
-		5F586B8418AD3E6900F1F201 /* GrassLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8318AD3E6900F1F201 /* GrassLayer.mm */; };
 		5F586B8718AD580400F1F201 /* LongGrass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8618AD580400F1F201 /* LongGrass.m */; };
 		5F66FBFE1898715A00869EA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFD1898715A00869EA4 /* QuartzCore.framework */; };
 		5F66FC001898715A00869EA4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFF1898715A00869EA4 /* OpenGLES.framework */; };
@@ -230,6 +229,7 @@
 		5F67B8A318B1253B00C77D9E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A218B1253B00C77D9E /* Creature.m */; };
 		5F67B8A618B13DBD00C77D9E /* CreatureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A518B13DBD00C77D9E /* CreatureHandler.m */; };
 		5F67B8A918B166F100C77D9E /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A818B166F100C77D9E /* UILayer.m */; };
+		5F85874018B3C79300403B12 /* CollisionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85873F18B3C79300403B12 /* CollisionHandler.m */; };
 		5F905ABC18987D9A00FBE122 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AA818987D9900FBE122 /* AppDelegate.m */; };
 		5F905ABD18987D9A00FBE122 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AAA18987D9900FBE122 /* ViewController.m */; };
 		5F905ABE18987D9A00FBE122 /* AssetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AAD18987D9900FBE122 /* AssetHandler.m */; };
@@ -273,8 +273,6 @@
 		5F3A07AE18B2D44800E15A48 /* environment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = environment.png; sourceTree = "<group>"; };
 		5F586B7F18AD3E1A00F1F201 /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
 		5F586B8018AD3E1A00F1F201 /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
-		5F586B8218AD3E6900F1F201 /* GrassLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrassLayer.h; sourceTree = "<group>"; };
-		5F586B8318AD3E6900F1F201 /* GrassLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrassLayer.mm; sourceTree = "<group>"; };
 		5F586B8518AD580400F1F201 /* LongGrass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongGrass.h; sourceTree = "<group>"; };
 		5F586B8618AD580400F1F201 /* LongGrass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongGrass.m; sourceTree = "<group>"; };
 		5F66FBFA1898715A00869EA4 /* weatheraware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatheraware.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -708,6 +706,8 @@
 		5F67B8A518B13DBD00C77D9E /* CreatureHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureHandler.m; sourceTree = "<group>"; };
 		5F67B8A718B166F100C77D9E /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
 		5F67B8A818B166F100C77D9E /* UILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILayer.m; sourceTree = "<group>"; };
+		5F85873E18B3C79300403B12 /* CollisionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHandler.h; sourceTree = "<group>"; };
+		5F85873F18B3C79300403B12 /* CollisionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionHandler.m; sourceTree = "<group>"; };
 		5F905AA718987D9900FBE122 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F905AA818987D9900FBE122 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5F905AA918987D9900FBE122 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1720,6 +1720,8 @@
 				5F67B8A518B13DBD00C77D9E /* CreatureHandler.m */,
 				5FE53E1E18B26C270014B15F /* JsonLoader.h */,
 				5FE53E1F18B26C270014B15F /* JsonLoader.m */,
+				5F85873E18B3C79300403B12 /* CollisionHandler.h */,
+				5F85873F18B3C79300403B12 /* CollisionHandler.m */,
 			);
 			name = controller;
 			path = Classes/controller;
@@ -1768,8 +1770,6 @@
 				5F905AB918987D9A00FBE122 /* BackgroundLayer.m */,
 				5F905ABA18987D9A00FBE122 /* MainScene.h */,
 				5F905ABB18987D9A00FBE122 /* MainScene.m */,
-				5F586B8218AD3E6900F1F201 /* GrassLayer.h */,
-				5F586B8318AD3E6900F1F201 /* GrassLayer.mm */,
 				5F67B8A718B166F100C77D9E /* UILayer.h */,
 				5F67B8A818B166F100C77D9E /* UILayer.m */,
 			);
@@ -1984,7 +1984,6 @@
 				5F66FCBC1898715A00869EA4 /* CCPhysicsBody.m in Sources */,
 				5F66FD411898715B00869EA4 /* CCWindow.m in Sources */,
 				5F66FC561898715A00869EA4 /* CCActionProgressTimer.m in Sources */,
-				5F586B8418AD3E6900F1F201 /* GrassLayer.mm in Sources */,
 				5F66FE0C1898715C00869EA4 /* plane.c in Sources */,
 				5F66FD8F1898715B00869EA4 /* OALSimpleAudio.m in Sources */,
 				5F66FC811898715A00869EA4 /* CCGLProgram.m in Sources */,
@@ -1996,6 +1995,7 @@
 				5F66FE161898715C00869EA4 /* vec3.c in Sources */,
 				5F905ABD18987D9A00FBE122 /* ViewController.m in Sources */,
 				5F66FC991898715A00869EA4 /* CCLayoutBox.m in Sources */,
+				5F85874018B3C79300403B12 /* CollisionHandler.m in Sources */,
 				5F66FC961898715A00869EA4 /* CCLayout.m in Sources */,
 				5F66FDB91898715B00869EA4 /* OALSuspendHandler.m in Sources */,
 				5F66FE181898715C00869EA4 /* vec4.c in Sources */,
