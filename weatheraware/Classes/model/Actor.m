@@ -60,7 +60,7 @@ const static int kMoveTag = 2352352;
             break;
     }    
     //Move sprite
-    [_tile runAction:action];
+    [self runAction:action];
 }
 
 @end

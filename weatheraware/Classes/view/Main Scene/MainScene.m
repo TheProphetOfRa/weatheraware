@@ -95,9 +95,17 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    
+    CGPoint relativeTouchPoint;
+    
+    relativeTouchPoint.x = ([self contentSize].width/2) - ([_actor position].x - [touch locationInNode:self].x);
+    relativeTouchPoint.y = ([self contentSize].height/2) - ([_actor position].y - [touch locationInNode:self].y);
+    
+    printf("Touch: %f, %f\n Sprite: %f, %f\n Relative: %f, %f\n", touch.locationInWorld.x, touch.locationInWorld.y, [_actor position].x, [_actor position].y, relativeTouchPoint.x, relativeTouchPoint.y);
+    
     //Create two diagonal lines from corner to corner
-    bool isAboveAC = ((_c.x - _a.x) * (touch.locationInWorld.y - _a.y) - (_c.y - _a.y) * (touch.locationInWorld.x - _a.x)) > 0;
-    bool isAboveDB = ((_b.x - _d.x) * (touch.locationInWorld.y - _d.y) - (_b.y - _d.y) * (touch.locationInWorld.x - _d.x)) > 0;
+    bool isAboveAC = ((_c.x - _a.x) * (relativeTouchPoint.y - _a.y) - (_c.y - _a.y) * (relativeTouchPoint.x - _a.x)) > 0;
+    bool isAboveDB = ((_b.x - _d.x) * (relativeTouchPoint.y - _d.y) - (_b.y - _d.y) * (relativeTouchPoint.x - _d.x)) > 0;
     
     if (isAboveAC)
     {
