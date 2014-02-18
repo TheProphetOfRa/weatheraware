@@ -10,15 +10,6 @@
 
 @class Object;
 
-@interface GridPos : NSObject
-{
-    int _x,_y;
-}
-- (id) initWithPosition:(CGPoint) pos;
-@property (readonly) int x;
-@property (readonly) int y;
-@end
-
 @interface Grid : CCNode
 {
     
@@ -29,6 +20,7 @@
 
 + (Grid*) sharedGrid;
 
+- (void) setObject:(Object*) obj atGridPos:(CGPoint) pos;
 - (Object*) getObjectAtGridPos:(CGPoint) pos;
 
 @end

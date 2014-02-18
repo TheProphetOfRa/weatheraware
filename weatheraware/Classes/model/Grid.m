@@ -13,20 +13,6 @@
 #import "CCSprite.h"
 #import "Object.h"
 
-@implementation GridPos
-
-- (id) initWithPosition:(CGPoint)pos
-{
-    if (self = [super init])
-    {
-        _x = pos.x;
-        _y = pos.y;
-    }
-    return self;
-}
-
-@end
-
 @implementation Grid
 
 static Grid* _sharedGrid = nil;
@@ -41,35 +27,23 @@ static Grid* _sharedGrid = nil;
 }
 
 - (id) init {
-    
     if (self = [super init])
     {
-        [self initMap];
+        _map = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-- (void) initMap
+- (void) setObject:(Object*) obj atGridPos:(CGPoint) pos
 {
-    
-    _map = [[NSMutableDictionary alloc] init];
-    
-    CCSprite *ref = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Grass128.png"]];
-    
-    for (int i = 0 ; i < ([[CCDirector sharedDirector] viewSize].width / [ref contentSize].width) ; i++)
-    {
-         for (int j = 0 ; j < ([[CCDirector sharedDirector] viewSize].height / [ref contentSize].height) ; j++)
-         {
-             [_map setObject:nil forKey:(id <NSCopying>)[[GridPos alloc] initWithPosition:ccp(i, j)]];
-         }
-    }
+    NSString* gpstring = [NSString stringWithFormat:@"%f,%f", pos.x, pos.y];
+    [_map setObject:obj forKey:gpstring];
 }
 
 - (Object*) getObjectAtGridPos:(CGPoint) pos
 {
-    GridPos* gp = [[GridPos alloc] initWithPosition:pos];
-    
-    return [_map objectForKey:gp];
+    NSString* gpstring = [NSString stringWithFormat:@"%f,%f", pos.x, pos.y];
+    return [_map objectForKey:gpstring];
 }
 
 @end

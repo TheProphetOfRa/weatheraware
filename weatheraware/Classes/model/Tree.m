@@ -1,16 +1,16 @@
 //
-//  LongGrass.m
+//  Tree.m
 //  weatheraware
 //
-//  Created by David Hodgkinson on 13/02/2014.
+//  Created by David Hodgkinson on 18/02/2014.
 //  Copyright (c) 2014 David Hodgkinson. All rights reserved.
 //
 
-#import "LongGrass.h"
+#import "Tree.h"
 
 #import "Object.h"
 
-@implementation LongGrass
+@implementation Tree
 
 - (id) initWithPosition:(CGPoint) pos
 {
@@ -23,7 +23,7 @@
 
 - (void) initTileWithPos:(CGPoint) pos
 {
-    _tile = [[Object alloc] initWithTextureName:@"LongGrass128.png" andType:eGrass];
+    _tile = [[Object alloc] initWithTextureName:@"Tree128.png" andType:eTree];
     CGPoint truePoint;
     truePoint.x = ([_tile contentSize].width * pos.x);
     truePoint.y = ([_tile contentSize].height * pos.y);

@@ -12,12 +12,13 @@
 
 @implementation Object
 
-- (id) initWithTextureName:(NSString*) textureName
+- (id) initWithTextureName:(NSString*) textureName andType:(enum Type)t
 {
     if (self = [super init])
     {
         _sprite = [[CCSprite alloc] initWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:textureName]];
         [_sprite setPosition:ccp([_sprite contentSize].width/2, [_sprite contentSize].height/2)];
+        _type = t;
         [self addChild:_sprite];
         [self setContentSize:[_sprite contentSize]];
     }    

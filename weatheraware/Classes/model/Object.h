@@ -10,15 +10,27 @@
 
 #import "CCSprite.h"
 
+enum Type{
+    eTree,
+    eFence,
+    eGrass,
+    eActor,
+    eBackground
+};
+
 @interface Object : CCNode
 {
+    
     CCSprite* _sprite;
     
     NSString* _filename;
+    
+    enum Type _type;
 }
 
-- (id) initWithTextureName:(NSString*) textureName;
+- (id) initWithTextureName:(NSString*) textureName andType:(enum Type) t;
 
 @property (nonatomic, retain) CCSprite* sprite;
+@property (readonly) enum Type type;
 
 @end

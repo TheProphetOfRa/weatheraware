@@ -72,7 +72,7 @@
 {
     //Create actor and add it to middle of scene
     _actor = [[Actor alloc] initWithFilename:@"Character128.png"];
-    [_actor setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
+
     [self addChild:_actor z:2];
 }
 
@@ -125,29 +125,29 @@
     
     bool playerIsInGrass = false;
     
-    for (LongGrass* g in gArray) //Long Grass
-    {
-        if ([CollisionHandler player:_actor isInGrass:g])
-        {
-            playerIsInGrass = true;
-        }
-    }
-    for (CCSprite* t in tArray) //Trees
-    {
-        if ([CollisionHandler player:_actor willCollideWithObject:t])
-        {
-            _touchIsDown = false;
-            _currentTouch = nil;
-        }
-    }
-    for (CCSprite* f in fArray) //Fence
-    {
-        if ([CollisionHandler player:_actor willCollideWithObject:f])
-        {
-            _touchIsDown = false;
-            _currentTouch = nil;
-        }
-    }
+//    for (LongGrass* g in gArray) //Long Grass
+//    {
+//        if ([CollisionHandler player:_actor isInGrass:g])
+//        {
+//            playerIsInGrass = true;
+//        }
+//    }
+//    for (CCSprite* t in tArray) //Trees
+//    {
+//        if ([CollisionHandler player:_actor willCollideWithObject:t])
+//        {
+//            _touchIsDown = false;
+//            _currentTouch = nil;
+//        }
+//    }
+//    for (CCSprite* f in fArray) //Fence
+//    {
+//        if ([CollisionHandler player:_actor willCollideWithObject:f])
+//        {
+//            _touchIsDown = false;
+//            _currentTouch = nil;
+//        }
+//    }
     
     if (_currentTouch != nil) {
         [self movePlayer];

@@ -231,6 +231,8 @@
 		5F67B8A918B166F100C77D9E /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A818B166F100C77D9E /* UILayer.m */; };
 		5F85874018B3C79300403B12 /* CollisionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85873F18B3C79300403B12 /* CollisionHandler.m */; };
 		5F85874318B3F7CF00403B12 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874218B3F7CF00403B12 /* Grid.m */; };
+		5F85874618B40C8D00403B12 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874518B40C8D00403B12 /* Tree.m */; };
+		5F85874918B40C9900403B12 /* Fence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874818B40C9900403B12 /* Fence.m */; };
 		5F905ABC18987D9A00FBE122 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AA818987D9900FBE122 /* AppDelegate.m */; };
 		5F905ABD18987D9A00FBE122 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AAA18987D9900FBE122 /* ViewController.m */; };
 		5F905ABE18987D9A00FBE122 /* AssetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AAD18987D9900FBE122 /* AssetHandler.m */; };
@@ -711,6 +713,10 @@
 		5F85873F18B3C79300403B12 /* CollisionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionHandler.m; sourceTree = "<group>"; };
 		5F85874118B3F7CF00403B12 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		5F85874218B3F7CF00403B12 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
+		5F85874418B40C8D00403B12 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		5F85874518B40C8D00403B12 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
+		5F85874718B40C9900403B12 /* Fence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fence.h; sourceTree = "<group>"; };
+		5F85874818B40C9900403B12 /* Fence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fence.m; sourceTree = "<group>"; };
 		5F905AA718987D9900FBE122 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F905AA818987D9900FBE122 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5F905AA918987D9900FBE122 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1733,16 +1739,20 @@
 		5F905AB218987D9A00FBE122 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				5FE26D9A189943680058FA0A /* Object.h */,
-				5FE26D9B189943680058FA0A /* Object.m */,
 				5FEE325218A15D9400FA95BE /* Actor.h */,
 				5FEE325318A15D9400FA95BE /* Actor.m */,
-				5F586B8518AD580400F1F201 /* LongGrass.h */,
-				5F586B8618AD580400F1F201 /* LongGrass.m */,
 				5F67B8A118B1253B00C77D9E /* Creature.h */,
 				5F67B8A218B1253B00C77D9E /* Creature.m */,
+				5F85874718B40C9900403B12 /* Fence.h */,
+				5F85874818B40C9900403B12 /* Fence.m */,
 				5F85874118B3F7CF00403B12 /* Grid.h */,
 				5F85874218B3F7CF00403B12 /* Grid.m */,
+				5F586B8518AD580400F1F201 /* LongGrass.h */,
+				5F586B8618AD580400F1F201 /* LongGrass.m */,
+				5FE26D9A189943680058FA0A /* Object.h */,
+				5FE26D9B189943680058FA0A /* Object.m */,
+				5F85874418B40C8D00403B12 /* Tree.h */,
+				5F85874518B40C8D00403B12 /* Tree.m */,
 			);
 			name = model;
 			path = Classes/model;
@@ -1975,8 +1985,10 @@
 				5F66FD621898715B00869EA4 /* NSThread+performBlock.m in Sources */,
 				5F66FCED1898715B00869EA4 /* CCShaderCache.m in Sources */,
 				5F66FE2A1898715C00869EA4 /* CCBSequenceProperty.m in Sources */,
+				5F85874918B40C9900403B12 /* Fence.m in Sources */,
 				5F66FD311898715B00869EA4 /* CCGLView.m in Sources */,
 				5F66FCF41898715B00869EA4 /* CCSprite.m in Sources */,
+				5F85874618B40C8D00403B12 /* Tree.m in Sources */,
 				5F905AC018987D9A00FBE122 /* WeatherController.m in Sources */,
 				5F66FC501898715A00869EA4 /* CCActionInterval.m in Sources */,
 				5F66FCBF1898715A00869EA4 /* CCPhysicsJoint.m in Sources */,
