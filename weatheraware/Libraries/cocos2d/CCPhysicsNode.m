@@ -95,7 +95,7 @@
 /// Internal class used to wrap cpCollisionHandlers
 @interface CCPhysicsCollisionHandler : NSObject {
 	cpCollisionHandler *_handler;
-	id _delegate;
+	__weak id _delegate;
 	
 	// Cache the CCPhysicsNode's collision pair singleton.
 	CCPhysicsCollisionPair *_collisionPairSingleton;
@@ -517,7 +517,7 @@ ColorForShape(cpShape *shape, CCDrawNode *draw)
 {
 	// Add the category if it doesn't exist yet.
 	if(![_categories containsObject:category]){
-		NSAssert(_categories.count <= MAX_CATEGORIES, @"A space can only track up to %d categories.", MAX_CATEGORIES);
+		NSAssert(_categories.count < MAX_CATEGORIES, @"A space can only track up to %d categories.", MAX_CATEGORIES);
 		[_categories addObject:category];
 	}
 	

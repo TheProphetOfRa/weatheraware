@@ -70,7 +70,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>environment{v}.png</filename>
+        <filename>Normal/environment{v}.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -161,7 +161,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>environment{v}.plist</filename>
+                <filename>Normal/environment{v}.plist</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -212,6 +212,13 @@
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceUR128.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/FenceVertical128.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/LongGrass128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Cloud512x256.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Rain128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/RainAlt128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/SnowLight128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/SnowLightAlt128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Snow128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/SnowAlt128.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

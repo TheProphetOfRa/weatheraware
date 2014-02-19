@@ -14,6 +14,7 @@
 @class BackgroundLayer;
 @class Actor;
 @class GrassLayer;
+@class WeatherLayer;
 
 @interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate>
 {
@@ -23,6 +24,7 @@
     
     //Layers
     BackgroundLayer *_background;
+    WeatherLayer    *_weather;
     
     Actor           *_actor;
     
@@ -34,7 +36,6 @@
     
     //Movement
     UITouch *_currentTouch;
-    bool _touchIsDown;
     
 }
 

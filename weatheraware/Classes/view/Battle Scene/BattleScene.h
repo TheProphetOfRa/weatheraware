@@ -6,16 +6,19 @@
 //  Copyright (c) 2014 David Hodgkinson. All rights reserved.
 //
 
-#import "CCNode.h"
+#import "CCScene.h"
 
 @class Creature;
 @class BattleUILayer;
+@class CCSprite;
 
-@interface BattleScene : CCNode
+@interface BattleScene : CCScene
 {
     Creature      *_creature;
 
     BattleUILayer *_ui;
+    
+    CCSprite *_sprite;
 }
 
 + (BattleScene*) scene;

@@ -7,18 +7,24 @@
 //
 
 #import "Actor.h"
+#import "BattleScene.h"
+#import "CCActionInterval.h"
+#import "CCAction.h"
 #import "CCDirector.h"
 #import "Grid.h"
 #import "Object.h"
 
 @implementation Actor
 
-const static int kMoveTag = 2352352;
+static const int kEncounterChance = 45;
 
 - (id) initWithFilename: (NSString*) filename
 {
     if (self = [super init])
     {
+        
+        srand(time(NULL));
+        
         _tile = [[Object alloc] initWithTextureName:filename andType:eActor];
         [_tile setPosition:ccp(0, 0)];
         
@@ -41,8 +47,7 @@ const static int kMoveTag = 2352352;
 
 - (void) moveInDirection: (enum Direction) dir
 {
-    //Check that previous move action has completed
-    if ([self getActionByTag:kMoveTag])
+    if (moving)
     {
         return;
     }
@@ -51,7 +56,11 @@ const static int kMoveTag = 2352352;
     const float tileSizeW = [[_tile sprite] contentSize].width;
     const float tileSizeH = [[_tile sprite] contentSize].height;
     
-    CCAction *action = nil;
+    
+    CCActionSequence    *seq = nil;
+    CCActionCallFunc    *callback = nil;
+    CCActionDelay       *delay = nil;
+    CCActionFiniteTime  *action = nil;
     
     //Create action to be in correct direction
     switch (dir)
@@ -61,7 +70,6 @@ const static int kMoveTag = 2352352;
                 [[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x,_gridPos.y+1)] type] == eGrass)
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, tileSizeH)];
-                [action setTag:kMoveTag];
                 _gridPos.y++;
             }
             break;
@@ -70,7 +78,6 @@ const static int kMoveTag = 2352352;
                 [[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x,_gridPos.y-1)] type] == eGrass)
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, -tileSizeH)];
-                [action setTag:kMoveTag];
                 _gridPos.y--;
             }
             break;
@@ -79,7 +86,6 @@ const static int kMoveTag = 2352352;
                 [[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x-1,_gridPos.y)] type] == eGrass)
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(-tileSizeW, 0)];
-                [action setTag:kMoveTag];
                 _gridPos.x--;
             }
             break;
@@ -88,15 +94,34 @@ const static int kMoveTag = 2352352;
                 [[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x+1,_gridPos.y)] type] == eGrass )
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(tileSizeW, 0)];
-                [action setTag:kMoveTag];
                 _gridPos.x++;
             }
             break;
     }
+    
     if (action != nil) {
-        //Move sprite
-        [self runAction:action];
+        callback = [CCActionCallFunc actionWithTarget:self selector:@selector(checkForEncounter)];
+        delay = [CCActionDelay actionWithDuration:0.1f];
+        seq = [CCActionSequence actions:action, delay, callback, nil];
     }
+    if (seq != nil)
+    {
+        moving = true;
+        //Move sprite
+        [self runAction:seq];
+    }
+}
+
+- (void) checkForEncounter
+{
+    moving = false;
+    if ([[[Grid sharedGrid] getObjectAtGridPos:_gridPos] type] == eGrass &&
+        rand()%100 <= kEncounterChance)
+    {
+        printf("Encounter\n");
+        [[CCDirector sharedDirector] pushScene:[BattleScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
+    }
+    
 }
 
 @end

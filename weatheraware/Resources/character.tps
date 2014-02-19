@@ -70,7 +70,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>character{v}.png</filename>
+        <filename>Normal/character{v}.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -161,7 +161,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>character{v}.plist</filename>
+                <filename>Normal/character{v}.plist</filename>
             </struct>
         </map>
         <key>multiPack</key>

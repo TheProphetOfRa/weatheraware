@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#cp ~/Projects/xcode/weatheraware/weatheraware/Resources/Normal/*-hd.* ~/Projects/xcode/weatheraware/weatheraware/Resources/TabletNormal/*-ipad.*
+mv ~/Projects/xcode/weatheraware/weatheraware/Resources/Normal/*-ipadhd.* ~/Projects/xcode/weatheraware/weatheraware/Resources/TabletHiDPI/
+mv ~/Projects/xcode/weatheraware/weatheraware/Resources/Normal/*-hd.* ~/Projects/xcode/weatheraware/weatheraware/Resources/HiDPI/
+

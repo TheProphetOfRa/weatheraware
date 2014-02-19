@@ -22,6 +22,8 @@
     Object* _tile;
     
     CGPoint _gridPos;
+    
+    bool moving;
         
 }
 
