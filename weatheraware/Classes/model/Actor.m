@@ -22,13 +22,13 @@ const static int kMoveTag = 2352352;
         _tile = [[Object alloc] initWithTextureName:filename andType:eActor];
         [_tile setPosition:ccp(0, 0)];
         
-        CGPoint pos;
-        pos.x = [[CCDirector sharedDirector] viewSize].width/2;
-        pos.y = [[CCDirector sharedDirector] viewSize].height/2;
-        
         CGPoint gridpos;
-        gridpos.x = ([[CCDirector sharedDirector] viewSize].width / [_tile contentSize].width)/2;
-        gridpos.y = ([[CCDirector sharedDirector] viewSize].height / [_tile contentSize].height)/2;
+        gridpos.x = [[Grid sharedGrid] width]/2;
+        gridpos.y = [[Grid sharedGrid] height]/2;
+        
+        CGPoint pos;
+        pos.x = [_tile contentSize].width * gridpos.x;
+        pos.y = [_tile contentSize].height * gridpos.y;
         
         [self setPosition:pos];
         
@@ -62,6 +62,7 @@ const static int kMoveTag = 2352352;
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, tileSizeH)];
                 [action setTag:kMoveTag];
+                _gridPos.y++;
             }
             break;
         case eDown:
@@ -70,6 +71,7 @@ const static int kMoveTag = 2352352;
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(0, -tileSizeH)];
                 [action setTag:kMoveTag];
+                _gridPos.y--;
             }
             break;
         case eLeft:
@@ -78,14 +80,16 @@ const static int kMoveTag = 2352352;
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(-tileSizeW, 0)];
                 [action setTag:kMoveTag];
+                _gridPos.x--;
             }
             break;
         case eRight:
             if ([[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x+1,_gridPos.y)] type] == eBackground ||
-                [[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x+1,_gridPos.y)] type] == eGrass)
+                [[[Grid sharedGrid] getObjectAtGridPos:ccp(_gridPos.x+1,_gridPos.y)] type] == eGrass )
             {
                 action = [CCActionMoveBy actionWithDuration:0.5f position:ccp(tileSizeW, 0)];
                 [action setTag:kMoveTag];
+                _gridPos.x++;
             }
             break;
     }

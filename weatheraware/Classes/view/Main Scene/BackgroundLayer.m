@@ -48,6 +48,9 @@
 
     NSArray *map = [data objectForKey:@"map"];
     
+    [[Grid sharedGrid] setHeight:[map count]];
+    [[Grid sharedGrid] setWidth:[[map objectAtIndex:0] count]];
+    
     for (int i = 0 ; i < [map count] ; i++)
     {
         for (int j = 0 ; j < [[map objectAtIndex:i] count] ; j++)
@@ -72,7 +75,7 @@
             }
             if (grassSprite != nil)
             {
-                [[Grid sharedGrid] setObject:grassSprite atGridPos:ccp(i,j)];
+                [[Grid sharedGrid] setObject:grassSprite atGridPos:ccp(j,i)];
                 [grassSprite setPosition:ccp(([grassSprite contentSize].width * j), ([grassSprite contentSize].height * i))];
                 [self addChild:grassSprite];
             }

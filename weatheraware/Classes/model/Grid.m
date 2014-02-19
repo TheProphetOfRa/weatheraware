@@ -34,6 +34,16 @@ static Grid* _sharedGrid = nil;
     return self;
 }
 
+- (void) setWidth:(int)width
+{
+    _width = width;
+}
+
+- (void) setHeight:(int)height
+{
+    _height = height;
+}
+
 - (void) setObject:(Object*) obj atGridPos:(CGPoint) pos
 {
     NSString* gpstring = [NSString stringWithFormat:@"%f,%f", pos.x, pos.y];

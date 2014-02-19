@@ -16,11 +16,20 @@
     Grid *_sharedGrid;
     
     NSMutableDictionary *_map;
+    
+    int _width, _height;
+    
 }
 
 + (Grid*) sharedGrid;
 
+- (void) setWidth:(int) width;
+- (void) setHeight:(int) height;
+
 - (void) setObject:(Object*) obj atGridPos:(CGPoint) pos;
 - (Object*) getObjectAtGridPos:(CGPoint) pos;
+
+@property (readonly) int width;
+@property (readonly) int height;
 
 @end
