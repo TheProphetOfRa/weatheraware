@@ -38,18 +38,18 @@ const static int kMoveTag = 2352387;
             _filename = @"Rain128.png";
             _altFilename = @"RainAlt128.png";
             break;
-        case eClouds:
+        case eSunny:
             _filename = @"Cloud512x256.png";
             break;
         case eSnow:
             _filename = @"Snow128.png";
             _altFilename = @"SnowAlt128.png";
             break;
-        default:
-            
+        case eClouds:
+            _filename = @"Overcast128.png";
             break;
     }
-    
+
     _weatherSprites = [[NSMutableArray alloc] init];
     
     if (_currentCondition == eRain)
@@ -59,6 +59,14 @@ const static int kMoveTag = 2352387;
     else if (_currentCondition == eSnow)
     {
         [self initSnow];
+    }
+    else if (_currentCondition == eSunny)
+    {
+        [self initSunny];
+    }
+    else if (_currentCondition == eClouds)
+    {
+        [self initClouds];
     }
 
     for (CCSprite* s in _weatherSprites)
@@ -142,6 +150,37 @@ const static int kMoveTag = 2352387;
     }
 }
 
+- (void) initClouds
+{
+    CCSprite* sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:_filename]];
+    
+    for (int i = 0 ; i < (_winsize.width/[sprite contentSize].width) ; i++)
+    {
+        for (int j = 0 ; j < (_winsize.height/[sprite contentSize].height) ; j++)
+        {
+            [sprite setAnchorPoint:ccp(0, 0)];
+            [sprite setPosition:ccp((i * sprite.contentSize.width), (j * sprite.contentSize.height))];
+            [_weatherSprites addObject:sprite];
+            [self addChild:sprite];
+            sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:_filename]];
+        }
+    }
+}
+
+- (void) initSunny
+{
+    CCSprite* sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:_filename]];
+    
+    for (int i = 0 ; i < (_winsize.height / [sprite contentSize].height)/2 ; i++)
+    {
+        [sprite setAnchorPoint:ccp(0, 0)];
+        [sprite setPosition:ccp((_winsize.width + (sprite.contentSize.width * (rand()%6))), ((2 * i) * (sprite.contentSize.height)))];
+        [_weatherSprites addObject:sprite];
+        [self addChild:sprite];
+        sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:_filename]];
+    }
+}
+
 -(void) update:(CCTime)delta
 {
     if (_currentCondition == eRain)
@@ -152,7 +191,10 @@ const static int kMoveTag = 2352387;
     {
         [self moveSnow];
     }
-
+    else if (_currentCondition == eSunny)
+    {
+        [self moveSunny];
+    }
 }
 
 - (void) moveRain
@@ -220,6 +262,20 @@ const static int kMoveTag = 2352387;
     if (performedActionThisFrame == true)
     {
         _leftwise = (_leftwise == true) ? false : true;
+    }
+}
+
+- (void) moveSunny
+{
+    for (CCSprite* s in _weatherSprites)
+    {
+        if ([s getActionByTag:kMoveTag] == nil)
+        {
+            [s setPosition:ccp(_winsize.width + ([s contentSize].width * (rand()%5)), s.position.y)];
+            CCActionMoveBy *action = [CCActionMoveBy actionWithDuration:25.0f + rand()%8 position:ccp(0.0f - ([s position].x + [s contentSize].width), 0.0f)];
+            [action setTag:kMoveTag];
+            [s runAction:action];
+        }
     }
 }
 

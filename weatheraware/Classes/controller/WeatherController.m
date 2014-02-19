@@ -56,7 +56,7 @@
         [_delegate tryNextServer];
         return;
     }
-    _condition = @"Snow";//[weatherInfo objectForKey:@"main"];
+    _condition = @"Clouds";//[weatherInfo objectForKey:@"main"];
     
     [_delegate newWeatherCondition:_condition];
 }

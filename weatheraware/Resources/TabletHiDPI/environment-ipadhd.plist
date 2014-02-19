@@ -20,7 +20,7 @@
             <key>FenceDL128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,866},{128,128}}</string>
+                <string>{{262,736},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>FenceDR128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,736},{128,128}}</string>
+                <string>{{132,866},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>FenceEndH128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,606},{128,128}}</string>
+                <string>{{132,736},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>FenceEndV128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,606},{128,128}}</string>
+                <string>{{262,606},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>FenceHorizontal128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,866},{128,128}}</string>
+                <string>{{132,606},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>FenceUL128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,736},{128,128}}</string>
+                <string>{{2,866},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>FenceUR128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,606},{128,128}}</string>
+                <string>{{2,736},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>FenceVertical128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{262,476},{128,128}}</string>
+                <string>{{2,606},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>Grass128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{132,476},{128,128}}</string>
+                <string>{{262,476},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>GrassAlt128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,476},{128,128}}</string>
+                <string>{{132,476},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -148,6 +148,19 @@
                 <string>{128,128}</string>
             </dict>
             <key>LongGrass128.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,476},{128,128}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{128,128}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>Overcast128.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{262,346},{128,128}}</string>
@@ -261,7 +274,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:8e69ce92d45f47be997faf1c1719065f:6700bbdf44df11210491f2300c1d5d21:ebb0df4607476f7175ede1cb5f6921aa$</string>
+            <string>$TexturePacker:SmartUpdate:26499b6e6002ca0e8bfa2554291e8654:9335ed9140de081a09bd93b4f5406816:ebb0df4607476f7175ede1cb5f6921aa$</string>
             <key>textureFileName</key>
             <string>environment-ipadhd.png</string>
         </dict>

@@ -219,6 +219,7 @@
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/SnowLightAlt128.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Snow128.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/SnowAlt128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Overcast128.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

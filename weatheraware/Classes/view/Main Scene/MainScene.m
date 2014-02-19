@@ -204,6 +204,11 @@
         _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
         [self addChild:_weather z:2];
     }
+    else if ([condition isEqualToString:@"Clouds"])
+    {
+        _weather = [[WeatherLayer alloc] initWithCondition:eClouds];
+        [self addChild:_weather z:2];
+    }
 }
 
 -(void) tryNextServer
