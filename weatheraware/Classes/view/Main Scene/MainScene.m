@@ -10,7 +10,6 @@
 
 #import "Actor.h"
 #import "BackgroundLayer.h"
-#import "CollisionHandler.h"
 #import "DeviceInformation.h"
 #import "GrassLayer.h"
 #import "JsonLoader.h"
