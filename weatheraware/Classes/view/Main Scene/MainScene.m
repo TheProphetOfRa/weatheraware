@@ -119,36 +119,6 @@
 
 -(void)update:(CCTime)delta
 {
-    NSMutableArray *gArray = [_background grassArray];
-    NSMutableArray *tArray = [_background treeArray];
-    NSMutableArray *fArray = [_background fenceArray];
-    
-    bool playerIsInGrass = false;
-    
-//    for (LongGrass* g in gArray) //Long Grass
-//    {
-//        if ([CollisionHandler player:_actor isInGrass:g])
-//        {
-//            playerIsInGrass = true;
-//        }
-//    }
-//    for (CCSprite* t in tArray) //Trees
-//    {
-//        if ([CollisionHandler player:_actor willCollideWithObject:t])
-//        {
-//            _touchIsDown = false;
-//            _currentTouch = nil;
-//        }
-//    }
-//    for (CCSprite* f in fArray) //Fence
-//    {
-//        if ([CollisionHandler player:_actor willCollideWithObject:f])
-//        {
-//            _touchIsDown = false;
-//            _currentTouch = nil;
-//        }
-//    }
-    
     if (_currentTouch != nil) {
         [self movePlayer];
     }

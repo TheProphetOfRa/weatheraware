@@ -44,8 +44,6 @@
 {
     Object *grassSprite;
     
-    _treeArray = [[NSMutableArray alloc] init];
-
     NSArray *map = [data objectForKey:@"map"];
     
     [[Grid sharedGrid] setHeight:[map count]];
@@ -60,7 +58,6 @@
             if ([tile  isEqual: @"x"])
             {
                 grassSprite = [[Object alloc] initWithTextureName:@"Tree128.png" andType:eTree];
-                [_treeArray addObject:grassSprite];
             }
             if ([tile  isEqual: @"b"])
             {
@@ -87,8 +84,6 @@
 {
     LongGrass *grassSprite;
     
-    _grassArray = [[NSMutableArray alloc] init];
-    
     NSArray *map = [data objectForKey:@"map"];
     
     for (int i = 0 ; i < [map count] ; i++)
@@ -100,7 +95,6 @@
             if ([tile  isEqual: @"g"])
             {
                 grassSprite = [[LongGrass alloc] initWithPosition:ccp(j,i)];
-                [_grassArray addObject:grassSprite];
                 [[Grid sharedGrid] setObject:[grassSprite tile] atGridPos:ccp(j,i)];
                 [self addChild:grassSprite];
             }
@@ -111,8 +105,6 @@
 -(void) initFenceWithData:(NSDictionary*) data
 {
     Fence *fenceSprite;
-    
-    _fenceArray = [[NSMutableArray alloc] init];
     
     NSArray *map = [data objectForKey:@"map"];
     
@@ -157,7 +149,6 @@
             if (fenceSprite != nil)
             {
                 [[Grid sharedGrid] setObject:[fenceSprite tile] atGridPos:ccp(j,i)];
-                [_fenceArray addObject:fenceSprite];
                 [self addChild:fenceSprite];
             }
         }
