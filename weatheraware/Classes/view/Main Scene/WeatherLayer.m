@@ -65,6 +65,13 @@ const static int kMoveTag = 2352387;
     {
         [s runAction:[CCActionFadeIn actionWithDuration:3.0f]];
     }
+    if (_parralaxSprites)
+    {
+        for (CCSprite* s in _parralaxSprites)
+        {
+            [s runAction:[CCActionFadeIn actionWithDuration:3.0f]];
+        }
+    }
 }
 
 -(void) initRain
@@ -101,7 +108,7 @@ const static int kMoveTag = 2352387;
                 [sprite setPosition:ccp((i * sprite.contentSize.width), (j * sprite.contentSize.height))];
                 [_weatherSprites addObject:sprite];
                 [self addChild:sprite];
-                CCActionMoveBy *action = [CCActionMoveBy actionWithDuration:3.0f position:ccp(0.0f, -(sprite.contentSize.height))];
+                CCActionMoveBy *action = [CCActionMoveBy actionWithDuration:3.0f position:ccp(-25.0f, -(sprite.contentSize.height))];
                 [action setTag:kMoveTag];
                 [sprite runAction:action];
                 sprite = (rand()%2 < 1) ? [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:_filename]] : [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:_altFilename]];
@@ -116,7 +123,7 @@ const static int kMoveTag = 2352387;
     altLightSnow = @"SnowLightAlt128.png";
     
     
-    for (int i = 0 ; i < (_winsize.width/[sprite contentSize].width) + 1 ; i++)
+    for (int i = -1 ; i < (_winsize.width/[sprite contentSize].width) ; i++)
     {
         for (int j = 0 ; j < (_winsize.height/[sprite contentSize].height) + 1 ; j++)
         {
@@ -126,7 +133,7 @@ const static int kMoveTag = 2352387;
                 [sprite setPosition:ccp((i * sprite.contentSize.width), (j * sprite.contentSize.height))];
                 [_parralaxSprites addObject:sprite];
                 [self addChild:sprite];
-                CCActionMoveBy *action = [CCActionMoveBy actionWithDuration:3.0f position:ccp(0.0f, -(sprite.contentSize.height))];
+                CCActionMoveBy *action = [CCActionMoveBy actionWithDuration:3.0f position:ccp(25.0f, -(sprite.contentSize.height))];
                 [action setTag:kMoveTag];
                 [sprite runAction:action];
                 sprite = (rand()%2 < 1) ? [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:lightSnow]] : [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:altLightSnow]];
