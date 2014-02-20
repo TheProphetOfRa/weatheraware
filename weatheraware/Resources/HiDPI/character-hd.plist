@@ -7,13 +7,13 @@
             <key>Character128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{34,54}}</string>
+                <string>{{2,2},{46,62}}</string>
                 <key>offset</key>
-                <string>{-1,-1}</string>
+                <string>{1,1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{14,6},{34,54}}</string>
+                <string>{{10,0},{46,62}}</string>
                 <key>sourceSize</key>
                 <string>{64,64}</string>
             </dict>
@@ -25,9 +25,9 @@
             <key>realTextureFileName</key>
             <string>character-hd.png</string>
             <key>size</key>
-            <string>{64,64}</string>
+            <string>{64,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:86bab3083e0cca96ba63cd3a7bb4575f:5309291aec42b857ae990543fc370931:6b28e604c04b208fba9392037c3db309$</string>
+            <string>$TexturePacker:SmartUpdate:109e5d54074ac34a9ff232e0743cdb2e:b2adf833e70f29f3d4b96139b89d8672:6b28e604c04b208fba9392037c3db309$</string>
             <key>textureFileName</key>
             <string>character-hd.png</string>
         </dict>
