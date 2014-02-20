@@ -24,11 +24,12 @@
     if (self = [super init])
     {
         _ui = [[BattleUILayer alloc] init];
-        [self addChild:_ui];
+        [self addChild:_ui z:1];
         
-        _sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Tree128.png"]];
-        [_sprite setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
-        [self addChild:_sprite];
+        _sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Test256x128.png"]];
+        [_sprite setAnchorPoint:ccp(0,0)];
+        [_sprite setPosition:ccp(0, 0)];
+        [self addChild:_sprite z:0];
         
     }
     return self;
