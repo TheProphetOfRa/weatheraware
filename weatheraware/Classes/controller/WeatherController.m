@@ -43,7 +43,7 @@
     
     NSArray *weather = [dataArray objectForKey:@"weather"];
     
-    if (!weather)../..
+    if (!weather)
     {
         [_delegate tryNextServer];
         return;
@@ -56,7 +56,7 @@
         [_delegate tryNextServer];
         return;
     }
-    _condition = [weatherInfo objectForKey:@"main"];
+    _condition = @"Snow";//[weatherInfo objectForKey:@"main"];
     
     [_delegate newWeatherCondition:_condition];
 }

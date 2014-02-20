@@ -119,7 +119,8 @@ static const int kEncounterChance = 45;
         rand()%100 <= kEncounterChance)
     {
         printf("Encounter\n");
-        [[CCDirector sharedDirector] pushScene:[BattleScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
+        //[[CCDirector sharedDirector] pushScene:[BattleScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
+        [[CCDirector sharedDirector] pushScene:[BattleScene scene]];
     }
     
 }

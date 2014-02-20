@@ -55,6 +55,12 @@
     return self;
 }
 
+- (void) onEnterTransitionDidFinish
+{
+    [super onEnterTransitionDidFinish];
+    [self setPaused:NO];
+}
+
 - (void) initLocation
 {
     // get physical location

@@ -217,7 +217,6 @@
 		5F66FED71898728700869EA4 /* Default-Landscape~ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F66FED51898728700869EA4 /* Default-Landscape~ipad@2x.png */; };
 		5F66FED81898728700869EA4 /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F66FED61898728700869EA4 /* Default~ipad.png */; };
 		5F67B8A318B1253B00C77D9E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A218B1253B00C77D9E /* Creature.m */; };
-		5F67B8A618B13DBD00C77D9E /* CreatureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A518B13DBD00C77D9E /* CreatureHandler.m */; };
 		5F67B8A918B166F100C77D9E /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A818B166F100C77D9E /* UILayer.m */; };
 		5F85874318B3F7CF00403B12 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874218B3F7CF00403B12 /* Grid.m */; };
 		5F85874618B40C8D00403B12 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874518B40C8D00403B12 /* Tree.m */; };
@@ -244,6 +243,7 @@
 		5FC8581518B52D6200F3BEE4 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8581118B52D6200F3BEE4 /* character.png */; };
 		5FC8581618B52D6200F3BEE4 /* environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8581218B52D6200F3BEE4 /* environment.plist */; };
 		5FC8581718B52D6200F3BEE4 /* environment.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8581318B52D6200F3BEE4 /* environment.png */; };
+		5FC85F5E18B6731700454656 /* AnimatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC85F5D18B6731700454656 /* AnimatedObject.m */; };
 		5FE26D9C189943680058FA0A /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE26D9B189943680058FA0A /* Object.m */; };
 		5FE53E2018B26C270014B15F /* JsonLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE53E1F18B26C270014B15F /* JsonLoader.m */; };
 		5FE53E2718B270260014B15F /* creatureinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2318B270260014B15F /* creatureinfo.json */; };
@@ -698,8 +698,6 @@
 		5F66FED61898728700869EA4 /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~ipad.png"; path = "Resources/Default~ipad.png"; sourceTree = "<group>"; };
 		5F67B8A118B1253B00C77D9E /* Creature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
 		5F67B8A218B1253B00C77D9E /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
-		5F67B8A418B13DBD00C77D9E /* CreatureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureHandler.h; sourceTree = "<group>"; };
-		5F67B8A518B13DBD00C77D9E /* CreatureHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureHandler.m; sourceTree = "<group>"; };
 		5F67B8A718B166F100C77D9E /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
 		5F67B8A818B166F100C77D9E /* UILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILayer.m; sourceTree = "<group>"; };
 		5F85874118B3F7CF00403B12 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
@@ -739,6 +737,8 @@
 		5FC8581118B52D6200F3BEE4 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		5FC8581218B52D6200F3BEE4 /* environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = environment.plist; sourceTree = "<group>"; };
 		5FC8581318B52D6200F3BEE4 /* environment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = environment.png; sourceTree = "<group>"; };
+		5FC85F5C18B6731700454656 /* AnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedObject.h; sourceTree = "<group>"; };
+		5FC85F5D18B6731700454656 /* AnimatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedObject.m; sourceTree = "<group>"; };
 		5FE26D9A189943680058FA0A /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		5FE26D9B189943680058FA0A /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
 		5FE53E1E18B26C270014B15F /* JsonLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonLoader.h; sourceTree = "<group>"; };
@@ -1742,8 +1742,6 @@
 				5F905AAF18987D9A00FBE122 /* LocationManager.m */,
 				5F905AB018987D9A00FBE122 /* WeatherController.h */,
 				5F905AB118987D9A00FBE122 /* WeatherController.m */,
-				5F67B8A418B13DBD00C77D9E /* CreatureHandler.h */,
-				5F67B8A518B13DBD00C77D9E /* CreatureHandler.m */,
 				5FE53E1E18B26C270014B15F /* JsonLoader.h */,
 				5FE53E1F18B26C270014B15F /* JsonLoader.m */,
 			);
@@ -1768,6 +1766,8 @@
 				5FE26D9B189943680058FA0A /* Object.m */,
 				5F85874418B40C8D00403B12 /* Tree.h */,
 				5F85874518B40C8D00403B12 /* Tree.m */,
+				5FC85F5C18B6731700454656 /* AnimatedObject.h */,
+				5FC85F5D18B6731700454656 /* AnimatedObject.m */,
 			);
 			name = model;
 			path = Classes/model;
@@ -2014,6 +2014,7 @@
 				5F66FC4D1898715A00869EA4 /* CCActionInstant.m in Sources */,
 				5F66FD471898715B00869EA4 /* base64.c in Sources */,
 				5F66FD861898715B00869EA4 /* OALAudioTrack.m in Sources */,
+				5FC85F5E18B6731700454656 /* AnimatedObject.m in Sources */,
 				5FE53E2018B26C270014B15F /* JsonLoader.m in Sources */,
 				5F66FCC91898715B00869EA4 /* CCProgressNode.m in Sources */,
 				5F66FCBC1898715A00869EA4 /* CCPhysicsBody.m in Sources */,
@@ -2046,7 +2047,6 @@
 				5F85874318B3F7CF00403B12 /* Grid.m in Sources */,
 				5F66FCF71898715B00869EA4 /* CCSprite9Slice.m in Sources */,
 				5F66FD091898715B00869EA4 /* CCTextureAtlas.m in Sources */,
-				5F67B8A618B13DBD00C77D9E /* CreatureHandler.m in Sources */,
 				5F66FDCA1898715B00869EA4 /* OALAudioFile.m in Sources */,
 				5F66FCF01898715B00869EA4 /* ccShaders.m in Sources */,
 				5F66FE041898715C00869EA4 /* matrix.c in Sources */,

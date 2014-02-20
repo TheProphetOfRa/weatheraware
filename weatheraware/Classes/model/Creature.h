@@ -6,17 +6,24 @@
 //  Copyright (c) 2014 David Hodgkinson. All rights reserved.
 //
 
-#import "Object.h"
+#import "CCNode.h"
 
-#import "CreatureHandler.h"
+enum CreatureType
+{
+    eDragon
+};
+
+@class AnimatedObject;
 
 @interface Creature : CCNode
 {
     enum CreatureType    *_type;
     
-    Object          *_tile;
+    AnimatedObject       *_tile;
     
-    int              _health;
+    int                   _health;
+    int                   _interest;
+    int                   _baseCapRate;
     
 }
 
