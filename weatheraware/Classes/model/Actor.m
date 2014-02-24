@@ -16,7 +16,7 @@
 
 @implementation Actor
 
-static const int kEncounterChance = 45;
+static const int kEncounterChance = 25;
 
 - (id) initWithFilename: (NSString*) filename
 {
@@ -36,7 +36,9 @@ static const int kEncounterChance = 45;
         pos.x = [_tile contentSize].width * gridpos.x;
         pos.y = [_tile contentSize].height * gridpos.y;
         
+        //Make actor appear the same as sprite
         [self setPosition:pos];
+        [self setContentSize:[_tile contentSize]];
         
         _gridPos = gridpos;
         

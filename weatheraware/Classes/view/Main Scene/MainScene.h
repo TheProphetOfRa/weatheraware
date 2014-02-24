@@ -11,10 +11,11 @@
 #import "LocationManager.h"
 #import "WeatherController.h"
 
-@class BackgroundLayer;
 @class Actor;
+@class BackgroundLayer;
 @class GrassLayer;
 @class WeatherLayer;
+@class UILayer;
 
 @interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate>
 {
@@ -25,8 +26,10 @@
     //Layers
     BackgroundLayer *_background;
     WeatherLayer    *_weather;
+    UILayer         *_ui;
     
-    Actor           *_actor;
+    //Player
+    Actor           *_player;
     
     //Corners of the screen
     CGPoint _a;

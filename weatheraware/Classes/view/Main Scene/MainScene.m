@@ -17,6 +17,7 @@
 #import "LongGrass.h"
 #import "Object.h"
 #import "WeatherLayer.h"
+#import "UILayer.h"
 
 @implementation MainScene
 
@@ -50,7 +51,10 @@
         
         [self initPlayer];
         
+        [self initMenu];
+        
         [self initMisc];
+        
     }
     return self;
 }
@@ -79,9 +83,15 @@
 - (void) initPlayer
 {
     //Create actor and add it to middle of scene
-    _actor = [[Actor alloc] initWithFilename:@"Character128.png"];
+    _player = [[Actor alloc] initWithFilename:@"Character128.png"];
 
-    [self addChild:_actor z:1];
+    [self addChild:_player z:1];
+}
+
+-(void) initMenu
+{
+    _ui = [[UILayer alloc] init];
+    [self addChild:_ui];
 }
 
 - (void) initMisc
@@ -131,11 +141,23 @@
 
 - (void) movePlayer
 {
+    
+    if ([_currentTouch locationInNode:self].x < [_player position].x + [_player contentSize].width &&
+        [_currentTouch locationInNode:self].x > [_player position].y &&
+        [_currentTouch locationInNode:self].y < [_player position].y + [_player contentSize].height &&
+        [_currentTouch locationInNode:self].y > [_player position].y)
+    {
+        [_ui toggleMenu];
+        _currentTouch = nil;
+        printf("Touch");
+        return;
+    }
+    
     CGPoint relativeTouchPoint;
     
     //Calculate touch point relative to sprite relative to center
-    relativeTouchPoint.x = ([self contentSize].width/2) - ([_actor position].x - [_currentTouch locationInNode:self].x);
-    relativeTouchPoint.y = ([self contentSize].height/2) - ([_actor position].y - [_currentTouch locationInNode:self].y);
+    relativeTouchPoint.x = ([self contentSize].width/2) - ([_player position].x - [_currentTouch locationInNode:self].x);
+    relativeTouchPoint.y = ([self contentSize].height/2) - ([_player position].y - [_currentTouch locationInNode:self].y);
     
     //Create two diagonal lines from corner to corner
     bool isAboveAC = ((_c.x - _a.x) * (relativeTouchPoint.y - _a.y) - (_c.y - _a.y) * (relativeTouchPoint.x - _a.x)) > 0;
@@ -146,12 +168,12 @@
         if (isAboveDB)
         {
             //top edge has intersected
-            [_actor moveInDirection:0];
+            [_player moveInDirection:0];
         }
         else
         {
             //right edge intersected
-            [_actor moveInDirection:3];
+            [_player moveInDirection:3];
         }
     }
     else
@@ -159,12 +181,12 @@
         if (isAboveDB)
         {
             //left edge has intersected
-            [_actor moveInDirection:2];
+            [_player moveInDirection:2];
         }
         else
         {
             //bottom edge intersected
-            [_actor moveInDirection:1];
+            [_player moveInDirection:1];
         }
     }
 }

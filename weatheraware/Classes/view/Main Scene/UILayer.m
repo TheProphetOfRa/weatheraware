@@ -8,18 +8,46 @@
 
 #import "UILayer.h"
 
+#import "CCButton.h"
+#import "CCDirector.h"
+
 @implementation UILayer
 
-- (id) initWithDirection:(CCLayoutBoxDirection)direction
+- (id) init
 {
     if (self = [super init])
     {
+        [self setContentSize:[[CCDirector sharedDirector] viewSize]];
         _menuContainer = [[CCLayoutBox alloc] init];
-        [_menuContainer setDirection:direction];
+        [_menuContainer setDirection:CCLayoutBoxDirectionVertical];
         _menu = [[CCScrollView alloc] initWithContentNode:_menuContainer];
+        [_menu setVisible:false];
         [self addChild:_menu];
+        [self initMenu];
     }
     return self;
+}
+
+- (void) initMenu
+{
+    CCButton *button;
+    
+    button = [CCButton buttonWithTitle:@"Button" fontName:@"Helvetica" fontSize:12.0f];
+    
+    [button setTarget:self selector:@selector(buttonPressed)];
+    
+    [_menuContainer addChild:button];
+    
+}
+
+- (void) buttonPressed
+{
+    printf("Button");
+}
+
+- (void) toggleMenu
+{
+    _menuOpen = !_menuOpen;
 }
 
 - (void) update:(CCTime)delta

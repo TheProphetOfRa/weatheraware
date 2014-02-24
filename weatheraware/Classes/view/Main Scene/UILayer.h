@@ -23,6 +23,8 @@
     
 }
 
-- (id) initWithDirection: (CCLayoutBoxDirection) direction;
+- (id) init;
+
+- (void) toggleMenu;
 
 @end
