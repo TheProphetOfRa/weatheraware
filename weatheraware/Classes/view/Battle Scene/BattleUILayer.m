@@ -80,22 +80,21 @@ static const int kRunChance = 450;
 
 - (void) fightButtonPressed
 {
-    printf("Fight");
+    [_delegate buttonPressed:eFight];
 }
 
 - (void) feedButtonPressed
 {
-    printf("Feed");
+    [_delegate buttonPressed:eFeed];
 }
 
 - (void) captureButtonPressed
 {
-    printf("Capture");
+    [_delegate buttonPressed:eCapture];
 }
 
 -(void) runButtonPressed
 {
-    printf("Run");
     if (rand()%100 < kRunChance)
     {
         [[CCDirector sharedDirector] popSceneWithTransition:[CCTransition transitionCrossFadeWithDuration:0.4f]];

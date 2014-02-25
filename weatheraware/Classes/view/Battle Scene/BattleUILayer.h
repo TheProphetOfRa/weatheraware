@@ -12,6 +12,23 @@
 @class CCLabelBMFont;
 @class CreatureStats;
 
+enum ButtonType
+{
+    eFight,
+    eFeed,
+    eCapture,
+    eRun
+};
+
+@protocol  UIButtonDelegate
+@required
+/**
+ *@brief Called when the user presses a button
+ *@param button The button ID of the pressed button
+ */
+- (void) buttonPressed:(enum ButtonType) button;
+@end
+
 @interface BattleUILayer : CCNode
 {
     CCButton        *_fightButton;
@@ -22,5 +39,7 @@
     CreatureStats   *_frame;
     
     CCLabelBMFont   *_infoLabel;
+    
+    id              _delegate;
 }
 @end

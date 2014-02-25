@@ -11,5 +11,5 @@
 @interface JsonLoader : NSObject
 
 + (NSDictionary*) loadJsonFromFile: (NSString*) filename;
-
++ (BOOL) saveJson:(NSDictionary*) json ToFile:(NSString*) filename;
 @end

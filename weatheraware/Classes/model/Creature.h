@@ -21,12 +21,26 @@ enum CreatureType
     
     AnimatedObject       *_tile;
     
+    NSString             *_filename;
+    
+    NSString             *_creatureName;
+    
     int                   _health;
+    int                   _maxHealth;
     int                   _interest;
+    int                   _foodEffect;
+    int                   _fightEffect;
     int                   _baseCapRate;
     
 }
 
 - (id) initWithType: (enum CreatureType) type;
+
+- (void) fight;
+- (void) feed;
+- (BOOL) tryCapture;
+
+@property (readonly) AnimatedObject *tile;
+@property (readonly) NSString *creatureName;
 
 @end

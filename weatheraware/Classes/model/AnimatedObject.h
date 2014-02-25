@@ -8,6 +8,10 @@
 
 #import "Object.h"
 
-@interface AnimatedObject : Object
+@interface AnimatedObject : Object {
+    
+}
+
+- (void) animate;
 
 @end

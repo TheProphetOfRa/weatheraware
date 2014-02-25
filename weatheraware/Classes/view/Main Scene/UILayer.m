@@ -34,7 +34,7 @@
 {
     CCButton *button;
     
-    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    button = [CCButton buttonWithTitle:@"Creature List" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
     
     [button setTarget:self selector:@selector(buttonPressed)];
     

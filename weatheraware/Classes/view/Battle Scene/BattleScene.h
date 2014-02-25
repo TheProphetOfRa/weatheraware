@@ -8,11 +8,12 @@
 
 #import "CCScene.h"
 
+#import "BattleUILayer.h"
+
 @class Creature;
-@class BattleUILayer;
 @class CCSprite;
 
-@interface BattleScene : CCScene
+@interface BattleScene : CCScene <UIButtonDelegate>
 {
     Creature      *_creature;
 

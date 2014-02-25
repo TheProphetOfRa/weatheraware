@@ -12,8 +12,6 @@
 
 @implementation JsonLoader
 
-static JsonLoader* _sharedLoader = nil;
-
 + (NSDictionary*) loadJsonFromFile:(NSString *)filename
 {
     
@@ -29,6 +27,30 @@ static JsonLoader* _sharedLoader = nil;
     
     return jsonData;
     
+}
+
+- (BOOL) saveJson:(NSDictionary*) json ToFile:(NSString*)filename
+{
+    NSData *data;
+    NSError *error = nil;
+    NSString *jsonString;
+    
+    data = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
+    
+    if (error != nil)
+    {
+        return false;
+    }
+    
+    jsonString = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
+    
+    [jsonString writeToFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:filename] atomically:NO encoding:NSUTF8StringEncoding error:&error];
+    
+    if (error != nil)
+    {
+        return false;
+    }
+    return true;
 }
 
 @end
