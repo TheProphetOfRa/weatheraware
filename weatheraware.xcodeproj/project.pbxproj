@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5F295ADD18B5023800507043 /* BattleUILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F295ADC18B5023800507043 /* BattleUILayer.m */; };
 		5F295ADF18B5162900507043 /* FontNormal.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F295ADE18B5162900507043 /* FontNormal.fnt */; };
+		5F3AB18518BC00E2008CEF23 /* CreatureStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AB18418BC00E2008CEF23 /* CreatureStats.m */; };
+		5F3AB18818BC02F1008CEF23 /* ui-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18618BC02F1008CEF23 /* ui-ipadhd.plist */; };
+		5F3AB18918BC02F1008CEF23 /* ui-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */; };
+		5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18A18BC038E008CEF23 /* ui-hd.plist */; };
+		5F3AB18D18BC038E008CEF23 /* ui-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18B18BC038E008CEF23 /* ui-hd.png */; };
 		5F586B8118AD3E1A00F1F201 /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8018AD3E1A00F1F201 /* BattleScene.m */; };
 		5F586B8718AD580400F1F201 /* LongGrass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8618AD580400F1F201 /* LongGrass.m */; };
 		5F66FBFE1898715A00869EA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFD1898715A00869EA4 /* QuartzCore.framework */; };
@@ -273,6 +278,12 @@
 		5F295ADB18B5023800507043 /* BattleUILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleUILayer.h; sourceTree = "<group>"; };
 		5F295ADC18B5023800507043 /* BattleUILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleUILayer.m; sourceTree = "<group>"; };
 		5F295ADE18B5162900507043 /* FontNormal.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FontNormal.fnt; path = Resources/FontNormal.fnt; sourceTree = "<group>"; };
+		5F3AB18318BC00E2008CEF23 /* CreatureStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureStats.h; sourceTree = "<group>"; };
+		5F3AB18418BC00E2008CEF23 /* CreatureStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureStats.m; sourceTree = "<group>"; };
+		5F3AB18618BC02F1008CEF23 /* ui-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui-ipadhd.plist"; sourceTree = "<group>"; };
+		5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-ipadhd.png"; sourceTree = "<group>"; };
+		5F3AB18A18BC038E008CEF23 /* ui-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui-hd.plist"; sourceTree = "<group>"; };
+		5F3AB18B18BC038E008CEF23 /* ui-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-hd.png"; sourceTree = "<group>"; };
 		5F586B7F18AD3E1A00F1F201 /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
 		5F586B8018AD3E1A00F1F201 /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
 		5F586B8518AD580400F1F201 /* LongGrass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongGrass.h; sourceTree = "<group>"; };
@@ -829,6 +840,8 @@
 		5F3A07A018B2D44700E15A48 /* HiDPI */ = {
 			isa = PBXGroup;
 			children = (
+				5F3AB18A18BC038E008CEF23 /* ui-hd.plist */,
+				5F3AB18B18BC038E008CEF23 /* ui-hd.png */,
 				5FF3234F18B6BF4200906456 /* creatures-hd.plist */,
 				5FF3235018B6BF4200906456 /* creatures-hd.png */,
 				5FC8580018B52D4C00F3BEE4 /* character-hd.plist */,
@@ -843,6 +856,8 @@
 		5F3A07A518B2D44800E15A48 /* TabletHiDPI */ = {
 			isa = PBXGroup;
 			children = (
+				5F3AB18618BC02F1008CEF23 /* ui-ipadhd.plist */,
+				5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */,
 				5FF3234718B6BF3100906456 /* creatures-ipadhd.plist */,
 				5FF3234818B6BF3100906456 /* creatures-ipadhd.png */,
 				5FC8580818B52D5800F3BEE4 /* character-ipadhd.plist */,
@@ -861,6 +876,8 @@
 				5F586B8018AD3E1A00F1F201 /* BattleScene.m */,
 				5F295ADB18B5023800507043 /* BattleUILayer.h */,
 				5F295ADC18B5023800507043 /* BattleUILayer.m */,
+				5F3AB18318BC00E2008CEF23 /* CreatureStats.h */,
+				5F3AB18418BC00E2008CEF23 /* CreatureStats.m */,
 			);
 			path = "Battle Scene";
 			sourceTree = "<group>";
@@ -1921,6 +1938,7 @@
 				5F66FC211898715A00869EA4 /* Icon.png in Resources */,
 				5FC8580D18B52D5800F3BEE4 /* character-ipadhd.png in Resources */,
 				5FC8580518B52D4C00F3BEE4 /* character-hd.png in Resources */,
+				5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */,
 				5F66FC2F1898715A00869EA4 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				5F66FED4189871E300869EA4 /* Default-Landscape@2x~ipad.png in Resources */,
 				5F66FC1E1898715A00869EA4 /* Default-Landscape~ipad.png in Resources */,
@@ -1937,11 +1955,13 @@
 				5F66FD731898715B00869EA4 /* LICENSE_cocos2d.txt in Resources */,
 				5FC8580E18B52D5800F3BEE4 /* environment-ipadhd.plist in Resources */,
 				5FC8581618B52D6200F3BEE4 /* environment.plist in Resources */,
+				5F3AB18818BC02F1008CEF23 /* ui-ipadhd.plist in Resources */,
 				5F66FC1C1898715A00869EA4 /* Default-568h@2x.png in Resources */,
 				5FE53E2F18B27DB30014B15F /* mainscene-ipad.json in Resources */,
 				5F66FC3C1898715A00869EA4 /* iTunesArtwork in Resources */,
 				5FE53E2718B270260014B15F /* creatureinfo.json in Resources */,
 				5FF3235118B6BF4200906456 /* creatures-hd.plist in Resources */,
+				5F3AB18D18BC038E008CEF23 /* ui-hd.png in Resources */,
 				5F66FC371898715A00869EA4 /* Icon-Spotlight-iOS7.png in Resources */,
 				5FC8581418B52D6200F3BEE4 /* character.plist in Resources */,
 				5FC8580F18B52D5800F3BEE4 /* environment-ipadhd.png in Resources */,
@@ -1954,6 +1974,7 @@
 				5FF3234D18B6BF3900906456 /* creatures.plist in Resources */,
 				5F66FDFF1898715C00869EA4 /* ChangeLog in Resources */,
 				5F66FC3E1898715A00869EA4 /* iTunesArtwork@2x in Resources */,
+				5F3AB18918BC02F1008CEF23 /* ui-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2112,6 +2133,7 @@
 				5F66FE271898715C00869EA4 /* CCBsequence.m in Sources */,
 				5F66FC881898715A00869EA4 /* CCLabelAtlas.m in Sources */,
 				5F66FD231898715B00869EA4 /* cocos2d.m in Sources */,
+				5F3AB18518BC00E2008CEF23 /* CreatureStats.m in Sources */,
 				5F66FDAB1898715B00869EA4 /* ALSource.m in Sources */,
 				5F66FCB31898715A00869EA4 /* CCParticleSystem.m in Sources */,
 				5F66FCD81898715B00869EA4 /* CCScene.m in Sources */,

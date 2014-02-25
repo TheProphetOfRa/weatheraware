@@ -10,14 +10,17 @@
 
 @class CCButton;
 @class CCLabelBMFont;
+@class CreatureStats;
 
 @interface BattleUILayer : CCNode
 {
-    CCButton    *_fightButton;
-    CCButton    *_feedButton;
-    CCButton    *_captureButton;
-    CCButton    *_runButton;
+    CCButton        *_fightButton;
+    CCButton        *_feedButton;
+    CCButton        *_captureButton;
+    CCButton        *_runButton;
     
-    CCLabelBMFont *_infoLabel;
+    CreatureStats   *_frame;
+    
+    CCLabelBMFont   *_infoLabel;
 }
 @end

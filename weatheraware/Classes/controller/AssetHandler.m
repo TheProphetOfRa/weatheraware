@@ -31,6 +31,7 @@ static AssetHandler *_sharedAssetHandler = nil;
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"environment.plist"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"character.plist"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"creatures.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ui.plist"];
 }
 - (CCSpriteFrame*) getTextureWithName:(NSString *)textureName
 {

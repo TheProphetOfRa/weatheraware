@@ -8,6 +8,8 @@
 
 #import "UILayer.h"
 
+#import "AssetHandler.h"
+
 #import "CCButton.h"
 #import "CCDirector.h"
 
@@ -32,7 +34,25 @@
 {
     CCButton *button;
     
-    button = [CCButton buttonWithTitle:@"Button" fontName:@"Helvetica" fontSize:12.0f];
+    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    
+    [button setTarget:self selector:@selector(buttonPressed)];
+    
+    [_menuContainer addChild:button];
+    
+    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    
+    [button setTarget:self selector:@selector(buttonPressed)];
+    
+    [_menuContainer addChild:button];
+    
+    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    
+    [button setTarget:self selector:@selector(buttonPressed)];
+    
+    [_menuContainer addChild:button];
+    
+    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
     
     [button setTarget:self selector:@selector(buttonPressed)];
     

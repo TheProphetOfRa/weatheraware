@@ -8,6 +8,9 @@
 
 #import "BattleUILayer.h"
 
+#import "AssetHandler.h"
+#import "CreatureStats.h"
+
 #import "CCActionInstant.h"
 #import "CCActionInterval.h"
 #import "CCButton.h"
@@ -17,7 +20,7 @@
 
 @implementation BattleUILayer
 
-static const int kRunChance = 30;
+static const int kRunChance = 450;
 
 - (id) init
 {
@@ -26,16 +29,17 @@ static const int kRunChance = 30;
         [self setContentSize:[[CCDirector sharedDirector] viewSize]];
         [self initMenu];
         [self initLabel];
+        [self initCreatureStats];
     }
     return self;
 }
 
 - (void) initMenu
 {
-    _fightButton = [CCButton buttonWithTitle:@"Fight" fontName:@"Helvetica" fontSize:72.0f];
-    _feedButton = [CCButton buttonWithTitle:@"Feed" fontName:@"Helvetica" fontSize:72.0f];
-    _captureButton = [CCButton buttonWithTitle:@"Capture" fontName:@"Helvetica" fontSize:72.0f];
-    _runButton = [CCButton buttonWithTitle:@"Run" fontName:@"Helvetica" fontSize:72.0f];
+    _fightButton = [CCButton buttonWithTitle:@"Fight" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];
+    _feedButton = [CCButton buttonWithTitle:@"Feed" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];;
+    _captureButton = [CCButton buttonWithTitle:@"Capture" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];;
+    _runButton = [CCButton buttonWithTitle:@"Run" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];
     
     [_fightButton setAnchorPoint:ccp(0,0)];
     [_feedButton setAnchorPoint:ccp(0,0)];
@@ -57,6 +61,13 @@ static const int kRunChance = 30;
     [self addChild:_captureButton];
     [self addChild:_runButton];
     
+}
+
+- (void) initCreatureStats
+{
+    _frame = [[CreatureStats alloc] init];
+    [_frame setPosition:ccp(0, [self contentSize].height - ([_frame contentSize].height/4))];
+    [self addChild:_frame];
 }
 
 - (void) initLabel
