@@ -1,0 +1,10 @@
+{
+    "maxhealth":60,
+    "interest":70,
+    "fighteffect":20,
+    "foodeffect":15,
+    "caprate":60,
+    "filename":"duck.png",
+    "creaturename":"Duck"
+}
+

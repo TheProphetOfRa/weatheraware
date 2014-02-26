@@ -1,7 +1,0 @@
-{
-    "creatures":[
-    {"type":"dragon","health":100},
-    {"type":"golum","health":80},
-    {"type":"rat","health":40}
-    ]
-}

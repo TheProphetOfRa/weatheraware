@@ -37,7 +37,6 @@
             break;
     }
     
-    _health = [[data objectForKey:@"health"] integerValue];
     _maxHealth = [[data objectForKey:@"maxhealth"] integerValue];
     _interest = [[data objectForKey:@"interest"] integerValue];
     _fightEffect = [[data objectForKey:@"fighteffect"] integerValue];
@@ -45,6 +44,8 @@
     _baseCapRate = [[data objectForKey:@"caprate"] integerValue];
     _filename = [[data objectForKey:@"filename"] stringValue];
     _creatureName = [[data objectForKey:@"creaturename"] stringValue];
+    
+    _health = _maxHealth;
     
 }
 

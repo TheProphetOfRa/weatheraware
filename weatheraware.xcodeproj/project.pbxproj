@@ -248,10 +248,17 @@
 		5FC8581618B52D6200F3BEE4 /* environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8581218B52D6200F3BEE4 /* environment.plist */; };
 		5FC8581718B52D6200F3BEE4 /* environment.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8581318B52D6200F3BEE4 /* environment.png */; };
 		5FC85F5E18B6731700454656 /* AnimatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC85F5D18B6731700454656 /* AnimatedObject.m */; };
+		5FD1EE0218BEB08700A4D411 /* bear.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EDF818BEB08700A4D411 /* bear.json */; };
+		5FD1EE0318BEB08700A4D411 /* bird.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EDF918BEB08700A4D411 /* bird.json */; };
+		5FD1EE0418BEB08700A4D411 /* crab.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EDFA18BEB08700A4D411 /* crab.json */; };
+		5FD1EE0518BEB08700A4D411 /* dragon.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EDFB18BEB08700A4D411 /* dragon.json */; };
+		5FD1EE0618BEB08700A4D411 /* duck.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EDFC18BEB08700A4D411 /* duck.json */; };
+		5FD1EE0718BEB08700A4D411 /* fox.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EDFD18BEB08700A4D411 /* fox.json */; };
+		5FD1EE0A18BEB08700A4D411 /* penguin.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EE0018BEB08700A4D411 /* penguin.json */; };
+		5FD1EE0B18BEB08700A4D411 /* turtle.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1EE0118BEB08700A4D411 /* turtle.json */; };
 		5FE1E86418BD10E000D1C9BC /* CreatureTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1E86318BD10E000D1C9BC /* CreatureTracker.m */; };
 		5FE26D9C189943680058FA0A /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE26D9B189943680058FA0A /* Object.m */; };
 		5FE53E2018B26C270014B15F /* JsonLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE53E1F18B26C270014B15F /* JsonLoader.m */; };
-		5FE53E2718B270260014B15F /* creatureinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2318B270260014B15F /* creatureinfo.json */; };
 		5FE53E2C18B279FA0014B15F /* DeviceInformation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FE53E2B18B279FA0014B15F /* DeviceInformation.mm */; };
 		5FE53E2F18B27DB30014B15F /* mainscene-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2D18B27DB30014B15F /* mainscene-ipad.json */; };
 		5FE53E3018B27DB30014B15F /* mainscene-iphone.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FE53E2E18B27DB30014B15F /* mainscene-iphone.json */; };
@@ -755,13 +762,20 @@
 		5FC8581318B52D6200F3BEE4 /* environment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = environment.png; sourceTree = "<group>"; };
 		5FC85F5C18B6731700454656 /* AnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedObject.h; sourceTree = "<group>"; };
 		5FC85F5D18B6731700454656 /* AnimatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedObject.m; sourceTree = "<group>"; };
+		5FD1EDF818BEB08700A4D411 /* bear.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bear.json; path = weatheraware/Resources/Info/bear.json; sourceTree = SOURCE_ROOT; };
+		5FD1EDF918BEB08700A4D411 /* bird.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bird.json; path = weatheraware/Resources/Info/bird.json; sourceTree = SOURCE_ROOT; };
+		5FD1EDFA18BEB08700A4D411 /* crab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = crab.json; path = weatheraware/Resources/Info/crab.json; sourceTree = SOURCE_ROOT; };
+		5FD1EDFB18BEB08700A4D411 /* dragon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dragon.json; path = weatheraware/Resources/Info/dragon.json; sourceTree = SOURCE_ROOT; };
+		5FD1EDFC18BEB08700A4D411 /* duck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = duck.json; path = weatheraware/Resources/Info/duck.json; sourceTree = SOURCE_ROOT; };
+		5FD1EDFD18BEB08700A4D411 /* fox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fox.json; path = weatheraware/Resources/Info/fox.json; sourceTree = SOURCE_ROOT; };
+		5FD1EE0018BEB08700A4D411 /* penguin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = penguin.json; path = weatheraware/Resources/Info/penguin.json; sourceTree = SOURCE_ROOT; };
+		5FD1EE0118BEB08700A4D411 /* turtle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = turtle.json; path = weatheraware/Resources/Info/turtle.json; sourceTree = SOURCE_ROOT; };
 		5FE1E86218BD10E000D1C9BC /* CreatureTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureTracker.h; sourceTree = "<group>"; };
 		5FE1E86318BD10E000D1C9BC /* CreatureTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureTracker.m; sourceTree = "<group>"; };
 		5FE26D9A189943680058FA0A /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		5FE26D9B189943680058FA0A /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
 		5FE53E1E18B26C270014B15F /* JsonLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonLoader.h; sourceTree = "<group>"; };
 		5FE53E1F18B26C270014B15F /* JsonLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonLoader.m; sourceTree = "<group>"; };
-		5FE53E2318B270260014B15F /* creatureinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = creatureinfo.json; sourceTree = "<group>"; };
 		5FE53E2A18B279FA0014B15F /* DeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformation.h; sourceTree = "<group>"; };
 		5FE53E2B18B279FA0014B15F /* DeviceInformation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInformation.mm; sourceTree = "<group>"; };
 		5FE53E2D18B27DB30014B15F /* mainscene-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mainscene-ipad.json"; sourceTree = "<group>"; };
@@ -1848,9 +1862,16 @@
 		5FE53E2118B270260014B15F /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				5FD1EDF818BEB08700A4D411 /* bear.json */,
+				5FD1EDF918BEB08700A4D411 /* bird.json */,
+				5FD1EDFA18BEB08700A4D411 /* crab.json */,
+				5FD1EDFB18BEB08700A4D411 /* dragon.json */,
+				5FD1EDFC18BEB08700A4D411 /* duck.json */,
+				5FD1EDFD18BEB08700A4D411 /* fox.json */,
+				5FD1EE0018BEB08700A4D411 /* penguin.json */,
+				5FD1EE0118BEB08700A4D411 /* turtle.json */,
 				5FE53E2D18B27DB30014B15F /* mainscene-ipad.json */,
 				5FE53E2E18B27DB30014B15F /* mainscene-iphone.json */,
-				5FE53E2318B270260014B15F /* creatureinfo.json */,
 			);
 			name = Info;
 			path = Resources/info;
@@ -1932,6 +1953,7 @@
 				5F66FC231898715A00869EA4 /* Icon@2x.png in Resources */,
 				5FF3234A18B6BF3100906456 /* creatures-ipadhd.png in Resources */,
 				5F66FC351898715A00869EA4 /* Icon-Small@2x.png in Resources */,
+				5FD1EE0718BEB08700A4D411 /* fox.json in Resources */,
 				5F66FC271898715A00869EA4 /* Icon-72@2x.png in Resources */,
 				5FC8580618B52D4C00F3BEE4 /* environment-hd.plist in Resources */,
 				5F66FC181898715A00869EA4 /* Default.png in Resources */,
@@ -1941,16 +1963,19 @@
 				5FC8580518B52D4C00F3BEE4 /* character-hd.png in Resources */,
 				5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */,
 				5F66FC2F1898715A00869EA4 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				5FD1EE0A18BEB08700A4D411 /* penguin.json in Resources */,
 				5F66FED4189871E300869EA4 /* Default-Landscape@2x~ipad.png in Resources */,
 				5F66FC1E1898715A00869EA4 /* Default-Landscape~ipad.png in Resources */,
 				5F66FC331898715A00869EA4 /* Icon-Small.png in Resources */,
 				5FF3234918B6BF3100906456 /* creatures-ipadhd.plist in Resources */,
 				5F66FC311898715A00869EA4 /* Icon-Small-50.png in Resources */,
 				5FE53E3018B27DB30014B15F /* mainscene-iphone.json in Resources */,
+				5FD1EE0B18BEB08700A4D411 /* turtle.json in Resources */,
 				5F66FE1A1898715C00869EA4 /* LICENSE_Kazmath.txt in Resources */,
 				5F66FC251898715A00869EA4 /* Icon-72.png in Resources */,
 				5FC8581718B52D6200F3BEE4 /* environment.png in Resources */,
 				5FC8581518B52D6200F3BEE4 /* character.png in Resources */,
+				5FD1EE0418BEB08700A4D411 /* crab.json in Resources */,
 				5FC8580C18B52D5800F3BEE4 /* character-ipadhd.plist in Resources */,
 				5FC8580418B52D4C00F3BEE4 /* character-hd.plist in Resources */,
 				5F66FD731898715B00869EA4 /* LICENSE_cocos2d.txt in Resources */,
@@ -1960,18 +1985,21 @@
 				5F66FC1C1898715A00869EA4 /* Default-568h@2x.png in Resources */,
 				5FE53E2F18B27DB30014B15F /* mainscene-ipad.json in Resources */,
 				5F66FC3C1898715A00869EA4 /* iTunesArtwork in Resources */,
-				5FE53E2718B270260014B15F /* creatureinfo.json in Resources */,
 				5FF3235118B6BF4200906456 /* creatures-hd.plist in Resources */,
 				5F3AB18D18BC038E008CEF23 /* ui-hd.png in Resources */,
 				5F66FC371898715A00869EA4 /* Icon-Spotlight-iOS7.png in Resources */,
 				5FC8581418B52D6200F3BEE4 /* character.plist in Resources */,
 				5FC8580F18B52D5800F3BEE4 /* environment-ipadhd.png in Resources */,
+				5FD1EE0518BEB08700A4D411 /* dragon.json in Resources */,
 				5FC8580718B52D4C00F3BEE4 /* environment-hd.png in Resources */,
 				5F66FED71898728700869EA4 /* Default-Landscape~ipad@2x.png in Resources */,
 				5F66FC2B1898715A00869EA4 /* Icon-76@2x.png in Resources */,
 				5F66FE9F1898715C00869EA4 /* LICENSE_Chipmunk.txt in Resources */,
 				5F66FC391898715A00869EA4 /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				5FD1EE0618BEB08700A4D411 /* duck.json in Resources */,
 				5F66FC291898715A00869EA4 /* Icon-76.png in Resources */,
+				5FD1EE0318BEB08700A4D411 /* bird.json in Resources */,
+				5FD1EE0218BEB08700A4D411 /* bear.json in Resources */,
 				5FF3234D18B6BF3900906456 /* creatures.plist in Resources */,
 				5F66FDFF1898715C00869EA4 /* ChangeLog in Resources */,
 				5F66FC3E1898715A00869EA4 /* iTunesArtwork@2x in Resources */,

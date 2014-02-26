@@ -1,0 +1,10 @@
+{
+    "maxhealth":150,
+    "interest":40,
+    "fighteffect":20,
+    "foodeffect":15,
+    "caprate":30,
+    "filename":"fox.png",
+    "creaturename":"Fox"
+}
+
