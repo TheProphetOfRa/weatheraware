@@ -10,7 +10,14 @@
 
 enum CreatureType
 {
-    eDragon
+    eDragon,
+    eTurtle,
+    eDuck,
+    eCrab,
+    eBear,
+    eFox,
+    ePenguin,
+    eBird
 };
 
 @class AnimatedObject;

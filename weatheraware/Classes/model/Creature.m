@@ -31,10 +31,30 @@
     switch ((int)_type)
     {
         case eDragon:
-            data = [JsonLoader loadJsonFromFile:@"Dragon.json"];
+            data = [JsonLoader loadJsonFromFile:@"dragon.json"];
             break;
-        default:
+        case eTurtle:
+            data = [JsonLoader loadJsonFromFile:@"turtle.json"];
             break;
+        case eDuck:
+            data = [JsonLoader loadJsonFromFile:@"duck.json"];
+            break;
+        case eCrab:
+            data = [JsonLoader loadJsonFromFile:@"crab.json"];
+            break;
+        case eBear:
+            data = [JsonLoader loadJsonFromFile:@"bear.json"];
+            break;
+        case eFox:
+            data = [JsonLoader loadJsonFromFile:@"fox.json"];
+            break;
+        case ePenguin:
+            data = [JsonLoader loadJsonFromFile:@"penguin.json"];
+            break;
+        case eBird:
+            data = [JsonLoader loadJsonFromFile:@"bird.json"];
+            break;
+            
     }
     
     _maxHealth = [[data objectForKey:@"maxhealth"] integerValue];

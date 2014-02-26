@@ -34,7 +34,7 @@ static CreatureTracker *_sharedTracker = nil;
 
 - (void) saveList
 {
-    if (![JsonLoader saveJson:_capturedCreatures ToFile:@"capturedCreatures.json"])
+    if (![JsonLoader saveJson:_capturedCreatures ToFile:@"capturedcreatures.json"])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save Failed!" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
@@ -44,7 +44,7 @@ static CreatureTracker *_sharedTracker = nil;
 
 - (void) loadList
 {
-    _capturedCreatures = [JsonLoader loadJsonFromFile:@"capturedCreatures.json"];
+    _capturedCreatures = [JsonLoader loadJsonFromFile:@"capturedcreatures.json"];
 }
 
 - (void) addCreature:(NSString*) creatureName

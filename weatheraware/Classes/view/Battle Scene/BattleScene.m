@@ -50,6 +50,10 @@
     {
         [[CreatureTracker sharedTracker] addCreature:[_creature creatureName]];
     }
+    else
+    {
+        [_ui printLabelWithString:@"Capture failed try again!"];
+    }
 }
 
 #pragma mark -

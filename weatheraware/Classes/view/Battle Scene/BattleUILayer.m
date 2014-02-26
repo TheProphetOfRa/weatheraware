@@ -34,6 +34,9 @@ static const int kRunChance = 450;
     return self;
 }
 
+#pragma mark -
+#pragma mark Initialisation
+
 - (void) initMenu
 {
     _fightButton = [CCButton buttonWithTitle:@"Fight" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];
@@ -78,6 +81,9 @@ static const int kRunChance = 450;
     [self addChild:_infoLabel];
 }
 
+#pragma mark -
+#pragma mark ButtonCallbacks
+
 - (void) fightButtonPressed
 {
     [_delegate buttonPressed:eFight];
@@ -101,16 +107,27 @@ static const int kRunChance = 450;
     }
     else
     {
-        [_infoLabel setString:@"Couldn't escape!"];
-        CCActionFadeIn* fadeIn = [CCActionFadeIn actionWithDuration:0.3f];
-        CCActionDelay* delay = [CCActionDelay actionWithDuration:0.3f];
-        CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:0.3f];
-        CCActionCallFunc* enableUI = [CCActionCallFunc actionWithTarget:self selector:@selector(enableUserInput)];
-        CCActionSequence* seq = [CCActionSequence actions:fadeIn, delay, fadeOut, enableUI, nil];
-        [self disableUserInput];
-        [_infoLabel runAction:seq];
+        [self printLabelWithString:@"Couldn't escape"];
     }
 }
+
+#pragma mark -
+#pragma mark PrintUserInfoLabel
+
+- (void) printLabelWithString:(NSString *)string
+{
+    [_infoLabel setString:string];
+    CCActionFadeIn* fadeIn = [CCActionFadeIn actionWithDuration:0.3f];
+    CCActionDelay* delay = [CCActionDelay actionWithDuration:0.3f];
+    CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:0.3f];
+    CCActionCallFunc* enableUI = [CCActionCallFunc actionWithTarget:self selector:@selector(enableUserInput)];
+    CCActionSequence* seq = [CCActionSequence actions:fadeIn, delay, fadeOut, enableUI, nil];
+    [self disableUserInput];
+    [_infoLabel runAction:seq];
+}
+
+#pragma mark -
+#pragma mark ToggleUserInteraction
 
 - (void) disableUserInput
 {
