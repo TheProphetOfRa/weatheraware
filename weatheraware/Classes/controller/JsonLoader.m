@@ -29,7 +29,7 @@
     
 }
 
-- (BOOL) saveJson:(NSDictionary*) json ToFile:(NSString*)filename
++ (BOOL) saveJson:(NSDictionary*) json ToFile:(NSString*)filename
 {
     NSData *data;
     NSError *error = nil;

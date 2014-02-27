@@ -11,15 +11,8 @@
 
 @class Object;
 
-@interface BackgroundLayer : CCNodeColor
-{
-    //scene components
-    
-    CCLabelTTF          *_label;
-}
+@interface BackgroundLayer : CCNode
 
 -(id) initWithJSONData:(NSDictionary*) data;
-
-@property (retain) CCLabelTTF *label;
 
 @end

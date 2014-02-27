@@ -10,4 +10,9 @@
 
 @implementation AnimatedObject
 
+- (void) animate
+{
+    
+}
+
 @end

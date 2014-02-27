@@ -22,20 +22,12 @@
 
 - (id) initWithJSONData:(NSDictionary *)data
 {
-    CCColor* color = [[CCColor alloc] initWithCcColor4b:ccc4(0.0f, 0.0f, 0.0f, 255.0f)];
     
-    if (self = [super initWithColor:color])
+    if (self = [super init])
     {
-        _label = [CCLabelTTF labelWithString:@"Hello, world" fontName:@"Helvetica" fontSize:24];
-        
-        [_label setPosition:ccp([self contentSize].width/2, [_label contentSize].height)];
-        
         [self initBackgroundSpritesFromData:data];
         [self initGrassSpritesWithData:data];
         [self initFenceWithData:data];
-        
-        //add UI
-        [self addChild:_label];
     }
     return self;
 }

@@ -29,7 +29,8 @@
     
     if (!data)
     {
-        [_delegate tryNextServer];
+        _condition = [self generateRandomCondition];
+        [_delegate newWeatherCondition:_condition];
         return;
     }
     
@@ -37,27 +38,44 @@
 
     if (! dataArray)
     {
-        [_delegate tryNextServer];
+        _condition = [self generateRandomCondition];
+        [_delegate newWeatherCondition:_condition];
         return;
     }
     
-    NSArray *weather = [dataArray objectForKey:@"weather"];
+    NSString *weather = [dataArray objectForKey:@"weather"];
     
     if (!weather)
     {
-        [_delegate tryNextServer];
+        _condition = [self generateRandomCondition];
+        [_delegate newWeatherCondition:_condition];
         return;
     }
-        
-    NSDictionary *weatherInfo = [weather objectAtIndex:0];
-    
-    if (!weatherInfo)
-    {
-        [_delegate tryNextServer];
-        return;
-    }
-    _condition = [weatherInfo objectForKey:@"main"];
+
+    _condition = weather;
     
     [_delegate newWeatherCondition:_condition];
 }
+
+- (NSString*) generateRandomCondition
+{
+    NSString* c;
+    
+    int rnd = rand()%3;
+    
+    switch (rnd)
+    {
+        case 1:
+            c = @"SuddenRain";
+            break;
+        case 2:
+            c = @"SuddenClear";
+            break;
+        default:
+            c = @"SuddenSnow";
+            break;
+    }
+    return c;
+}
+
 @end

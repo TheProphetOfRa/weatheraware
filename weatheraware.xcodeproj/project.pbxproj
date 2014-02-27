@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F24641518BF9C510024CE51 /* MetricManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F24641418BF9C510024CE51 /* MetricManager.m */; };
 		5F295ADD18B5023800507043 /* BattleUILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F295ADC18B5023800507043 /* BattleUILayer.m */; };
 		5F3AB18518BC00E2008CEF23 /* CreatureStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AB18418BC00E2008CEF23 /* CreatureStats.m */; };
 		5F3AB18818BC02F1008CEF23 /* ui-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18618BC02F1008CEF23 /* ui-ipadhd.plist */; };
@@ -282,6 +283,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F24641318BF9C510024CE51 /* MetricManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricManager.h; sourceTree = "<group>"; };
+		5F24641418BF9C510024CE51 /* MetricManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricManager.m; sourceTree = "<group>"; };
 		5F295ADB18B5023800507043 /* BattleUILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleUILayer.h; sourceTree = "<group>"; };
 		5F295ADC18B5023800507043 /* BattleUILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleUILayer.m; sourceTree = "<group>"; };
 		5F3AB18318BC00E2008CEF23 /* CreatureStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureStats.h; sourceTree = "<group>"; };
@@ -1795,6 +1798,8 @@
 				5F905AAF18987D9A00FBE122 /* LocationManager.m */,
 				5F905AB018987D9A00FBE122 /* WeatherController.h */,
 				5F905AB118987D9A00FBE122 /* WeatherController.m */,
+				5F24641318BF9C510024CE51 /* MetricManager.h */,
+				5F24641418BF9C510024CE51 /* MetricManager.m */,
 			);
 			name = controller;
 			path = Classes/controller;
@@ -2087,6 +2092,7 @@
 				5F66FCBF1898715A00869EA4 /* CCPhysicsJoint.m in Sources */,
 				5F66FC9D1898715A00869EA4 /* CCMotionStreak.m in Sources */,
 				5F66FC4D1898715A00869EA4 /* CCActionInstant.m in Sources */,
+				5F24641518BF9C510024CE51 /* MetricManager.m in Sources */,
 				5F66FD471898715B00869EA4 /* base64.c in Sources */,
 				5F66FD861898715B00869EA4 /* OALAudioTrack.m in Sources */,
 				5FC85F5E18B6731700454656 /* AnimatedObject.m in Sources */,

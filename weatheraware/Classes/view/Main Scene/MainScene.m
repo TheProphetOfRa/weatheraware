@@ -201,8 +201,7 @@
     _lastKnownLocation = location;
     
     //create query string
-    //NSString *query = [NSString stringWithFormat:@"http://mruniverse.theprophetofra.com/~theprophetofra/forward/weather?lat=%f&lon=%f", location.location.coordinate.latitude, location.location.coordinate.longitude];
-    NSString *query = [NSString stringWithFormat:@"http://www.paperweightsolutions.co.uk/DavidHodgkinson/weather?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
+    NSString *query = [NSString stringWithFormat:@"http://davidh.us-lot.org/cgi-bin/getweather.cgi?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
     
     //allocate a weather controller and hand it the query string
     WeatherController *controller = [[WeatherController alloc] initWithQuery:query];
@@ -221,7 +220,6 @@
 - (void) newWeatherCondition:(NSString*)condition
 {
     //print location
-    [[_background label] setString:condition];
     if ([condition isEqualToString:@"Rain"])
     {
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];
@@ -237,21 +235,35 @@
         _weather = [[WeatherLayer alloc] initWithCondition:eClouds];
         [self addChild:_weather z:2];
     }
+    else if ([condition isEqualToString:@"Clear"])
+    {
+        _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
+        [self addChild:_weather z:2];
+    }
+    else if ([condition isEqualToString:@"SuddenRain"])
+    {
+        [self createDialogWithTitle:@"Storm!" andString:@"A Tropical Storm has arrived!"];
+        _weather = [[WeatherLayer alloc] initWithCondition:eRain];
+        [self addChild:_weather z:2];
+    }
+    else if ([condition isEqualToString:@"SuddenSnow"])
+    {
+        [self createDialogWithTitle:@"Blizzard!" andString:@"A Blizzard has blown in!"];
+        _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
+        [self addChild:_weather z:2];
+    }
+    else if ([condition isEqualToString:@"SuddenClear"])
+    {
+        [self createDialogWithTitle:@"Heatwave!" andString:@"A Heatwave has occured"];
+        _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
+        [self addChild:_weather z:2];
+    }
 }
 
--(void) tryNextServer
+- (void) createDialogWithTitle:(NSString*) title andString:(NSString*) string
 {
-    //create query string
-    NSString *query = [NSString stringWithFormat:@"http://www.paperweightsolutions.co.uk/DavidHodgkinson/weather?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
-    
-    //allocate a weather controller and hand it the query string
-    WeatherController *controller = [[WeatherController alloc] initWithQuery:query];
-    
-    //give the weather controller something to call back to when the hrrp request completes
-    [controller setDelegate:self];
-    
-    //run the query
-    [controller runQuery];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 @end
