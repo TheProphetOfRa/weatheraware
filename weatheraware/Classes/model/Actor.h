@@ -8,6 +8,8 @@
 
 #import "cocos2d.h"
 
+#import "WeatherLayer.h"
+
 @class Object;
 
 @interface Actor : CCNode
@@ -24,10 +26,12 @@
     CGPoint _gridPos;
     
     bool moving;
+    
+    enum WeatherType _condition;
         
 }
 
-- (id) initWithFilename: (NSString*) filename;
+- (id) initWithFilename: (NSString*) filename andWeatherCondition:(enum WeatherType) cond;
 - (void) moveInDirection: (enum Direction) dir;
 
 @property (readonly) CGPoint gridPos;

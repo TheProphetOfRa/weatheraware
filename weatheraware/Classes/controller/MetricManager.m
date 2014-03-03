@@ -10,44 +10,58 @@
 
 @implementation MetricManager
 
+static MetricManager* _sharedManager = nil;
+
++ (MetricManager*) sharedManager
+{
+    if (_sharedManager == nil)
+    {
+        _sharedManager = [[MetricManager alloc] init];
+    }
+    return _sharedManager;
+}
+
+- (id) init
+{
+    if (self = [super init])
+    {
+        [self pullData];
+    }
+    return self;
+}
+
 - (void) sendData
 {
-    NSString* post = [self formatData];
-    
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString* postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"davidh.us-lot.org/cgi-bin/savejson.cgi?"]]];
+    NSString *url = [NSString stringWithFormat:@"http://davidh.us-lot.org/cgi-bin/savejson.cgi?%@", [self formatData]];
     
-    [request setHTTPMethod:@"POST"];
+    [request setURL:[NSURL URLWithString:url]];
     
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPMethod:@"GET"];
     
-    [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"text/plain" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"text/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"text/json" forHTTPHeaderField:@"Accept"];
     
-    [request setHTTPBody:postData];
+    NSLog(@"%@", [request URL]);
     
-    NSURLConnection* conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    if (conn)
-    {
-        printf("Success");
-    }
+    NSURLConnection* conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
+    [conn scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    [conn start];
+
 }
 
 - (NSString*) formatData
 {
     NSString* data;
-    NSString*filename = [NSString stringWithFormat:@"%@.json", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
-
+    NSString* encodedData;
+    NSString* filename = [NSString stringWithFormat:@"%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
     
-    data = [NSString stringWithFormat:@"filename=%@&jsonstring={\"UUID\":%@, \"metrics\":\"%@\"}",filename ,[[[UIDevice currentDevice] identifierForVendor] UUIDString], _metrics];
+    data = [NSString stringWithFormat:@"filename=%@&jsonstring={\"UUID\":\"%@\", \"metrics\":\"%@\"}",filename ,filename, _metrics];
     
-    return data;
+    encodedData = [data stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    
+    return encodedData;
 }
 
 - (void) pullData
@@ -55,19 +69,53 @@
     NSData* data;
     NSError* error;
     
-    data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@""]];
+    data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"davidh.us-lot.org/cgi-bin/loadjson.cgi"]];
     
-    _metrics = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    if (data == nil)
+    {
+        _metrics = [[NSMutableDictionary alloc] init];
+        printf("First time");
+        return;
+    }
+    
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    
+    if (json == nil)
+    {
+        return;
+    }
+    
+    if (![[[json objectForKey:@"UUID"] stringValue] isEqualToString:[[[UIDevice currentDevice] identifierForVendor] UUIDString]])
+    {
+        printf("Wrong UUID");
+        return;
+    }
+    
+    _metrics = [json objectForKey:@"metrics"];
+    
+    if (_metrics == nil)
+    {
+        _metrics = [[NSMutableDictionary alloc] init];
+    }
 }
 
 - (void) updateValue:(id)value forKey:(NSString *)key
 {
-    
+    [_metrics setValue:value forKey:key];
 }
 
 - (id) getCurrentValueForKey:(NSString*) key
 {
     return [_metrics valueForKey:key];
+}
+
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"\nError: %@\n", error);
+    NSLog(@"Error Code: %d\n", error.code);
+    NSLog(@"Error Type: %@\n", error.domain);
+    NSLog(@"Error Help: %@\n", error.localizedRecoveryOptions);
+    NSLog(@"Error Reason: %@\n", error.localizedFailureReason);
 }
 
 @end

@@ -33,4 +33,6 @@ enum WeatherType
 
 - (id) initWithCondition:(enum WeatherType) condition;
 
+@property (readonly) enum WeatherType currentCondition;
+
 @end

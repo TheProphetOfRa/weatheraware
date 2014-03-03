@@ -17,21 +17,18 @@
 
 @implementation BattleScene
 
-+ (BattleScene *) scene {
-    return [[self alloc] init];
++ (BattleScene *) sceneWithWeatherCondition:(enum WeatherType) condition {
+    return [[self alloc] initWithWeatherCondition:condition];
 }
 
-- (id) init {
+- (id) initWithWeatherCondition:(enum WeatherType) condition {
     
     if (self = [super init])
     {
         _ui = [[BattleUILayer alloc] init];
         [self addChild:_ui z:1];
         
-        _sprite = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Test256x128.png"]];
-        [_sprite setAnchorPoint:ccp(0,0)];
-        [_sprite setPosition:ccp(0, 0)];
-        [self addChild:_sprite z:0];
+        _condition = condition;
         
         [self initEnemy];
         
@@ -41,7 +38,21 @@
 
 - (void) initEnemy
 {
-    _creature = [[Creature alloc] initWithType:eDragon];
+    switch ((int)_condition)
+    {
+        case eRain:
+            _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eDuck] : [[Creature alloc] initWithType:eCrab];
+            break;
+        case eSnow:
+            _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eBear] : [[Creature alloc] initWithType:ePenguin];
+            break;
+        case eSunny:
+            _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eDragon] : [[Creature alloc] initWithType:eTurtle];
+            break;
+        case eClouds:
+            _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eFox] : [[Creature alloc] initWithType:eBird];
+            break;
+    }
 }
 
 - (void) attemptCapture

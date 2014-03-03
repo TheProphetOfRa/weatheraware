@@ -62,8 +62,8 @@
     _fightEffect = [[data objectForKey:@"fighteffect"] integerValue];
     _foodEffect = [[data objectForKey:@"foodeffect"] integerValue];
     _baseCapRate = [[data objectForKey:@"caprate"] integerValue];
-    _filename = [[data objectForKey:@"filename"] stringValue];
-    _creatureName = [[data objectForKey:@"creaturename"] stringValue];
+    _filename = [data objectForKey:@"filename"];
+    _creatureName = [data objectForKey:@"creaturename"];
     
     _health = _maxHealth;
     

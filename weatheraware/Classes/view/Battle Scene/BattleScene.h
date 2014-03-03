@@ -9,6 +9,7 @@
 #import "CCScene.h"
 
 #import "BattleUILayer.h"
+#import "WeatherLayer.h"
 
 @class Creature;
 @class CCSprite;
@@ -18,10 +19,10 @@
     Creature      *_creature;
 
     BattleUILayer *_ui;
-    
-    CCSprite *_sprite;
+        
+    enum WeatherType *_condition;
 }
 
-+ (BattleScene*) scene;
++ (BattleScene*) sceneWithWeatherCondition:(enum WeatherType) condition;
 
 @end

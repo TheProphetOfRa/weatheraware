@@ -9,6 +9,7 @@
 #import "UILayer.h"
 
 #import "AssetHandler.h"
+#import "MetricManager.h"
 
 #import "CCButton.h"
 #import "CCDirector.h"
@@ -36,33 +37,22 @@
     
     button = [CCButton buttonWithTitle:@"Creature List" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
     
-    [button setTarget:self selector:@selector(buttonPressed)];
+    [button setTarget:self selector:@selector(checkProgress)];
     
     [_menuContainer addChild:button];
     
-    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    button = [CCButton buttonWithTitle:@"Save" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
     
-    [button setTarget:self selector:@selector(buttonPressed)];
-    
-    [_menuContainer addChild:button];
-    
-    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
-    
-    [button setTarget:self selector:@selector(buttonPressed)];
+    [button setTarget:self selector:@selector(saveGame)];
     
     [_menuContainer addChild:button];
     
-    button = [CCButton buttonWithTitle:@"Button" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    button = [CCButton buttonWithTitle:@"Credits" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
     
-    [button setTarget:self selector:@selector(buttonPressed)];
+    [button setTarget:self selector:@selector(credits)];
     
     [_menuContainer addChild:button];
     
-}
-
-- (void) buttonPressed
-{
-    printf("Button");
 }
 
 - (void) toggleMenu
@@ -80,6 +70,21 @@
     {
         [_menu setVisible:false];
     }
+}
+
+- (void) saveGame
+{
+    [[MetricManager sharedManager] sendData];
+}
+
+- (void) checkProgress
+{
+    printf("Check progress");
+}
+
+- (void) credits
+{
+    printf("Credits");
 }
 
 @end

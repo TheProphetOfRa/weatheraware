@@ -18,10 +18,12 @@
 
 static const int kEncounterChance = 25;
 
-- (id) initWithFilename: (NSString*) filename
+- (id) initWithFilename: (NSString*) filename andWeatherCondition:(enum WeatherType) cond
 {
     if (self = [super init])
     {
+        
+        _condition = cond;
         
         srand(time(NULL));
         
@@ -122,7 +124,7 @@ static const int kEncounterChance = 25;
     {
         printf("Encounter\n");
         //[[CCDirector sharedDirector] pushScene:[BattleScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
-        [[CCDirector sharedDirector] pushScene:[BattleScene scene]];
+        [[CCDirector sharedDirector] pushScene:[BattleScene sceneWithWeatherCondition:_condition]];
     }
     
 }

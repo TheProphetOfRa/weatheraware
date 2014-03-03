@@ -83,7 +83,7 @@
 - (void) initPlayer
 {
     //Create actor and add it to middle of scene
-    _player = [[Actor alloc] initWithFilename:@"Character128.png"];
+    _player = [[Actor alloc] initWithFilename:@"Character128.png" andWeatherCondition:[_weather currentCondition]];
 
     [self addChild:_player z:1];
 }
@@ -131,7 +131,8 @@
 
 -(void)update:(CCTime)delta
 {
-    if (_currentTouch != nil) {
+    if (_currentTouch != nil)
+    {
         [self movePlayer];
     }
 }

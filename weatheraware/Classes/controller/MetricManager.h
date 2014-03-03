@@ -10,11 +10,12 @@
 
 @interface MetricManager : NSObject <NSURLConnectionDelegate>
 {
-    NSDictionary    *_metrics;
+    NSMutableDictionary    *_metrics;
 }
 
++ (MetricManager*) sharedManager;
+
 - (void) sendData;
-- (void) pullData;
 
 - (void) updateValue:(id) value forKey:(NSString*) key;
 - (id) getCurrentValueForKey:(NSString*) key;
