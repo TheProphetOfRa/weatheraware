@@ -9,6 +9,7 @@
 #import "CreatureTracker.h"
 
 #import "JsonLoader.h"
+#import "MetricManager.h"
 
 @implementation CreatureTracker
 
@@ -49,6 +50,7 @@ static CreatureTracker *_sharedTracker = nil;
 
 - (void) addCreature:(NSString*) creatureName
 {
+    [[MetricManager sharedManager] capturedCreature:creatureName];
     [_capturedCreatures setValue:[NSNumber numberWithBool:YES] forKey:creatureName];
 }
 

@@ -40,6 +40,9 @@
     //Movement
     UITouch *_currentTouch;
     
+    //Time tracking
+    int _sessionStart;
+    
 }
 
 +(MainScene*) scene;

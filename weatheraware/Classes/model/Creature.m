@@ -10,6 +10,7 @@
 
 #import "JsonLoader.h"
 #import "AnimatedObject.h"
+#import "MetricManager.h"
 
 @implementation Creature
 
@@ -66,6 +67,8 @@
     _creatureName = [data objectForKey:@"creaturename"];
     
     _health = _maxHealth;
+    
+    [[MetricManager sharedManager] sawCreature:_creatureName];
     
 }
 

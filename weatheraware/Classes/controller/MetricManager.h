@@ -17,7 +17,9 @@
 
 - (void) sendData;
 
+- (void) capturedCreature:(NSString*) creatureName;
+- (void) sawCreature:(NSString*) creatureName;
 - (void) updateValue:(id) value forKey:(NSString*) key;
-- (id) getCurrentValueForKey:(NSString*) key;
+- (void) addWeatherCondition:(NSString*) weather;
 
 @end

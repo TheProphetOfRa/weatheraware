@@ -25,7 +25,7 @@ static MetricManager* _sharedManager = nil;
 {
     if (self = [super init])
     {
-        [self pullData];
+        _metrics = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -42,9 +42,7 @@ static MetricManager* _sharedManager = nil;
     
     [request setValue:@"text/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"text/json" forHTTPHeaderField:@"Accept"];
-    
-    NSLog(@"%@", [request URL]);
-    
+        
     NSURLConnection* conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
     [conn scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [conn start];
@@ -55,58 +53,65 @@ static MetricManager* _sharedManager = nil;
 {
     NSString* data;
     NSString* encodedData;
-    NSString* filename = [NSString stringWithFormat:@"%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+    NSString* userID = [NSString stringWithFormat:@"%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+    NSError* error;
     
-    data = [NSString stringWithFormat:@"filename=%@&jsonstring={\"UUID\":\"%@\", \"metrics\":\"%@\"}",filename ,filename, _metrics];
+    NSData* jsonData = [NSJSONSerialization JSONObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:_metrics] options:NSJSONWritingPrettyPrinted error:&error];
+    
+    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    data = [NSString stringWithFormat:@"user=%@&jsonstring={\"UUID\":\"%@\", \"metrics\":\"%@\"}",userID ,userID, jsonString];
     
     encodedData = [data stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     
     return encodedData;
 }
 
-- (void) pullData
+- (void) capturedCreature:(NSString *)creatureName
 {
-    NSData* data;
-    NSError* error;
-    
-    data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"davidh.us-lot.org/cgi-bin/loadjson.cgi"]];
-    
-    if (data == nil)
+    NSMutableArray *creaturesSeen = [_metrics objectForKey:@"captured"];
+    if (creaturesSeen == nil)
     {
-        _metrics = [[NSMutableDictionary alloc] init];
-        printf("First time");
-        return;
+        creaturesSeen = [[NSMutableArray alloc] initWithObjects:creatureName, nil];
     }
-    
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-    
-    if (json == nil)
+    else
     {
-        return;
+        [creaturesSeen addObject:creatureName];
     }
-    
-    if (![[[json objectForKey:@"UUID"] stringValue] isEqualToString:[[[UIDevice currentDevice] identifierForVendor] UUIDString]])
+    [_metrics setObject:creaturesSeen forKey:@"captured"];
+}
+
+- (void) sawCreature:(NSString *)creatureName
+{
+    NSMutableArray *creaturesSeen = [_metrics objectForKey:@"creaturesSeen"];
+    if (creaturesSeen == nil)
     {
-        printf("Wrong UUID");
-        return;
+        creaturesSeen = [[NSMutableArray alloc] initWithObjects:creatureName, nil];
     }
-    
-    _metrics = [json objectForKey:@"metrics"];
-    
-    if (_metrics == nil)
+    else
     {
-        _metrics = [[NSMutableDictionary alloc] init];
+        [creaturesSeen addObject:creatureName];
     }
+    [_metrics setObject:creaturesSeen forKey:@"creaturesSeen"];
 }
 
 - (void) updateValue:(id)value forKey:(NSString *)key
 {
-    [_metrics setValue:value forKey:key];
+    [_metrics setObject:value forKey:key];
 }
 
-- (id) getCurrentValueForKey:(NSString*) key
+- (void) addWeatherCondition: (NSString *) weather
 {
-    return [_metrics valueForKey:key];
+    NSMutableArray *creaturesSeen = [_metrics objectForKey:@"weather"];
+    if (creaturesSeen == nil)
+    {
+        creaturesSeen = [[NSMutableArray alloc] initWithObjects:weather, nil];
+    }
+    else
+    {
+        [creaturesSeen addObject:weather];
+    }
+    [_metrics setObject:creaturesSeen forKey:@"weather"];
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

@@ -40,13 +40,7 @@
     [button setTarget:self selector:@selector(checkProgress)];
     
     [_menuContainer addChild:button];
-    
-    button = [CCButton buttonWithTitle:@"Save" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
-    
-    [button setTarget:self selector:@selector(saveGame)];
-    
-    [_menuContainer addChild:button];
-    
+        
     button = [CCButton buttonWithTitle:@"Credits" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
     
     [button setTarget:self selector:@selector(credits)];
@@ -70,11 +64,6 @@
     {
         [_menu setVisible:false];
     }
-}
-
-- (void) saveGame
-{
-    [[MetricManager sharedManager] sendData];
 }
 
 - (void) checkProgress

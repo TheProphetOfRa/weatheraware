@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "IntroScene.h"
 #import "MainScene.h"
+#import "MetricManager.h"
 
 @implementation AppDelegate
 
@@ -44,6 +45,14 @@
 	}];
     
 	return YES;
+}
+
+- (void) applicationDidEnterBackground:(UIApplication *)application
+{
+    int endTime = (int)time(NULL);
+    [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:endTime] forKey:@"sessionend"];
+    [[MetricManager sharedManager] sendData];
+    [super applicationDidEnterBackground:application];
 }
 
 -(CCScene *)startScene

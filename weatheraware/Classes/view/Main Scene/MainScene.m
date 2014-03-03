@@ -15,6 +15,7 @@
 #import "Grid.h"
 #import "JsonLoader.h"
 #import "LongGrass.h"
+#import "MetricManager.h"
 #import "Object.h"
 #import "WeatherLayer.h"
 #import "UILayer.h"
@@ -46,6 +47,9 @@
         {
             levelData = [JsonLoader loadJsonFromFile:@"mainscene-iphone.json"];
         }
+        
+        _sessionStart = (int)time(NULL);
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:_sessionStart] forKey:@"sessionstart"];
         
         [self initBackgroundFromData:levelData];
         
@@ -131,6 +135,12 @@
 
 -(void)update:(CCTime)delta
 {
+    
+    if ((int)time(NULL) > (_sessionStart + 900))
+    {
+        [_locationManager startUpdates];
+    }
+    
     if (_currentTouch != nil)
     {
         [self movePlayer];
@@ -220,7 +230,6 @@
 
 - (void) newWeatherCondition:(NSString*)condition
 {
-    //print location
     if ([condition isEqualToString:@"Rain"])
     {
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];
@@ -259,6 +268,7 @@
         _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
         [self addChild:_weather z:2];
     }
+    [[MetricManager sharedManager] addWeatherCondition:condition];
 }
 
 - (void) createDialogWithTitle:(NSString*) title andString:(NSString*) string
