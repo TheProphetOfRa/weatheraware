@@ -12,6 +12,8 @@
 #import "Creature.h"
 #import "CreatureTracker.h"
 
+#import "CCActionInstant.h"
+#import "CCActionInterval.h"
 #import "CCDirector.h"
 #import "CCSprite.h"
 
@@ -60,11 +62,22 @@
     if ([_creature tryCapture])
     {
         [[CreatureTracker sharedTracker] addCreature:[_creature creatureName]];
+        [self runAction:[CCActionSequence actions:[CCActionCallFunc actionWithTarget:self selector:@selector(displayCaptureLabel)], [CCActionDelay actionWithDuration:1.0f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
     }
     else
     {
         [_ui printLabelWithString:@"Capture failed try again!"];
     }
+}
+
+- (void) displayCaptureLabel
+{
+    [_ui printLabelWithString:@"Capture Successful"];
+}
+
+- (void) transition
+{
+    [[CCDirector sharedDirector] popScene];
 }
 
 #pragma mark -
