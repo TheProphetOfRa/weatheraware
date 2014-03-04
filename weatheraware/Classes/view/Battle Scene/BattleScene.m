@@ -55,6 +55,7 @@
             _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eFox] : [[Creature alloc] initWithType:eBird];
             break;
     }
+    [self addChild:_creature z:0];
 }
 
 - (void) attemptCapture

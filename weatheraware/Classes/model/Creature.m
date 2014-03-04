@@ -74,7 +74,7 @@
 
 - (void) initSprite
 {
-    _tile = [[AnimatedObject alloc] initWithTextureName:_filename andType:eActor];
+    _tile = [[AnimatedObject alloc] initWithTextureName:@"Test256x128.png"/*_filename*/ andType:eActor];
     [self addChild:_tile];
 }
 

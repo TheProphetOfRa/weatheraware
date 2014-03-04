@@ -20,7 +20,7 @@
 
 @implementation BattleUILayer
 
-static const int kRunChance = 450;
+static const int kRunChance = 45;
 
 - (id) init
 {
@@ -59,10 +59,10 @@ static const int kRunChance = 450;
     [_captureButton setTarget:self selector:@selector(captureButtonPressed)];
     [_runButton setTarget:self selector:@selector(runButtonPressed)];
     
-    [self addChild:_fightButton];
-    [self addChild:_feedButton];
-    [self addChild:_captureButton];
-    [self addChild:_runButton];
+    [self addChild:_fightButton z:3];
+    [self addChild:_feedButton z:3];
+    [self addChild:_captureButton z:3];
+    [self addChild:_runButton z:3];
     
 }
 
@@ -70,15 +70,14 @@ static const int kRunChance = 450;
 {
     _frame = [[CreatureStats alloc] init];
     [_frame setPosition:ccp(0, [self contentSize].height - ([_frame contentSize].height/4))];
-    [self addChild:_frame];
+    [self addChild:_frame z:2];
 }
 
 - (void) initLabel
 {
-    _infoLabel = [[CCLabelBMFont alloc] initWithString:@"Label" fntFile:@"FontNormal.fnt" width:[self contentSize].width/3 alignment:CCTextAlignmentCenter];
+    _infoLabel = [CCLabelBMFont labelWithString:@"" fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"] width:256.0f alignment:CCTextAlignmentCenter];
     [_infoLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height/2)];
-    [_infoLabel setOpacity:0.0f];
-    [self addChild:_infoLabel];
+    [self addChild:_infoLabel z:5];
 }
 
 #pragma mark -

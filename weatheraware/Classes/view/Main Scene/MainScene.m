@@ -95,7 +95,7 @@
 -(void) initMenu
 {
     _ui = [[UILayer alloc] init];
-    [self addChild:_ui];
+    [self addChild:_ui z:2];
 }
 
 - (void) initMisc
