@@ -43,6 +43,8 @@ enum ButtonType
     id              _delegate;
 }
 
+- (id) initWithCreatureName:(NSString*) name;
+
 - (void) printLabelWithString:(NSString*) string;
 
 @property (readonly) CreatureStats *frame;

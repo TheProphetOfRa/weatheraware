@@ -8,7 +8,7 @@
 
 #import "CCNode.h"
 
-enum CreatureType
+typedef enum
 {
     eDragon,
     eTurtle,
@@ -18,15 +18,15 @@ enum CreatureType
     eFox,
     ePenguin,
     eBird
-};
+}CreatureType;
 
-@class AnimatedObject;
+@class Object;
 
 @interface Creature : CCNode
 {
-    enum CreatureType    *_type;
+    CreatureType         _type;
     
-    AnimatedObject       *_tile;
+    Object               *_tile;
     
     NSString             *_filename;
     
@@ -41,13 +41,13 @@ enum CreatureType
     
 }
 
-- (id) initWithType: (enum CreatureType) type;
+- (id) initWithType: (CreatureType) type;
 
 - (void) fight;
 - (void) feed;
 - (BOOL) tryCapture;
 
-@property (readonly) AnimatedObject *tile;
+@property (readonly) Object *tile;
 @property (readonly) NSString *creatureName;
 
 @end

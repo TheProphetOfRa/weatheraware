@@ -19,28 +19,25 @@
 
 @implementation BattleScene
 
-+ (BattleScene *) sceneWithWeatherCondition:(enum WeatherType) condition {
++ (BattleScene *) sceneWithWeatherCondition:(WeatherType) condition {
     return [[self alloc] initWithWeatherCondition:condition];
 }
 
-- (id) initWithWeatherCondition:(enum WeatherType) condition {
+- (id) initWithWeatherCondition:(WeatherType) condition {
     
     if (self = [super init])
     {
-        _ui = [[BattleUILayer alloc] init];
-        [self addChild:_ui z:1];
-        
         _condition = condition;
-        
         [self initEnemy];
-        
+        _ui = [[BattleUILayer alloc] initWithCreatureName:[_creature creatureName]];
+        [self addChild:_ui z:1];
     }
     return self;
 }
 
 - (void) initEnemy
 {
-    switch ((int)_condition)
+    switch (_condition)
     {
         case eRain:
             _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eDuck] : [[Creature alloc] initWithType:eCrab];
@@ -55,6 +52,7 @@
             _creature = (rand()%6 < 2) ? [[Creature alloc] initWithType:eFox] : [[Creature alloc] initWithType:eBird];
             break;
     }
+    [_creature setPosition:ccp([self contentSize].width - [_creature contentSize].width, [self contentSize].height - [_creature contentSize].height)];
     [self addChild:_creature z:0];
 }
 

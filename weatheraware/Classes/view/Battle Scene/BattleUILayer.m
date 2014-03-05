@@ -22,14 +22,14 @@
 
 static const int kRunChance = 45;
 
-- (id) init
+- (id) initWithCreatureName:(NSString *)name
 {
     if (self = [super init])
     {
         [self setContentSize:[[CCDirector sharedDirector] viewSize]];
         [self initMenu];
         [self initLabel];
-        [self initCreatureStats];
+        [self initCreatureStatsWithName:name];
     }
     return self;
 }
@@ -66,10 +66,10 @@ static const int kRunChance = 45;
     
 }
 
-- (void) initCreatureStats
+- (void) initCreatureStatsWithName:(NSString*) name
 {
-    _frame = [[CreatureStats alloc] init];
-    [_frame setPosition:ccp(0, [self contentSize].height - ([_frame contentSize].height/4))];
+    _frame = [[CreatureStats alloc] initWithCreatureName:name];
+    [_frame setPosition:ccp(0, [self contentSize].height - [_frame contentSize].height/2)];
     [self addChild:_frame z:2];
 }
 

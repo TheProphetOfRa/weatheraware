@@ -200,7 +200,9 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Test256x128.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Fire_Dragon.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Grass_Turtle.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Flying_Bird.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

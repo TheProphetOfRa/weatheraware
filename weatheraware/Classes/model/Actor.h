@@ -12,6 +12,14 @@
 
 @class Object;
 
+@protocol EncounterDelegate
+@required
+/**
+ @brief Triggers a creature encounter
+ */
+- (void) triggerEncounter;
+@end
+
 @interface Actor : CCNode
 {
     enum Direction : int{
@@ -27,11 +35,13 @@
     
     bool moving;
     
-    enum WeatherType _condition;
-        
+    WeatherType _condition;
+    
+    
+    id _delegate;
 }
 
-- (id) initWithFilename: (NSString*) filename andWeatherCondition:(enum WeatherType) cond;
+- (id) initWithFilename: (NSString*) filename andDelegate:(id) delegate;
 - (void) moveInDirection: (enum Direction) dir;
 
 @property (readonly) CGPoint gridPos;

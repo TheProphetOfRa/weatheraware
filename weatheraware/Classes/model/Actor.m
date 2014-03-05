@@ -7,7 +7,6 @@
 //
 
 #import "Actor.h"
-#import "BattleScene.h"
 #import "CCActionInterval.h"
 #import "CCAction.h"
 #import "CCDirector.h"
@@ -18,14 +17,13 @@
 
 static const int kEncounterChance = 25;
 
-- (id) initWithFilename: (NSString*) filename andWeatherCondition:(enum WeatherType) cond
+- (id) initWithFilename: (NSString*) filename andDelegate:(id)delegate
 {
     if (self = [super init])
     {
-        
-        _condition = cond;
-        
         srand(time(NULL));
+     
+        _delegate = delegate;
         
         _tile = [[Object alloc] initWithTextureName:filename andType:eActor];
         [_tile setPosition:ccp(0, 0)];
@@ -122,9 +120,8 @@ static const int kEncounterChance = 25;
     if ([[[Grid sharedGrid] getObjectAtGridPos:_gridPos] type] == eGrass &&
         rand()%100 <= kEncounterChance)
     {
-        printf("Encounter\n");
         //[[CCDirector sharedDirector] pushScene:[BattleScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
-        [[CCDirector sharedDirector] pushScene:[BattleScene sceneWithWeatherCondition:_condition]];
+        [_delegate triggerEncounter];
     }
     
 }

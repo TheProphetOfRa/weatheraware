@@ -20,9 +20,9 @@
 
     BattleUILayer *_ui;
         
-    enum WeatherType *_condition;
+    WeatherType _condition;
 }
 
-+ (BattleScene*) sceneWithWeatherCondition:(enum WeatherType) condition;
++ (BattleScene*) sceneWithWeatherCondition:(WeatherType) condition;
 
 @end

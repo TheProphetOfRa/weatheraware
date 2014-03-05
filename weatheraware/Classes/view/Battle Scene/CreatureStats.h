@@ -8,6 +8,7 @@
 
 #import "CCNode.h"
 
+#import "CCLabelBMFont.h"
 #import "CCSprite.h"
 #import "CCSprite9Slice.h"
 
@@ -15,8 +16,10 @@
 {
     CCSprite        *_background;
     CCSprite9Slice  *_healthBar;
+    CCLabelBMFont   *_nameLabel;
 }
 
+- (id) initWithCreatureName:(NSString*) name;
 - (void) reduceHealthBy:(int) percentage;
 
 @end

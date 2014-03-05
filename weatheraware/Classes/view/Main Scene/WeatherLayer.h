@@ -8,17 +8,17 @@
 
 #import "CCNode.h"
 
-enum WeatherType
+typedef enum
 {
     eRain,
     eClouds,
     eSnow,
     eSunny
-};
+}WeatherType;
 
 @interface WeatherLayer : CCNode
 {
-    enum WeatherType    _currentCondition;
+    WeatherType    _currentCondition;
     
     NSMutableArray      *_weatherSprites;
     NSMutableArray      *_parralaxSprites;
@@ -31,8 +31,8 @@ enum WeatherType
     
 }
 
-- (id) initWithCondition:(enum WeatherType) condition;
+- (id) initWithCondition:(WeatherType) condition;
 
-@property (readonly) enum WeatherType currentCondition;
+@property (readonly) WeatherType currentCondition;
 
 @end

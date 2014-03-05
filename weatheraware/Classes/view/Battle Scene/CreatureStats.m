@@ -10,9 +10,11 @@
 
 #import "AssetHandler.h"
 
+#import "CCFileUtils.h"
+
 @implementation CreatureStats
 
-- (id) init
+- (id) initWithCreatureName:(NSString*) name
 {
     if (self = [super init])
     {
@@ -20,6 +22,12 @@
         [_background setPosition:ccp(_background.contentSize.width/2, 0)];
         [self addChild:_background];
         //_healthBar = [CCSprite9Slice spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"healthBar.png"]];;
+        [self setContentSize:[_background contentSize]];
+        
+        _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"]];
+        [_nameLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height - [_nameLabel contentSize].height * 1.25)];
+        [self addChild:_nameLabel];
+        
     }
     return self;
 }

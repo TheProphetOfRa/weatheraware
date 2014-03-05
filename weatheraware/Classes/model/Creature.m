@@ -9,12 +9,12 @@
 #import "Creature.h"
 
 #import "JsonLoader.h"
-#import "AnimatedObject.h"
+#import "Object.h"
 #import "MetricManager.h"
 
 @implementation Creature
 
-- (id) initWithType:(enum CreatureType)type
+- (id) initWithType:(CreatureType)type
 {    
     if (self = [super init])
     {
@@ -29,7 +29,7 @@
 {
     NSDictionary *data;
     
-    switch ((int)_type)
+    switch (_type)
     {
         case eDragon:
             data = [JsonLoader loadJsonFromFile:@"dragon.json"];
@@ -74,8 +74,9 @@
 
 - (void) initSprite
 {
-    _tile = [[AnimatedObject alloc] initWithTextureName:@"Test256x128.png"/*_filename*/ andType:eActor];
+    _tile = [[Object alloc] initWithTextureName:_filename andType:eActor];
     [self addChild:_tile];
+    [self setContentSize:[_tile contentSize]];
 }
 
 - (void) fight

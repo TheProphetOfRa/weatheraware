@@ -4,18 +4,44 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Test256x128.png</key>
+            <key>Mon_Fire_Dragon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{1024,512}}</string>
+                <string>{{1372,2},{1026,582}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-3,21}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{1024,512}}</string>
+                <string>{{108,24},{1026,582}}</string>
                 <key>sourceSize</key>
-                <string>{1024,512}</string>
+                <string>{1248,672}</string>
+            </dict>
+            <key>Mon_Flying_Bird.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{1368,784}}</string>
+                <key>offset</key>
+                <string>{-4,32}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{144,24},{1368,784}}</string>
+                <key>sourceSize</key>
+                <string>{1664,896}</string>
+            </dict>
+            <key>Mon_Grass_Turtle.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1030},{684,396}}</string>
+                <key>offset</key>
+                <string>{-2,18}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{72,8},{684,396}}</string>
+                <key>sourceSize</key>
+                <string>{832,448}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -25,9 +51,9 @@
             <key>realTextureFileName</key>
             <string>creatures-ipadhd.png</string>
             <key>size</key>
-            <string>{1024,2048}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a511c34e78aa1be12e87845301f852f3:cf74537ee7655889b886eaa1a35c44ec:b067bf843fe1b6a405b18de5c3bb1653$</string>
+            <string>$TexturePacker:SmartUpdate:2d3a4b019a7402d60b4283b391488090:0103cd65ef3bacea720aa7001c8f15fc:b067bf843fe1b6a405b18de5c3bb1653$</string>
             <key>textureFileName</key>
             <string>creatures-ipadhd.png</string>
         </dict>

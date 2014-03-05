@@ -17,7 +17,7 @@
 
 const static int kMoveTag = 2352387;
 
-- (id) initWithCondition:(enum WeatherType) condition
+- (id) initWithCondition:(WeatherType) condition
 {
     if (self = [super init])
     {

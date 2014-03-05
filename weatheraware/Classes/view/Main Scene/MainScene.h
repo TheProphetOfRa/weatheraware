@@ -8,16 +8,16 @@
 
 #import "CCScene.h"
 
+#import "Actor.h"
 #import "LocationManager.h"
 #import "WeatherController.h"
 
-@class Actor;
 @class BackgroundLayer;
 @class GrassLayer;
 @class WeatherLayer;
 @class UILayer;
 
-@interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate>
+@interface MainScene : CCScene <LocationGetterDelegate,WeatherControllerDelegate, EncounterDelegate>
 {
     //location information
     LocationGetter  *_locationManager;
@@ -30,6 +30,9 @@
     
     //Player
     Actor           *_player;
+    
+    //Current weather condition
+    WeatherType        *_condition;
     
     //Corners of the screen
     CGPoint _a;

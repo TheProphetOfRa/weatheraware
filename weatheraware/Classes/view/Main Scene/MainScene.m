@@ -8,8 +8,8 @@
 
 #import "MainScene.h"
 
-#import "Actor.h"
 #import "BackgroundLayer.h"
+#import "BattleScene.h"
 #import "DeviceInformation.h"
 #import "GrassLayer.h"
 #import "Grid.h"
@@ -87,7 +87,7 @@
 - (void) initPlayer
 {
     //Create actor and add it to middle of scene
-    _player = [[Actor alloc] initWithFilename:@"Character128.png" andWeatherCondition:[_weather currentCondition]];
+    _player = [[Actor alloc] initWithFilename:@"Character128.png" andDelegate:self];
 
     [self addChild:_player z:1];
 }
@@ -234,41 +234,56 @@
     {
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];
         [self addChild:_weather z:2];
+        _condition = eRain;
     }
     else if ([condition isEqualToString:@"Snow"])
     {
         _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
         [self addChild:_weather z:2];
+        _condition = eSnow;
     }
     else if ([condition isEqualToString:@"Clouds"])
     {
         _weather = [[WeatherLayer alloc] initWithCondition:eClouds];
         [self addChild:_weather z:2];
+        _condition = eClouds;
     }
     else if ([condition isEqualToString:@"Clear"])
     {
         _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
         [self addChild:_weather z:2];
+        _condition = eSunny;
     }
     else if ([condition isEqualToString:@"SuddenRain"])
     {
         [self createDialogWithTitle:@"Storm!" andString:@"A Tropical Storm has arrived!"];
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];
         [self addChild:_weather z:2];
+        _condition = eRain;
     }
     else if ([condition isEqualToString:@"SuddenSnow"])
     {
         [self createDialogWithTitle:@"Blizzard!" andString:@"A Blizzard has blown in!"];
         _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
         [self addChild:_weather z:2];
+        _condition = eSnow;
     }
     else if ([condition isEqualToString:@"SuddenClear"])
     {
         [self createDialogWithTitle:@"Heatwave!" andString:@"A Heatwave has occured"];
         _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
         [self addChild:_weather z:2];
+        _condition = eSunny;
     }
     [[MetricManager sharedManager] addWeatherCondition:condition];
+}
+
+#pragma mark -
+#pragma mark EncounterDelegate
+
+- (void) triggerEncounter
+{
+    [[CCDirector sharedDirector] pushScene:[BattleScene sceneWithWeatherCondition:_condition]];
 }
 
 - (void) createDialogWithTitle:(NSString*) title andString:(NSString*) string
