@@ -25,16 +25,20 @@
         //_healthBar = [CCSprite9Slice spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"healthBar.png"]];;
         [self setContentSize:[_background contentSize]];
         
+        float labelOffset;
+        
         if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
         {
             _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"]];
+            labelOffset = 1.25f;
         }
         else
         {
-            _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font16.fnt"]];   
+            _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font12.fnt"]];
+            labelOffset = 1.75f;
         }
         [_nameLabel setColor:[CCColor colorWithUIColor:[UIColor blackColor]]];
-        [_nameLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height - [_nameLabel contentSize].height * 1.25)];
+        [_nameLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height - [_nameLabel contentSize].height * labelOffset)];
         [self addChild:_nameLabel];
         
     }

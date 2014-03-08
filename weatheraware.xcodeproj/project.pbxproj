@@ -14,6 +14,12 @@
 		5F3AB18918BC02F1008CEF23 /* ui-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */; };
 		5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18A18BC038E008CEF23 /* ui-hd.plist */; };
 		5F3AB18D18BC038E008CEF23 /* ui-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18B18BC038E008CEF23 /* ui-hd.png */; };
+		5F542B9518CBC613002D7CEA /* Font8.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9318CBC613002D7CEA /* Font8.fnt */; };
+		5F542B9618CBC613002D7CEA /* Font8.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9418CBC613002D7CEA /* Font8.png */; };
+		5F542B9918CBC7C8002D7CEA /* Font10.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9718CBC7C8002D7CEA /* Font10.fnt */; };
+		5F542B9A18CBC7C8002D7CEA /* Font10.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9818CBC7C8002D7CEA /* Font10.png */; };
+		5F542BA118CBCE89002D7CEA /* Font12.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9F18CBCE89002D7CEA /* Font12.fnt */; };
+		5F542BA218CBCE89002D7CEA /* Font12.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F542BA018CBCE89002D7CEA /* Font12.png */; };
 		5F586B8118AD3E1A00F1F201 /* BattleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8018AD3E1A00F1F201 /* BattleScene.m */; };
 		5F586B8718AD580400F1F201 /* LongGrass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F586B8618AD580400F1F201 /* LongGrass.m */; };
 		5F66FBFE1898715A00869EA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F66FBFD1898715A00869EA4 /* QuartzCore.framework */; };
@@ -300,6 +306,12 @@
 		5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-ipadhd.png"; sourceTree = "<group>"; };
 		5F3AB18A18BC038E008CEF23 /* ui-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui-hd.plist"; sourceTree = "<group>"; };
 		5F3AB18B18BC038E008CEF23 /* ui-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-hd.png"; sourceTree = "<group>"; };
+		5F542B9318CBC613002D7CEA /* Font8.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Font8.fnt; sourceTree = "<group>"; };
+		5F542B9418CBC613002D7CEA /* Font8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Font8.png; sourceTree = "<group>"; };
+		5F542B9718CBC7C8002D7CEA /* Font10.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Font10.fnt; sourceTree = "<group>"; };
+		5F542B9818CBC7C8002D7CEA /* Font10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Font10.png; sourceTree = "<group>"; };
+		5F542B9F18CBCE89002D7CEA /* Font12.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Font12.fnt; sourceTree = "<group>"; };
+		5F542BA018CBCE89002D7CEA /* Font12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Font12.png; sourceTree = "<group>"; };
 		5F586B7F18AD3E1A00F1F201 /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
 		5F586B8018AD3E1A00F1F201 /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
 		5F586B8518AD580400F1F201 /* LongGrass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongGrass.h; sourceTree = "<group>"; };
@@ -1915,10 +1927,16 @@
 		5FFA6D8118C689CC00A2F3DB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5F542B9718CBC7C8002D7CEA /* Font10.fnt */,
+				5F542B9818CBC7C8002D7CEA /* Font10.png */,
+				5F542B9F18CBCE89002D7CEA /* Font12.fnt */,
+				5F542BA018CBCE89002D7CEA /* Font12.png */,
 				5FD2017818CB7563006C75CD /* Font16.fnt */,
 				5FD2017918CB7563006C75CD /* Font16.png */,
 				5FFA6D8218C689CC00A2F3DB /* Font32.fnt */,
 				5FFA6D8318C689CC00A2F3DB /* Font32.png */,
+				5F542B9318CBC613002D7CEA /* Font8.fnt */,
+				5F542B9418CBC613002D7CEA /* Font8.png */,
 			);
 			name = Fonts;
 			path = Resources/Fonts;
@@ -2009,6 +2027,7 @@
 				5F66FC211898715A00869EA4 /* Icon.png in Resources */,
 				5FC8580D18B52D5800F3BEE4 /* character-ipadhd.png in Resources */,
 				5FD2017A18CB7563006C75CD /* Font16.fnt in Resources */,
+				5F542B9A18CBC7C8002D7CEA /* Font10.png in Resources */,
 				5FC8580518B52D4C00F3BEE4 /* character-hd.png in Resources */,
 				5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */,
 				5F66FC2F1898715A00869EA4 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
@@ -2026,12 +2045,15 @@
 				5FC8581518B52D6200F3BEE4 /* character.png in Resources */,
 				5FD1EE0418BEB08700A4D411 /* crab.json in Resources */,
 				5FC8580C18B52D5800F3BEE4 /* character-ipadhd.plist in Resources */,
+				5F542BA118CBCE89002D7CEA /* Font12.fnt in Resources */,
 				5FC8580418B52D4C00F3BEE4 /* character-hd.plist in Resources */,
+				5F542BA218CBCE89002D7CEA /* Font12.png in Resources */,
 				5F66FD731898715B00869EA4 /* LICENSE_cocos2d.txt in Resources */,
 				5FD2018018CB7B09006C75CD /* capturedcreatures.json in Resources */,
 				5FC8580E18B52D5800F3BEE4 /* environment-ipadhd.plist in Resources */,
 				5FC8581618B52D6200F3BEE4 /* environment.plist in Resources */,
 				5F3AB18818BC02F1008CEF23 /* ui-ipadhd.plist in Resources */,
+				5F542B9518CBC613002D7CEA /* Font8.fnt in Resources */,
 				5F66FC1C1898715A00869EA4 /* Default-568h@2x.png in Resources */,
 				5FD2017B18CB7563006C75CD /* Font16.png in Resources */,
 				5FE53E2F18B27DB30014B15F /* mainscene-ipad.json in Resources */,
@@ -2043,6 +2065,7 @@
 				5FC8580F18B52D5800F3BEE4 /* environment-ipadhd.png in Resources */,
 				5FD1EE0518BEB08700A4D411 /* dragon.json in Resources */,
 				5FC8580718B52D4C00F3BEE4 /* environment-hd.png in Resources */,
+				5F542B9918CBC7C8002D7CEA /* Font10.fnt in Resources */,
 				5F66FED71898728700869EA4 /* Default-Landscape~ipad@2x.png in Resources */,
 				5F66FC2B1898715A00869EA4 /* Icon-76@2x.png in Resources */,
 				5F66FE9F1898715C00869EA4 /* LICENSE_Chipmunk.txt in Resources */,
@@ -2052,6 +2075,7 @@
 				5F66FC291898715A00869EA4 /* Icon-76.png in Resources */,
 				5FD1EE0318BEB08700A4D411 /* bird.json in Resources */,
 				5FD1EE0218BEB08700A4D411 /* bear.json in Resources */,
+				5F542B9618CBC613002D7CEA /* Font8.png in Resources */,
 				5FF3234D18B6BF3900906456 /* creatures.plist in Resources */,
 				5F66FDFF1898715C00869EA4 /* ChangeLog in Resources */,
 				5F66FC3E1898715A00869EA4 /* iTunesArtwork@2x in Resources */,

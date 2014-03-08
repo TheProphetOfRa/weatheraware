@@ -9,15 +9,12 @@
 #import "CCNode.h"
 
 #import "CCLabelBMFont.h"
-#import "CCScrollView.h"
-
+ 
 #import "CCLayoutBox.h"
 
 @interface UILayer : CCNode
 {    
     bool _menuOpen;
-    
-    CCScrollView *_menu;
     
     CCLayoutBox *_menuContainer;
     
@@ -26,5 +23,7 @@
 - (id) init;
 
 - (void) toggleMenu;
+
+@property (readonly) bool menuOpen;
 
 @end

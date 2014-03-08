@@ -47,7 +47,7 @@
     }
     else
     {
-        fontName = @"Font16.fnt";
+        fontName = @"Font10.fnt";
     }
 
     CCLabelBMFont *label;
@@ -77,11 +77,17 @@
     label = [CCLabelBMFont labelWithString:@"Credits" fntFile:fontName];
     [container addChild:label];
     
+    label = [CCLabelBMFont labelWithString:@"" fntFile:fontName];
+    [container addChild:label];
+    
     [container layout];
     
-    CCScrollView* scrollView = [[CCScrollView alloc] initWithContentNode:container];
-    [scrollView setHorizontalScrollEnabled:NO];
-    [self addChild:scrollView];
+//    CCScrollView* scrollView = [[CCScrollView alloc] initWithContentNode:container];
+//    [scrollView setHorizontalScrollEnabled:NO];
+//    [scrollView setPosition:ccp([self contentSize].width/2,[scrollView position].y)];
+    [container setAnchorPoint:ccp(0.5, 1)];
+    [container setPosition:ccp([self contentSize].width/2, [self contentSize].height)];
+    [self addChild:container];
 }
 
 - (void) end

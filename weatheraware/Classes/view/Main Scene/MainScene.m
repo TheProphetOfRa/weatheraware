@@ -141,6 +141,11 @@
         [_locationManager startUpdates];
     }
     
+    if ([_ui menuOpen] == true)
+    {
+        _currentTouch = nil;
+    }
+    
     if (_currentTouch != nil)
     {
         [self movePlayer];

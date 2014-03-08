@@ -11,6 +11,7 @@
 #import "AssetHandler.h"
 #import "CreditsScene.h"
 #import "CustomButton.h"
+#import "DeviceInformation.h"
 #import "MetricManager.h"
 
 #import "CCDirector.h"
@@ -24,9 +25,10 @@
         [self setContentSize:[[CCDirector sharedDirector] viewSize]];
         _menuContainer = [[CCLayoutBox alloc] init];
         [_menuContainer setDirection:CCLayoutBoxDirectionVertical];
-        _menu = [[CCScrollView alloc] initWithContentNode:_menuContainer];
-        [_menu setVisible:false];
-        [self addChild:_menu];
+        [_menuContainer setVisible:false];
+        [_menuContainer setAnchorPoint:ccp(1,1)];
+        [_menuContainer setPosition:ccp([self contentSize].width, [self contentSize].height)];
+        [self addChild:_menuContainer];
         [self initMenu];
     }
     return self;
@@ -36,18 +38,34 @@
 {
     CustomButton *button;
     
-    button = [CustomButton buttonWithTitle:@"Creature List" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:@"Font16.fnt"];
+    NSString* fontName;
     
-    [button setTarget:self selector:@selector(checkProgress)];
+    if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
+    {
+        fontName = @"Font32.fnt";
+    }
+    else
+    {
+        fontName = @"Font10.fnt";
+    }
+    
+    button = [CustomButton buttonWithTitle:@"Back" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:fontName];
+    
+    [button setTarget:self selector:@selector(toggleMenu)];
     
     [_menuContainer addChild:button];
-        
-    button = [CustomButton buttonWithTitle:@"Credits" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:@"Font16.fnt"];
+    
+    button = [CustomButton buttonWithTitle:@"Credits" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:fontName];
     
     [button setTarget:self selector:@selector(credits)];
     
     [_menuContainer addChild:button];
     
+    button = [CustomButton buttonWithTitle:@"Creature List" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:fontName];
+    
+    [button setTarget:self selector:@selector(checkProgress)];
+    
+    [_menuContainer addChild:button];
 }
 
 - (void) toggleMenu
@@ -57,13 +75,13 @@
 
 - (void) update:(CCTime)delta
 {
-    if (_menuOpen && ![_menu visible])
+    if (_menuOpen && ![_menuContainer visible])
     {
-        [_menu setVisible:true];
+        [_menuContainer setVisible:true];
     }
-    else if (!_menuOpen && [_menu visible])
+    else if (!_menuOpen && [_menuContainer visible])
     {
-        [_menu setVisible:false];
+        [_menuContainer setVisible:false];
     }
 }
 
