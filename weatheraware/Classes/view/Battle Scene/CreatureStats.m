@@ -9,6 +9,7 @@
 #import "CreatureStats.h"
 
 #import "AssetHandler.h"
+#import "DeviceInformation.h"
 
 #import "CCFileUtils.h"
 
@@ -24,7 +25,14 @@
         //_healthBar = [CCSprite9Slice spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"healthBar.png"]];;
         [self setContentSize:[_background contentSize]];
         
-        _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"]];
+        if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
+        {
+            _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"]];
+        }
+        else
+        {
+            _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font16.fnt"]];   
+        }
         [_nameLabel setColor:[CCColor colorWithUIColor:[UIColor blackColor]]];
         [_nameLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height - [_nameLabel contentSize].height * 1.25)];
         [self addChild:_nameLabel];

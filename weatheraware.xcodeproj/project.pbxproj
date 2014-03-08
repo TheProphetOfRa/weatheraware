@@ -261,6 +261,7 @@
 		5FD2017B18CB7563006C75CD /* Font16.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2017918CB7563006C75CD /* Font16.png */; };
 		5FD2017E18CB7795006C75CD /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2017D18CB7795006C75CD /* CustomButton.m */; };
 		5FD2018018CB7B09006C75CD /* capturedcreatures.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FD2017F18CB7B09006C75CD /* capturedcreatures.json */; };
+		5FD2018418CB7E64006C75CD /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2018318CB7E64006C75CD /* CreditsScene.m */; };
 		5FE1E86418BD10E000D1C9BC /* CreatureTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1E86318BD10E000D1C9BC /* CreatureTracker.m */; };
 		5FE26D9C189943680058FA0A /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE26D9B189943680058FA0A /* Object.m */; };
 		5FE53E2018B26C270014B15F /* JsonLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE53E1F18B26C270014B15F /* JsonLoader.m */; };
@@ -784,6 +785,8 @@
 		5FD2017C18CB7795006C75CD /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		5FD2017D18CB7795006C75CD /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		5FD2017F18CB7B09006C75CD /* capturedcreatures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = capturedcreatures.json; path = weatheraware/Resources/Info/capturedcreatures.json; sourceTree = SOURCE_ROOT; };
+		5FD2018218CB7E64006C75CD /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
+		5FD2018318CB7E64006C75CD /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
 		5FE1E86218BD10E000D1C9BC /* CreatureTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureTracker.h; sourceTree = "<group>"; };
 		5FE1E86318BD10E000D1C9BC /* CreatureTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureTracker.m; sourceTree = "<group>"; };
 		5FE26D9A189943680058FA0A /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
@@ -1828,6 +1831,8 @@
 				5FC85F5D18B6731700454656 /* AnimatedObject.m */,
 				5F67B8A118B1253B00C77D9E /* Creature.h */,
 				5F67B8A218B1253B00C77D9E /* Creature.m */,
+				5FD2017C18CB7795006C75CD /* CustomButton.h */,
+				5FD2017D18CB7795006C75CD /* CustomButton.m */,
 				5F85874718B40C9900403B12 /* Fence.h */,
 				5F85874818B40C9900403B12 /* Fence.m */,
 				5F85874118B3F7CF00403B12 /* Grid.h */,
@@ -1838,8 +1843,6 @@
 				5FE26D9B189943680058FA0A /* Object.m */,
 				5F85874418B40C8D00403B12 /* Tree.h */,
 				5F85874518B40C8D00403B12 /* Tree.m */,
-				5FD2017C18CB7795006C75CD /* CustomButton.h */,
-				5FD2017D18CB7795006C75CD /* CustomButton.m */,
 			);
 			name = model;
 			path = Classes/model;
@@ -1848,6 +1851,7 @@
 		5F905AB318987D9A00FBE122 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5FD2018118CB7E55006C75CD /* Credits */,
 				5F586B7E18AD3E0900F1F201 /* Battle Scene */,
 				5F905AB418987D9A00FBE122 /* Intro Scene */,
 				5F905AB718987D9A00FBE122 /* Main Scene */,
@@ -1878,6 +1882,15 @@
 				5FC857FE18B528A100F3BEE4 /* WeatherLayer.m */,
 			);
 			path = "Main Scene";
+			sourceTree = "<group>";
+		};
+		5FD2018118CB7E55006C75CD /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2018218CB7E64006C75CD /* CreditsScene.h */,
+				5FD2018318CB7E64006C75CD /* CreditsScene.m */,
+			);
+			path = Credits;
 			sourceTree = "<group>";
 		};
 		5FE53E2118B270260014B15F /* Info */ = {
@@ -2142,6 +2155,7 @@
 				5F66FC811898715A00869EA4 /* CCGLProgram.m in Sources */,
 				5F586B8718AD580400F1F201 /* LongGrass.m in Sources */,
 				5F66FEA31898715C00869EA4 /* main.m in Sources */,
+				5FD2018418CB7E64006C75CD /* CreditsScene.m in Sources */,
 				5F66FDB61898715B00869EA4 /* OALAudioSession.m in Sources */,
 				5F66FE2D1898715C00869EA4 /* CCBLocalizationManager.m in Sources */,
 				5F66FD191898715B00869EA4 /* CCTiledMapObjectGroup.m in Sources */,

@@ -9,9 +9,10 @@
 #import "UILayer.h"
 
 #import "AssetHandler.h"
+#import "CreditsScene.h"
+#import "CustomButton.h"
 #import "MetricManager.h"
 
-#import "CCButton.h"
 #import "CCDirector.h"
 
 @implementation UILayer
@@ -33,15 +34,15 @@
 
 - (void) initMenu
 {
-    CCButton *button;
+    CustomButton *button;
     
-    button = [CCButton buttonWithTitle:@"Creature List" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    button = [CustomButton buttonWithTitle:@"Creature List" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:@"Font16.fnt"];
     
     [button setTarget:self selector:@selector(checkProgress)];
     
     [_menuContainer addChild:button];
         
-    button = [CCButton buttonWithTitle:@"Credits" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"]];
+    button = [CustomButton buttonWithTitle:@"Credits" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:@"Font16.fnt"];
     
     [button setTarget:self selector:@selector(credits)];
     
@@ -73,7 +74,7 @@
 
 - (void) credits
 {
-    printf("Credits");
+    [[CCDirector sharedDirector] pushScene:[CreditsScene scene]];
 }
 
 @end

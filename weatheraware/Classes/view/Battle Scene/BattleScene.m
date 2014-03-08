@@ -88,6 +88,11 @@
     {
         case eFight:
             [_creature fight];
+            if ([_creature interest] <= 0)
+            {
+                [_ui printLabelWithString:@"The creature fled!"];
+                [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
+            }
             break;
         case eFeed:
             [_creature feed];

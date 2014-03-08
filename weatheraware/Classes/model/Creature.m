@@ -82,6 +82,7 @@
 - (void) fight
 {
     _interest -= _fightEffect;
+    _health -= _fightEffect;
 }
 
 - (void) feed
