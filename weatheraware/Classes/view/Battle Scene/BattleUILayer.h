@@ -8,7 +8,7 @@
 
 #import "CCNode.h"
 
-@class CCButton;
+@class CustomButton;
 @class CCLabelBMFont;
 @class CreatureStats;
 
@@ -31,10 +31,10 @@ enum ButtonType
 
 @interface BattleUILayer : CCNode
 {
-    CCButton        *_fightButton;
-    CCButton        *_feedButton;
-    CCButton        *_captureButton;
-    CCButton        *_runButton;
+    CustomButton        *_fightButton;
+    CustomButton        *_feedButton;
+    CustomButton        *_captureButton;
+    CustomButton        *_runButton;
     
     CreatureStats   *_frame;
     
@@ -43,7 +43,7 @@ enum ButtonType
     id              _delegate;
 }
 
-- (id) initWithCreatureName:(NSString*) name;
+- (id) initWithCreatureName:(NSString*) name andButtonDelegate:(id) delegate;
 
 - (void) printLabelWithString:(NSString*) string;
 

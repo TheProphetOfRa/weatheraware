@@ -29,7 +29,7 @@
     {
         _condition = condition;
         [self initEnemy];
-        _ui = [[BattleUILayer alloc] initWithCreatureName:[_creature creatureName]];
+        _ui = [[BattleUILayer alloc] initWithCreatureName:[_creature creatureName] andButtonDelegate:self];
         [self addChild:_ui z:1];
     }
     return self;

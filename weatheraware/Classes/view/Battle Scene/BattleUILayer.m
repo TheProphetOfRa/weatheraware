@@ -10,10 +10,10 @@
 
 #import "AssetHandler.h"
 #import "CreatureStats.h"
+#import "CustomButton.h"
 
 #import "CCActionInstant.h"
 #import "CCActionInterval.h"
-#import "CCButton.h"
 #import "CCDirector.h"
 #import "CCLabelBMFont.h"
 #import "CCTransition.h"
@@ -22,10 +22,11 @@
 
 static const int kRunChance = 45;
 
-- (id) initWithCreatureName:(NSString *)name
+- (id) initWithCreatureName:(NSString *)name andButtonDelegate:(id) delegate
 {
     if (self = [super init])
     {
+        _delegate = delegate;
         [self setContentSize:[[CCDirector sharedDirector] viewSize]];
         [self initMenu];
         [self initLabel];
@@ -39,10 +40,10 @@ static const int kRunChance = 45;
 
 - (void) initMenu
 {
-    _fightButton = [CCButton buttonWithTitle:@"Fight" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];
-    _feedButton = [CCButton buttonWithTitle:@"Feed" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];;
-    _captureButton = [CCButton buttonWithTitle:@"Capture" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];;
-    _runButton = [CCButton buttonWithTitle:@"Run" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"]];
+    _fightButton = [CustomButton buttonWithTitle:@"Fight" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"] andFont:@"Font16.fnt"];
+    _feedButton = [CustomButton buttonWithTitle:@"Feed" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"] andFont:@"Font16.fnt"];;
+    _captureButton = [CustomButton buttonWithTitle:@"Capture" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"] andFont:@"Font16.fnt"];;
+    _runButton = [CustomButton buttonWithTitle:@"Run" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar1024x256.png"] andFont:@"Font16.fnt"];
     
     [_fightButton setAnchorPoint:ccp(0,0)];
     [_feedButton setAnchorPoint:ccp(0,0)];

@@ -25,6 +25,7 @@
         [self setContentSize:[_background contentSize]];
         
         _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"]];
+        [_nameLabel setColor:[CCColor colorWithUIColor:[UIColor blackColor]]];
         [_nameLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height - [_nameLabel contentSize].height * 1.25)];
         [self addChild:_nameLabel];
         

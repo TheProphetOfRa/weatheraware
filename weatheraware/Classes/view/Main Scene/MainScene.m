@@ -283,6 +283,7 @@
 
 - (void) triggerEncounter
 {
+    _currentTouch = nil;
     [[CCDirector sharedDirector] pushScene:[BattleScene sceneWithWeatherCondition:_condition]];
 }
 
