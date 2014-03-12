@@ -42,7 +42,7 @@
     
     if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
     {
-        fontName = @"Font32.fnt";
+        fontName = @"Font12.fnt";
     }
     else
     {

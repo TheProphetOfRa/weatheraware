@@ -8,6 +8,7 @@
 // -----------------------------------------------------------------------
 
 #import "AppDelegate.h"
+#import "CreatureTracker.h"
 #import "IntroScene.h"
 #import "MainScene.h"
 #import "MetricManager.h"
@@ -25,7 +26,7 @@
 	// If you want more flexibility, you can configure Cocos2D yourself instead of calling setupCocos2dWithOptions:.
 	[self setupCocos2dWithOptions:@{
 		// Show the FPS and draw call label.
-		CCSetupShowDebugStats: @(YES),
+		//CCSetupShowDebugStats: @(YES),
 		
 		// More examples of options you might want to fiddle with:
 		// (See CCAppDelegate.h for more information)
@@ -49,6 +50,7 @@
 
 - (void) applicationDidEnterBackground:(UIApplication *)application
 {
+    [[CreatureTracker sharedTracker] saveList];
     int endTime = (int)time(NULL);
     [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:endTime] forKey:@"sessionend"];
     [[MetricManager sharedManager] sendData];

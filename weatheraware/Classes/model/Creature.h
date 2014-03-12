@@ -35,6 +35,7 @@ typedef enum
     int                   _health;
     int                   _maxHealth;
     int                   _interest;
+    int                   _maxInterest;
     int                   _foodEffect;
     int                   _fightEffect;
     int                   _baseCapRate;

@@ -67,6 +67,7 @@
     _creatureName = [data objectForKey:@"creaturename"];
     
     _health = _maxHealth;
+    _maxInterest = _interest;
     
     [[MetricManager sharedManager] sawCreature:_creatureName];
     
@@ -88,6 +89,8 @@
 - (void) feed
 {
     _interest += _foodEffect;
+    if (_interest > _maxInterest)
+        _interest = _maxInterest;
 }
 
 - (BOOL) tryCapture

@@ -68,7 +68,12 @@
 
 - (void) reduceHealthBy:(float)percentage
 {
-    [_healthBar setScaleX:([_healthBar scaleX] - percentage)];
+    float newScale = [_healthBar scaleX] - percentage;
+    
+    if (newScale < 0)
+        newScale = 0;
+    
+    [_healthBar setScaleX:newScale];
 }
 
 @end

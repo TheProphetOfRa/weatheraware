@@ -8,6 +8,8 @@
 
 #import "CustomButton.h"
 
+#import "DeviceInformation.h"
+
 @implementation CustomButton
 
 + (id) buttonWithTitle:(NSString *)title spriteFrame:(CCSpriteFrame *)spriteFrame andFont:(NSString *)fntFile
@@ -21,7 +23,21 @@
     {
         _label = [CCLabelBMFont labelWithString:title fntFile:fntFile];
         [_label setAlignment:CCTextAlignmentCenter];
-        [_label setAnchorPoint:ccp(0.5, 0)];
+        if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
+        {
+            if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [UIScreen mainScreen].scale > 1)
+            {
+                [_label setAnchorPoint:ccp(0.5, 0)];
+            }
+            else
+            {
+                [_label setAnchorPoint:ccp(0.5, 0.5)];
+            }
+        }
+        else
+        {
+            [_label setAnchorPoint:ccp(0.5, 0)];
+        }
         [_label setPosition:ccp([self contentSize].width/2,[self contentSize].height/2)];
         [_label setColor:[CCColor colorWithWhite:0.0f alpha:255.0f]];
         [self addChild:_label];
