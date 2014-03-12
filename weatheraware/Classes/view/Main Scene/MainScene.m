@@ -230,6 +230,27 @@
 
 }
 
+- (void) noLocationAvailable
+{
+    NSString* c;
+    
+    int rnd = rand()%3;
+    
+    switch (rnd)
+    {
+        case 1:
+            c = @"SuddenRain";
+            break;
+        case 2:
+            c = @"SuddenClear";
+            break;
+        default:
+            c = @"SuddenSnow";
+        break;
+    }
+    [self newWeatherCondition:c];
+}
+
 #pragma mark - 
 #pragma mark WeatherControllerDelegateMethod
 

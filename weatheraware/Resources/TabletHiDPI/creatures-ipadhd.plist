@@ -7,7 +7,20 @@
             <key>Mon_Fire_Dragon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1372,2},{1026,582}}</string>
+                <string>{{2058,1030},{1026,582}}</string>
+                <key>offset</key>
+                <string>{-3,21}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{108,24},{1026,582}}</string>
+                <key>sourceSize</key>
+                <string>{1248,672}</string>
+            </dict>
+            <key>Mon_Fire_Fox.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1790,2},{1026,582}}</string>
                 <key>offset</key>
                 <string>{-3,21}</string>
                 <key>rotated</key>
@@ -20,28 +33,80 @@
             <key>Mon_Flying_Bird.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{1368,784}}</string>
+                <string>{{1200,2},{1026,588}}</string>
                 <key>offset</key>
-                <string>{-4,32}</string>
+                <string>{-3,24}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{144,24},{1368,784}}</string>
+                <string>{{108,18},{1026,588}}</string>
                 <key>sourceSize</key>
-                <string>{1664,896}</string>
+                <string>{1248,672}</string>
             </dict>
             <key>Mon_Grass_Turtle.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,1030},{684,396}}</string>
+                <string>{{604,2},{1026,594}}</string>
                 <key>offset</key>
-                <string>{-2,18}</string>
+                <string>{-3,27}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{72,8},{684,396}}</string>
+                <string>{{108,12},{1026,594}}</string>
                 <key>sourceSize</key>
-                <string>{832,448}</string>
+                <string>{1248,672}</string>
+            </dict>
+            <key>Mon_Snow_Bear.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{1026,600}}</string>
+                <key>offset</key>
+                <string>{-3,30}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,6},{1026,600}}</string>
+                <key>sourceSize</key>
+                <string>{1248,672}</string>
+            </dict>
+            <key>Mon_Snow_Penguin.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1030,1030},{1026,588}}</string>
+                <key>offset</key>
+                <string>{-3,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{108,18},{1026,588}}</string>
+                <key>sourceSize</key>
+                <string>{1248,672}</string>
+            </dict>
+            <key>Mon_Water_Crab.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2374,2},{1026,444}}</string>
+                <key>offset</key>
+                <string>{-3,-48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{108,162},{1026,444}}</string>
+                <key>sourceSize</key>
+                <string>{1248,672}</string>
+            </dict>
+            <key>Mon_Water_Duck.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1030},{1026,594}}</string>
+                <key>offset</key>
+                <string>{-3,27}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{108,12},{1026,594}}</string>
+                <key>sourceSize</key>
+                <string>{1248,672}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -51,9 +116,9 @@
             <key>realTextureFileName</key>
             <string>creatures-ipadhd.png</string>
             <key>size</key>
-            <string>{2048,2048}</string>
+            <string>{4096,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2d3a4b019a7402d60b4283b391488090:0103cd65ef3bacea720aa7001c8f15fc:b067bf843fe1b6a405b18de5c3bb1653$</string>
+            <string>$TexturePacker:SmartUpdate:553c0224892bf0be78fc14b6174d5e07:095a9aea1968f2faeb66470ff45bdb10:b067bf843fe1b6a405b18de5c3bb1653$</string>
             <key>textureFileName</key>
             <string>creatures-ipadhd.png</string>
         </dict>

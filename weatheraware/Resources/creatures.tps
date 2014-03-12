@@ -102,7 +102,7 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>4096</int>
             <key>height</key>
             <int>2048</int>
         </QSize>
@@ -203,6 +203,11 @@
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Fire_Dragon.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Grass_Turtle.png</filename>
             <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Flying_Bird.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Fire_Fox.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Snow_Bear.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Snow_Penguin.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Water_Crab.png</filename>
+            <filename>../../../../../Dropbox/Lavalanche/ProjectStarboard/DavidHonours/Mon_Water_Duck.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -16,6 +16,7 @@
  *@param location The new location
  */
 - (void) newPhysicalLocation:(CLPlacemark *)location;
+- (void) noLocationAvailable;
 @end
 
 @interface LocationGetter : NSObject <CLLocationManagerDelegate>

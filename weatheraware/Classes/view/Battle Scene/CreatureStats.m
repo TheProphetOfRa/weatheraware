@@ -30,7 +30,14 @@
         if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
         {
             _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font32.fnt"]];
-            labelOffset = 1.25f;
+            if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [UIScreen mainScreen].scale > 1)
+            {
+                labelOffset = 1.25f;
+            }
+            else
+            {
+                labelOffset = 1.5f;
+            }
         }
         else
         {

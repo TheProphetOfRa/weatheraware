@@ -57,7 +57,7 @@
             break;
             
     }
-    
+        
     _maxHealth = [[data objectForKey:@"maxhealth"] integerValue];
     _interest = [[data objectForKey:@"interest"] integerValue];
     _fightEffect = [[data objectForKey:@"fighteffect"] integerValue];

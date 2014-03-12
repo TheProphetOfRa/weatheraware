@@ -78,8 +78,7 @@ BOOL didUpdate = NO;
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alert show];
+            [_delegate noLocationAvailable];
         }
     }];
     

@@ -229,6 +229,14 @@
 		5F66FED81898728700869EA4 /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F66FED61898728700869EA4 /* Default~ipad.png */; };
 		5F67B8A318B1253B00C77D9E /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A218B1253B00C77D9E /* Creature.m */; };
 		5F67B8A918B166F100C77D9E /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F67B8A818B166F100C77D9E /* UILayer.m */; };
+		5F81557518D1039700464B33 /* character-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F81556D18D1039700464B33 /* character-ipad.plist */; };
+		5F81557618D1039700464B33 /* character-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F81556E18D1039700464B33 /* character-ipad.png */; };
+		5F81557718D1039700464B33 /* creatures-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F81556F18D1039700464B33 /* creatures-ipad.plist */; };
+		5F81557818D1039700464B33 /* creatures-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557018D1039700464B33 /* creatures-ipad.png */; };
+		5F81557918D1039700464B33 /* environment-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557118D1039700464B33 /* environment-ipad.plist */; };
+		5F81557A18D1039700464B33 /* environment-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557218D1039700464B33 /* environment-ipad.png */; };
+		5F81557B18D1039700464B33 /* ui-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557318D1039700464B33 /* ui-ipad.plist */; };
+		5F81557C18D1039700464B33 /* ui-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557418D1039700464B33 /* ui-ipad.png */; };
 		5F85874318B3F7CF00403B12 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874218B3F7CF00403B12 /* Grid.m */; };
 		5F85874618B40C8D00403B12 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874518B40C8D00403B12 /* Tree.m */; };
 		5F85874918B40C9900403B12 /* Fence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874818B40C9900403B12 /* Fence.m */; };
@@ -745,6 +753,14 @@
 		5F67B8A218B1253B00C77D9E /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Creature.m; sourceTree = "<group>"; };
 		5F67B8A718B166F100C77D9E /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
 		5F67B8A818B166F100C77D9E /* UILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILayer.m; sourceTree = "<group>"; };
+		5F81556D18D1039700464B33 /* character-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "character-ipad.plist"; sourceTree = "<group>"; };
+		5F81556E18D1039700464B33 /* character-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "character-ipad.png"; sourceTree = "<group>"; };
+		5F81556F18D1039700464B33 /* creatures-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "creatures-ipad.plist"; sourceTree = "<group>"; };
+		5F81557018D1039700464B33 /* creatures-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "creatures-ipad.png"; sourceTree = "<group>"; };
+		5F81557118D1039700464B33 /* environment-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "environment-ipad.plist"; sourceTree = "<group>"; };
+		5F81557218D1039700464B33 /* environment-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "environment-ipad.png"; sourceTree = "<group>"; };
+		5F81557318D1039700464B33 /* ui-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui-ipad.plist"; sourceTree = "<group>"; };
+		5F81557418D1039700464B33 /* ui-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-ipad.png"; sourceTree = "<group>"; };
 		5F85874118B3F7CF00403B12 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		5F85874218B3F7CF00403B12 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
 		5F85874418B40C8D00403B12 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
@@ -846,6 +862,14 @@
 		5F295AC118B4EADA00507043 /* TabletNormal */ = {
 			isa = PBXGroup;
 			children = (
+				5F81556D18D1039700464B33 /* character-ipad.plist */,
+				5F81556E18D1039700464B33 /* character-ipad.png */,
+				5F81556F18D1039700464B33 /* creatures-ipad.plist */,
+				5F81557018D1039700464B33 /* creatures-ipad.png */,
+				5F81557118D1039700464B33 /* environment-ipad.plist */,
+				5F81557218D1039700464B33 /* environment-ipad.png */,
+				5F81557318D1039700464B33 /* ui-ipad.plist */,
+				5F81557418D1039700464B33 /* ui-ipad.png */,
 			);
 			name = TabletNormal;
 			path = Resources/TabletNormal;
@@ -2012,6 +2036,7 @@
 			files = (
 				5F66FC1A1898715A00869EA4 /* Default@2x.png in Resources */,
 				5FFA6D8818C689CC00A2F3DB /* Font32.png in Resources */,
+				5F81557718D1039700464B33 /* creatures-ipad.plist in Resources */,
 				5F66FED81898728700869EA4 /* Default~ipad.png in Resources */,
 				5FF3235218B6BF4200906456 /* creatures-hd.png in Resources */,
 				5F66FC2D1898715A00869EA4 /* Icon-120.png in Resources */,
@@ -2029,12 +2054,15 @@
 				5FD2017A18CB7563006C75CD /* Font16.fnt in Resources */,
 				5F542B9A18CBC7C8002D7CEA /* Font10.png in Resources */,
 				5FC8580518B52D4C00F3BEE4 /* character-hd.png in Resources */,
+				5F81557818D1039700464B33 /* creatures-ipad.png in Resources */,
 				5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */,
 				5F66FC2F1898715A00869EA4 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				5FD1EE0A18BEB08700A4D411 /* penguin.json in Resources */,
 				5F66FED4189871E300869EA4 /* Default-Landscape@2x~ipad.png in Resources */,
 				5F66FC1E1898715A00869EA4 /* Default-Landscape~ipad.png in Resources */,
 				5F66FC331898715A00869EA4 /* Icon-Small.png in Resources */,
+				5F81557A18D1039700464B33 /* environment-ipad.png in Resources */,
+				5F81557918D1039700464B33 /* environment-ipad.plist in Resources */,
 				5FF3234918B6BF3100906456 /* creatures-ipadhd.plist in Resources */,
 				5F66FC311898715A00869EA4 /* Icon-Small-50.png in Resources */,
 				5FE53E3018B27DB30014B15F /* mainscene-iphone.json in Resources */,
@@ -2069,8 +2097,11 @@
 				5F66FED71898728700869EA4 /* Default-Landscape~ipad@2x.png in Resources */,
 				5F66FC2B1898715A00869EA4 /* Icon-76@2x.png in Resources */,
 				5F66FE9F1898715C00869EA4 /* LICENSE_Chipmunk.txt in Resources */,
+				5F81557C18D1039700464B33 /* ui-ipad.png in Resources */,
 				5F66FC391898715A00869EA4 /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				5F81557B18D1039700464B33 /* ui-ipad.plist in Resources */,
 				5FD1EE0618BEB08700A4D411 /* duck.json in Resources */,
+				5F81557618D1039700464B33 /* character-ipad.png in Resources */,
 				5FFA6D8718C689CC00A2F3DB /* Font32.fnt in Resources */,
 				5F66FC291898715A00869EA4 /* Icon-76.png in Resources */,
 				5FD1EE0318BEB08700A4D411 /* bird.json in Resources */,
@@ -2080,6 +2111,7 @@
 				5F66FDFF1898715C00869EA4 /* ChangeLog in Resources */,
 				5F66FC3E1898715A00869EA4 /* iTunesArtwork@2x in Resources */,
 				5F3AB18918BC02F1008CEF23 /* ui-ipadhd.png in Resources */,
+				5F81557518D1039700464B33 /* character-ipad.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
