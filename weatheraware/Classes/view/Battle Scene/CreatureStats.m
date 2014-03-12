@@ -22,13 +22,11 @@
         _background = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Container.png"]];
         [_background setPosition:ccp(_background.contentSize.width/2, 0)];
         [self addChild:_background];
-        _healthBar = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"HealthBar.png"]];
-        [_healthBar setPosition:ccp([_background position].x + 20 - [_healthBar contentSize].width/2, [_background position].y - 22)];
-        [_healthBar setAnchorPoint:ccp(0,0.5)];
-        [self addChild:_healthBar];
         [self setContentSize:[_background contentSize]];
         
         float labelOffset;
+        float barXOffset;
+        float barYOffset;
         
         if ([[DeviceInformation getDeviceType] isEqualToString:@"iPad"])
         {
@@ -41,12 +39,25 @@
             {
                 labelOffset = 1.5f;
             }
+            
+            barXOffset = 20;
+            barYOffset = 22;
+            
         }
         else
         {
             _nameLabel  = [CCLabelBMFont labelWithString:name fntFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:@"Font12.fnt"]];
             labelOffset = 1.75f;
+            
+            barXOffset = 10;
+            barYOffset = 11;
         }
+        
+        _healthBar = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"HealthBar.png"]];
+        [_healthBar setPosition:ccp([_background position].x + barXOffset - [_healthBar contentSize].width/2, [_background position].y - barYOffset)];
+        [_healthBar setAnchorPoint:ccp(0,0.5)];
+        [self addChild:_healthBar];
+        
         [_nameLabel setColor:[CCColor colorWithUIColor:[UIColor blackColor]]];
         [_nameLabel setPosition:ccp([self contentSize].width/2, [self contentSize].height - [_nameLabel contentSize].height * labelOffset)];
         [self addChild:_nameLabel];

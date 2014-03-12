@@ -50,6 +50,7 @@ typedef enum
 @property (readonly) Object *tile;
 @property (readonly) NSString *creatureName;
 @property (readonly) int interest;
+@property (readonly) int health;
 @property (readonly) int maxHealth;
 @property (readonly) int fightEffect;
 

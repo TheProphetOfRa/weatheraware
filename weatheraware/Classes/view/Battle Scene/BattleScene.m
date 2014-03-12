@@ -66,7 +66,15 @@
     }
     else
     {
-        [_ui printLabelWithString:@"Capture failed try again!"];
+        if (rand()%3 <= 1)
+        {
+            [_ui printLabelWithString:@"The creature fled!"];
+            [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
+        }
+        else
+        {
+            [_ui printLabelWithString:@"Capture failed try again!"];
+        }
     }
 }
 
@@ -94,6 +102,11 @@
             if ([_creature interest] <= 0)
             {
                 [_ui printLabelWithString:@"The creature fled!"];
+                [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
+            }
+            else if ([_creature health] <= 0)
+            {
+                [_ui printLabelWithString:@"The creature was incapacatated!"];
                 [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
             }
             break;
