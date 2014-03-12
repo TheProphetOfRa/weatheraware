@@ -19,10 +19,13 @@
 {
     if (self = [super init])
     {
-        _background = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"UITest.png"]];
+        _background = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Container.png"]];
         [_background setPosition:ccp(_background.contentSize.width/2, 0)];
         [self addChild:_background];
-        //_healthBar = [CCSprite9Slice spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"healthBar.png"]];;
+        _healthBar = [CCSprite spriteWithSpriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"HealthBar.png"]];
+        [_healthBar setPosition:ccp([_background position].x + 20 - [_healthBar contentSize].width/2, [_background position].y - 22)];
+        [_healthBar setAnchorPoint:ccp(0,0.5)];
+        [self addChild:_healthBar];
         [self setContentSize:[_background contentSize]];
         
         float labelOffset;
@@ -52,9 +55,9 @@
     return self;
 }
 
-- (void) reduceHealthBy:(int)percentage
+- (void) reduceHealthBy:(float)percentage
 {
-    
+    [_healthBar setScaleX:([_healthBar scaleX] - percentage)];
 }
 
 @end

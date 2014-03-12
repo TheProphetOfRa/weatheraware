@@ -57,12 +57,12 @@
             break;
             
     }
-        
-    _maxHealth = [[data objectForKey:@"maxhealth"] integerValue];
-    _interest = [[data objectForKey:@"interest"] integerValue];
-    _fightEffect = [[data objectForKey:@"fighteffect"] integerValue];
-    _foodEffect = [[data objectForKey:@"foodeffect"] integerValue];
-    _baseCapRate = [[data objectForKey:@"caprate"] integerValue];
+    
+    _maxHealth = (int)[[data objectForKey:@"maxhealth"] integerValue];
+    _interest = (int)[[data objectForKey:@"interest"] integerValue];
+    _fightEffect = (int)[[data objectForKey:@"fighteffect"] integerValue];
+    _foodEffect = (int)[[data objectForKey:@"foodeffect"] integerValue];
+    _baseCapRate = (int)[[data objectForKey:@"caprate"] integerValue];
     _filename = [data objectForKey:@"filename"];
     _creatureName = [data objectForKey:@"creaturename"];
     

@@ -21,7 +21,7 @@ static const int kEncounterChance = 25;
 {
     if (self = [super init])
     {
-        srand(time(NULL));
+        srand((int)time(NULL));
      
         _delegate = delegate;
         

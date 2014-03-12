@@ -38,8 +38,8 @@
     
     NSArray *map = [data objectForKey:@"map"];
     
-    [[Grid sharedGrid] setHeight:[map count]];
-    [[Grid sharedGrid] setWidth:[[map objectAtIndex:0] count]];
+    [[Grid sharedGrid] setHeight:(int)[map count]];
+    [[Grid sharedGrid] setWidth:(int)[[map objectAtIndex:0] count]];
     
     for (int i = 0 ; i < [map count] ; i++)
     {

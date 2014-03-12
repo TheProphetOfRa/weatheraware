@@ -117,7 +117,7 @@ static MetricManager* _sharedManager = nil;
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"\nError: %@\n", error);
-    NSLog(@"Error Code: %d\n", error.code);
+    NSLog(@"Error Code: %ld\n", (long)error.code);
     NSLog(@"Error Type: %@\n", error.domain);
     NSLog(@"Error Help: %@\n", error.localizedRecoveryOptions);
     NSLog(@"Error Reason: %@\n", error.localizedFailureReason);

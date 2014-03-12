@@ -10,16 +10,15 @@
 
 #import "CCLabelBMFont.h"
 #import "CCSprite.h"
-#import "CCSprite9Slice.h"
 
 @interface CreatureStats : CCNode
 {
     CCSprite        *_background;
-    CCSprite9Slice  *_healthBar;
+    CCSprite        *_healthBar;
     CCLabelBMFont   *_nameLabel;
 }
 
 - (id) initWithCreatureName:(NSString*) name;
-- (void) reduceHealthBy:(int) percentage;
+- (void) reduceHealthBy:(float) percentage;
 
 @end

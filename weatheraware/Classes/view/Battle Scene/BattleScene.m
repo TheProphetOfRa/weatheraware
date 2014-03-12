@@ -10,6 +10,7 @@
 
 #import "AssetHandler.h"
 #import "Creature.h"
+#import "CreatureStats.h"
 #import "CreatureTracker.h"
 
 #import "CCActionInstant.h"
@@ -88,6 +89,8 @@
     {
         case eFight:
             [_creature fight];
+            float percentage = (float)[_creature fightEffect]/(float)[_creature maxHealth];
+            [[_ui frame] reduceHealthBy:percentage];
             if ([_creature interest] <= 0)
             {
                 [_ui printLabelWithString:@"The creature fled!"];
