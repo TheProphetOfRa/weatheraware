@@ -48,19 +48,32 @@
 	return YES;
 }
 
+- (void) applicationDidBecomeActive:(UIApplication *)application
+{
+    int sessionStart = (int)time(NULL);
+    [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:sessionStart] forKey:@"sessionstart"];
+}
+
 - (void) applicationDidEnterBackground:(UIApplication *)application
 {
     [[CreatureTracker sharedTracker] saveList];
     int endTime = (int)time(NULL);
     [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:endTime] forKey:@"sessionend"];
-    [[MetricManager sharedManager] sendData];
+    [[MetricManager sharedManager] sendDataWithLat:[_scene lastKnownLocation].location.coordinate.latitude andLon:[_scene lastKnownLocation].location.coordinate.longitude];
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    notification.repeatInterval = NSDayCalendarUnit;
+    [notification setAlertBody:@"Come check out the weather today!"];
+    [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+    [notification setTimeZone:[NSTimeZone  defaultTimeZone]];
+    [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
     [super applicationDidEnterBackground:application];
 }
 
 -(CCScene *)startScene
 {
     // This method should return the very first scene to be run when your app starts.
-	return [MainScene scene];
+    _scene = [MainScene scene];
+	return _scene;
 }
 
 @end

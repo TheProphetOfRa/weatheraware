@@ -11,11 +11,12 @@
 @interface MetricManager : NSObject <NSURLConnectionDelegate>
 {
     NSMutableDictionary    *_metrics;
+    float _lat, _lon;
 }
 
 + (MetricManager*) sharedManager;
 
-- (void) sendData;
+- (void) sendDataWithLat:(float) lat andLon:(float) lon;
 
 - (void) capturedCreature:(NSString*) creatureName;
 - (void) sawCreature:(NSString*) creatureName;

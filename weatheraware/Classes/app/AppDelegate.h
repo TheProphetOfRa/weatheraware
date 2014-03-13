@@ -9,5 +9,10 @@
 
 #import "cocos2d.h"
 
+@class MainScene;
+
 @interface AppDelegate : CCAppDelegate
+{
+    MainScene *_scene;
+}
 @end

@@ -1860,16 +1860,16 @@
 				5F905AAD18987D9900FBE122 /* AssetHandler.m */,
 				5FE1E86218BD10E000D1C9BC /* CreatureTracker.h */,
 				5FE1E86318BD10E000D1C9BC /* CreatureTracker.m */,
+				5F4E20B218D1E91B00D07ACD /* FileHandler.h */,
+				5F4E20B318D1E91B00D07ACD /* FileHandler.m */,
 				5FE53E1E18B26C270014B15F /* JsonLoader.h */,
 				5FE53E1F18B26C270014B15F /* JsonLoader.m */,
 				5F905AAE18987D9A00FBE122 /* LocationManager.h */,
 				5F905AAF18987D9A00FBE122 /* LocationManager.m */,
-				5F905AB018987D9A00FBE122 /* WeatherController.h */,
-				5F905AB118987D9A00FBE122 /* WeatherController.m */,
 				5F24641318BF9C510024CE51 /* MetricManager.h */,
 				5F24641418BF9C510024CE51 /* MetricManager.m */,
-				5F4E20B218D1E91B00D07ACD /* FileHandler.h */,
-				5F4E20B318D1E91B00D07ACD /* FileHandler.m */,
+				5F905AB018987D9A00FBE122 /* WeatherController.h */,
+				5F905AB118987D9A00FBE122 /* WeatherController.m */,
 			);
 			name = controller;
 			path = Classes/controller;
@@ -2028,6 +2028,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "David Hodgkinson";
+				TargetAttributes = {
+					5F66FBF91898715A00869EA4 = {
+						DevelopmentTeam = B37Z5FGVR6;
+					};
+				};
 			};
 			buildConfigurationList = 5F66FBF51898715A00869EA4 /* Build configuration list for PBXProject "weatheraware" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2453,6 +2458,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2469,6 +2476,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2477,6 +2485,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weatheraware/Supporting Files/Prefix.pch";
@@ -2492,6 +2502,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

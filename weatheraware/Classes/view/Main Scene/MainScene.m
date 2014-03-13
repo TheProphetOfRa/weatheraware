@@ -48,9 +48,6 @@
             levelData = [JsonLoader loadJsonFromFile:@"mainscene-iphone.json"];
         }
         
-        _sessionStart = (int)time(NULL);
-        [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:_sessionStart] forKey:@"sessionstart"];
-        
         [self initBackgroundFromData:levelData];
         
         [self initPlayer];
@@ -218,7 +215,7 @@
     
     //create query string
     NSString *query = [NSString stringWithFormat:@"http://davidh.us-lot.org/cgi-bin/getweather.cgi?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
-    
+        
     //allocate a weather controller and hand it the query string
     WeatherController *controller = [[WeatherController alloc] initWithQuery:query];
     
@@ -258,30 +255,35 @@
 {
     if ([condition isEqualToString:@"Rain"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];
         [self addChild:_weather z:2];
         _condition = eRain;
     }
     else if ([condition isEqualToString:@"Snow"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
         _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
         [self addChild:_weather z:2];
         _condition = eSnow;
     }
     else if ([condition isEqualToString:@"Clouds"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
         _weather = [[WeatherLayer alloc] initWithCondition:eClouds];
         [self addChild:_weather z:2];
         _condition = eClouds;
     }
     else if ([condition isEqualToString:@"Clear"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
         _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
         [self addChild:_weather z:2];
         _condition = eSunny;
     }
     else if ([condition isEqualToString:@"SuddenRain"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:YES] forKey:@"Spoofed Data"];
         [self createDialogWithTitle:@"Storm!" andString:@"A Tropical Storm has arrived!"];
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];
         [self addChild:_weather z:2];
@@ -289,6 +291,7 @@
     }
     else if ([condition isEqualToString:@"SuddenSnow"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:YES] forKey:@"Spoofed Data"];
         [self createDialogWithTitle:@"Blizzard!" andString:@"A Blizzard has blown in!"];
         _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
         [self addChild:_weather z:2];
@@ -296,6 +299,7 @@
     }
     else if ([condition isEqualToString:@"SuddenClear"])
     {
+        [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:YES] forKey:@"Spoofed Data"];
         [self createDialogWithTitle:@"Heatwave!" andString:@"A Heatwave has occured"];
         _weather = [[WeatherLayer alloc] initWithCondition:eSunny];
         [self addChild:_weather z:2];

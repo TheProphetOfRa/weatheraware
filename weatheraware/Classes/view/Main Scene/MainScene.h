@@ -32,7 +32,7 @@
     Actor           *_player;
     
     //Current weather condition
-    WeatherType        *_condition;
+    WeatherType        _condition;
     
     //Corners of the screen
     CGPoint _a;
@@ -45,6 +45,9 @@
     
     //Time tracking
     int _sessionStart;
+    
+    float _lat;
+    float _lon;
     
 }
 

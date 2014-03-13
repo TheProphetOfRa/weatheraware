@@ -30,8 +30,12 @@ static MetricManager* _sharedManager = nil;
     return self;
 }
 
-- (void) sendData
+- (void) sendDataWithLat:(float) lat andLon:(float) lon
 {
+    
+    _lat = lat;
+    _lon = lon;
+    
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
     
     NSString *url = [NSString stringWithFormat:@"http://davidh.us-lot.org/cgi-bin/savejson.cgi?%@", [self formatData]];
@@ -56,11 +60,11 @@ static MetricManager* _sharedManager = nil;
     NSString* userID = [NSString stringWithFormat:@"%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
     NSError* error;
     
-    NSData* jsonData = [NSJSONSerialization JSONObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:_metrics] options:NSJSONWritingPrettyPrinted error:&error];
+    NSData* jsonData =[NSJSONSerialization dataWithJSONObject:_metrics options:nil error:&error];
     
     NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
-    data = [NSString stringWithFormat:@"user=%@&jsonstring={\"UUID\":\"%@\", \"metrics\":\"%@\"}",userID ,userID, jsonString];
+    data = [NSString stringWithFormat:@"user=%@&lat=%f&lon=%f&jsonstring={\"UUID\":\"%@\", \"metrics\":\"%@\"}",userID , _lat, _lon, userID, jsonString];
     
     encodedData = [data stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     
