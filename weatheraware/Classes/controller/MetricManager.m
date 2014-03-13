@@ -60,7 +60,7 @@ static MetricManager* _sharedManager = nil;
     NSString* userID = [NSString stringWithFormat:@"%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
     NSError* error;
     
-    NSData* jsonData =[NSJSONSerialization dataWithJSONObject:_metrics options:nil error:&error];
+    NSData* jsonData =[NSJSONSerialization dataWithJSONObject:_metrics options:NSJSONWritingPrettyPrinted error:&error];
     
     NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     

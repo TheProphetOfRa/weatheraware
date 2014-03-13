@@ -45,7 +45,14 @@
         }
         else
         {
-            levelData = [JsonLoader loadJsonFromFile:@"mainscene-iphone.json"];
+            if ([self contentSize].width == 568)
+            {
+                levelData = [JsonLoader loadJsonFromFile:@"mainscene-iphone.json"];
+            }
+            else
+            {
+                levelData = [JsonLoader loadJsonFromFile:@"mainscene-hd.json"];
+            }
         }
         
         [self initBackgroundFromData:levelData];
