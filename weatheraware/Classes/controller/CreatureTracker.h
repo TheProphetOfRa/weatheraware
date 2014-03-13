@@ -16,5 +16,6 @@
 + (CreatureTracker*) sharedTracker;
 
 - (void) addCreature:(NSString*) creatureName;
+- (BOOL) haveCaughtCreature:(NSString*) creatureName;
 - (void) saveList;
 @end

@@ -14,6 +14,8 @@
 		5F3AB18918BC02F1008CEF23 /* ui-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */; };
 		5F3AB18C18BC038E008CEF23 /* ui-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18A18BC038E008CEF23 /* ui-hd.plist */; };
 		5F3AB18D18BC038E008CEF23 /* ui-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3AB18B18BC038E008CEF23 /* ui-hd.png */; };
+		5F4E20B118D1DF5000D07ACD /* CreatureListScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E20B018D1DF5000D07ACD /* CreatureListScene.m */; };
+		5F4E20B418D1E91B00D07ACD /* FileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E20B318D1E91B00D07ACD /* FileHandler.m */; };
 		5F542B9518CBC613002D7CEA /* Font8.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9318CBC613002D7CEA /* Font8.fnt */; };
 		5F542B9618CBC613002D7CEA /* Font8.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9418CBC613002D7CEA /* Font8.png */; };
 		5F542B9918CBC7C8002D7CEA /* Font10.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F542B9718CBC7C8002D7CEA /* Font10.fnt */; };
@@ -314,6 +316,10 @@
 		5F3AB18718BC02F1008CEF23 /* ui-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-ipadhd.png"; sourceTree = "<group>"; };
 		5F3AB18A18BC038E008CEF23 /* ui-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui-hd.plist"; sourceTree = "<group>"; };
 		5F3AB18B18BC038E008CEF23 /* ui-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-hd.png"; sourceTree = "<group>"; };
+		5F4E20AF18D1DF5000D07ACD /* CreatureListScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureListScene.h; sourceTree = "<group>"; };
+		5F4E20B018D1DF5000D07ACD /* CreatureListScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureListScene.m; sourceTree = "<group>"; };
+		5F4E20B218D1E91B00D07ACD /* FileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHandler.h; sourceTree = "<group>"; };
+		5F4E20B318D1E91B00D07ACD /* FileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHandler.m; sourceTree = "<group>"; };
 		5F542B9318CBC613002D7CEA /* Font8.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Font8.fnt; sourceTree = "<group>"; };
 		5F542B9418CBC613002D7CEA /* Font8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Font8.png; sourceTree = "<group>"; };
 		5F542B9718CBC7C8002D7CEA /* Font10.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Font10.fnt; sourceTree = "<group>"; };
@@ -937,6 +943,15 @@
 			);
 			name = TabletHiDPI;
 			path = Resources/TabletHiDPI;
+			sourceTree = "<group>";
+		};
+		5F4E20AE18D1DF3800D07ACD /* Creature List */ = {
+			isa = PBXGroup;
+			children = (
+				5F4E20AF18D1DF5000D07ACD /* CreatureListScene.h */,
+				5F4E20B018D1DF5000D07ACD /* CreatureListScene.m */,
+			);
+			path = "Creature List";
 			sourceTree = "<group>";
 		};
 		5F586B7E18AD3E0900F1F201 /* Battle Scene */ = {
@@ -1853,6 +1868,8 @@
 				5F905AB118987D9A00FBE122 /* WeatherController.m */,
 				5F24641318BF9C510024CE51 /* MetricManager.h */,
 				5F24641418BF9C510024CE51 /* MetricManager.m */,
+				5F4E20B218D1E91B00D07ACD /* FileHandler.h */,
+				5F4E20B318D1E91B00D07ACD /* FileHandler.m */,
 			);
 			name = controller;
 			path = Classes/controller;
@@ -1887,6 +1904,7 @@
 		5F905AB318987D9A00FBE122 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5F4E20AE18D1DF3800D07ACD /* Creature List */,
 				5FD2018118CB7E55006C75CD /* Credits */,
 				5F586B7E18AD3E0900F1F201 /* Battle Scene */,
 				5F905AB418987D9A00FBE122 /* Intro Scene */,
@@ -2132,6 +2150,7 @@
 				5F66FD3E1898715B00869EA4 /* CCGLView.m in Sources */,
 				5F66FE081898715C00869EA4 /* mat4.c in Sources */,
 				5F66FC641898715A00869EA4 /* CCAtlasNode.m in Sources */,
+				5F4E20B418D1E91B00D07ACD /* FileHandler.m in Sources */,
 				5FD2017E18CB7795006C75CD /* CustomButton.m in Sources */,
 				5F66FDB21898715B00869EA4 /* OpenALManager.m in Sources */,
 				5F905AC118987D9A00FBE122 /* IntroScene.m in Sources */,
@@ -2163,6 +2182,7 @@
 				5F66FD5C1898715B00869EA4 /* CGPointExtension.m in Sources */,
 				5F66FDE71898715B00869EA4 /* CCTextField.m in Sources */,
 				5F66FD521898715B00869EA4 /* CCProfiling.m in Sources */,
+				5F4E20B118D1DF5000D07ACD /* CreatureListScene.m in Sources */,
 				5F66FD791898715B00869EA4 /* OALAction.m in Sources */,
 				5F66FD0F1898715B00869EA4 /* CCTexturePVR.m in Sources */,
 				5FEE325418A15D9400FA95BE /* Actor.m in Sources */,

@@ -9,6 +9,7 @@
 #import "UILayer.h"
 
 #import "AssetHandler.h"
+#import "CreatureListScene.h"
 #import "CreditsScene.h"
 #import "CustomButton.h"
 #import "DeviceInformation.h"
@@ -87,7 +88,7 @@
 
 - (void) checkProgress
 {
-    printf("Check progress");
+    [[CCDirector sharedDirector] pushScene:[CreatureListScene scene]];
 }
 
 - (void) credits

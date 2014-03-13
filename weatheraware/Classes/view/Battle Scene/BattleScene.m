@@ -66,7 +66,7 @@
     }
     else
     {
-        if (rand()%3 <= 1)
+        if (rand()%100 >= [_creature interest])
         {
             [_ui printLabelWithString:@"The creature fled!"];
             [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
@@ -107,11 +107,6 @@
             else if ([_creature health] <= 0)
             {
                 [_ui printLabelWithString:@"The creature KO'd!"];
-                [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
-            }
-            else if (rand()%100 > [_creature interest])
-            {
-                [_ui printLabelWithString:@"The creature fled!"];
                 [self runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:0.9f], [CCActionCallFunc actionWithTarget:self selector:@selector(transition)], nil]];
             }
             break;

@@ -48,8 +48,7 @@ BOOL didUpdate = NO;
  */
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your location could not be determined. Please check your internet connection." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
+   [_delegate noLocationAvailable];
 }
 
 /**

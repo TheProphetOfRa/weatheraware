@@ -8,7 +8,7 @@
 
 #import "JsonLoader.h"
 
-#import "CCFileUtils.h"
+#import "FileHandler.h"
 
 @implementation JsonLoader
 
@@ -19,9 +19,7 @@
     NSData *data;
     NSError *error;
     
-    NSString *path = [[CCFileUtils sharedFileUtils] fullPathForFilename:filename];
-    
-    data = [NSData dataWithContentsOfFile:path];
+    data = [[FileHandler sharedFileHandler] loadFromFile:filename];
     
     jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     
@@ -39,17 +37,14 @@
     
     if (error != nil)
     {
+        printf("failed");
         return false;
     }
     
     jsonString = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
+
+    [[FileHandler sharedFileHandler] saveString:jsonString ToFile:filename];
     
-    [jsonString writeToFile:[[CCFileUtils sharedFileUtils] fullPathForFilename:filename] atomically:NO encoding:NSUTF8StringEncoding error:&error];
-    
-    if (error != nil)
-    {
-        return false;
-    }
     return true;
 }
 

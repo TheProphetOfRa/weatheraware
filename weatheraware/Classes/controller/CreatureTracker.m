@@ -54,4 +54,9 @@ static CreatureTracker *_sharedTracker = nil;
     [_capturedCreatures setValue:[NSNumber numberWithBool:YES] forKey:creatureName];
 }
 
+- (BOOL) haveCaughtCreature:(NSString *)creatureName
+{
+    return [[_capturedCreatures valueForKey:creatureName] boolValue];
+}
+
 @end
