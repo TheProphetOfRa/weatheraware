@@ -63,7 +63,7 @@
     UILocalNotification *notification = [[UILocalNotification alloc]init];
     notification.repeatInterval = NSDayCalendarUnit;
     [notification setAlertBody:@"Come check out the weather today!"];
-    [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+    [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:86400]];
     [notification setTimeZone:[NSTimeZone  defaultTimeZone]];
     [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
     [super applicationDidEnterBackground:application];
