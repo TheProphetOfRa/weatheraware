@@ -330,7 +330,7 @@
 		5F586B8018AD3E1A00F1F201 /* BattleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleScene.m; sourceTree = "<group>"; };
 		5F586B8518AD580400F1F201 /* LongGrass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongGrass.h; sourceTree = "<group>"; };
 		5F586B8618AD580400F1F201 /* LongGrass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongGrass.m; sourceTree = "<group>"; };
-		5F66FBFA1898715A00869EA4 /* weatheraware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatheraware.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F66FBFA1898715A00869EA4 /* Weather Aware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Aware.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F66FBFD1898715A00869EA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5F66FBFF1898715A00869EA4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		5F66FC011898715A00869EA4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -979,7 +979,7 @@
 		5F66FBFB1898715A00869EA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F66FBFA1898715A00869EA4 /* weatheraware.app */,
+				5F66FBFA1898715A00869EA4 /* Weather Aware.app */,
 				5F66FC111898715A00869EA4 /* libObjectiveChipmunk.a */,
 			);
 			name = Products;
@@ -2002,7 +2002,7 @@
 			);
 			name = weatheraware;
 			productName = weatheraware;
-			productReference = 5F66FBFA1898715A00869EA4 /* weatheraware.app */;
+			productReference = 5F66FBFA1898715A00869EA4 /* Weather Aware.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5F66FC101898715A00869EA4 /* ObjectiveChipmunk */ = {
@@ -2477,7 +2477,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Weather Aware";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
@@ -2504,7 +2504,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Weather Aware";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				VALIDATE_PRODUCT = YES;
