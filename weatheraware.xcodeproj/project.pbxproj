@@ -239,6 +239,8 @@
 		5F81557A18D1039700464B33 /* environment-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557218D1039700464B33 /* environment-ipad.png */; };
 		5F81557B18D1039700464B33 /* ui-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557318D1039700464B33 /* ui-ipad.plist */; };
 		5F81557C18D1039700464B33 /* ui-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F81557418D1039700464B33 /* ui-ipad.png */; };
+		5F857ED218E8937A00446D32 /* mainscene-hd.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F857ED018E8937A00446D32 /* mainscene-hd.json */; };
+		5F857ED318E8937A00446D32 /* mainscene.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F857ED118E8937A00446D32 /* mainscene.json */; };
 		5F85874318B3F7CF00403B12 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874218B3F7CF00403B12 /* Grid.m */; };
 		5F85874618B40C8D00403B12 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874518B40C8D00403B12 /* Tree.m */; };
 		5F85874918B40C9900403B12 /* Fence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85874818B40C9900403B12 /* Fence.m */; };
@@ -251,6 +253,7 @@
 		5F905AC218987D9A00FBE122 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905AB918987D9A00FBE122 /* BackgroundLayer.m */; };
 		5F905AC318987D9A00FBE122 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F905ABB18987D9A00FBE122 /* MainScene.m */; };
 		5F905AC518987F4200FBE122 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F905AC418987F4200FBE122 /* CoreLocation.framework */; };
+		5FB03D3218DF204300FF7026 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB03D3118DF204300FF7026 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5FC857FF18B528A100F3BEE4 /* WeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC857FE18B528A100F3BEE4 /* WeatherLayer.m */; };
 		5FC8580418B52D4C00F3BEE4 /* character-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8580018B52D4C00F3BEE4 /* character-hd.plist */; };
 		5FC8580518B52D4C00F3BEE4 /* character-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FC8580118B52D4C00F3BEE4 /* character-hd.png */; };
@@ -767,6 +770,8 @@
 		5F81557218D1039700464B33 /* environment-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "environment-ipad.png"; sourceTree = "<group>"; };
 		5F81557318D1039700464B33 /* ui-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ui-ipad.plist"; sourceTree = "<group>"; };
 		5F81557418D1039700464B33 /* ui-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-ipad.png"; sourceTree = "<group>"; };
+		5F857ED018E8937A00446D32 /* mainscene-hd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "mainscene-hd.json"; path = "weatheraware/Resources/Info/mainscene-hd.json"; sourceTree = SOURCE_ROOT; };
+		5F857ED118E8937A00446D32 /* mainscene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mainscene.json; path = weatheraware/Resources/Info/mainscene.json; sourceTree = SOURCE_ROOT; };
 		5F85874118B3F7CF00403B12 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		5F85874218B3F7CF00403B12 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
 		5F85874418B40C8D00403B12 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
@@ -790,6 +795,8 @@
 		5F905ABA18987D9A00FBE122 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		5F905ABB18987D9A00FBE122 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		5F905AC418987F4200FBE122 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5FB03D3018DF204300FF7026 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		5FB03D3118DF204300FF7026 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		5FC857FD18B528A100F3BEE4 /* WeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherLayer.h; sourceTree = "<group>"; };
 		5FC857FE18B528A100F3BEE4 /* WeatherLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherLayer.m; sourceTree = "<group>"; };
 		5FC8580018B52D4C00F3BEE4 /* character-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "character-hd.plist"; sourceTree = "<group>"; };
@@ -1050,6 +1057,7 @@
 		5F66FC3F1898715A00869EA4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5FB03D2F18DF204300FF7026 /* OpenUDID */,
 				5F66FD721898715B00869EA4 /* LICENSE_cocos2d.txt */,
 				5F66FE191898715C00869EA4 /* LICENSE_Kazmath.txt */,
 				5F66FE301898715C00869EA4 /* LICENSE_CCBReader.txt */,
@@ -1938,6 +1946,16 @@
 			path = "Main Scene";
 			sourceTree = "<group>";
 		};
+		5FB03D2F18DF204300FF7026 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				5FB03D3018DF204300FF7026 /* OpenUDID.h */,
+				5FB03D3118DF204300FF7026 /* OpenUDID.m */,
+			);
+			name = OpenUDID;
+			path = Libraries/OpenUDID;
+			sourceTree = "<group>";
+		};
 		5FD2018118CB7E55006C75CD /* Credits */ = {
 			isa = PBXGroup;
 			children = (
@@ -1950,6 +1968,8 @@
 		5FE53E2118B270260014B15F /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				5F857ED018E8937A00446D32 /* mainscene-hd.json */,
+				5F857ED118E8937A00446D32 /* mainscene.json */,
 				5FD1EDF818BEB08700A4D411 /* bear.json */,
 				5FD1EDF918BEB08700A4D411 /* bird.json */,
 				5FD2017F18CB7B09006C75CD /* capturedcreatures.json */,
@@ -2066,6 +2086,7 @@
 				5F66FE311898715C00869EA4 /* LICENSE_CCBReader.txt in Resources */,
 				5F66FC231898715A00869EA4 /* Icon@2x.png in Resources */,
 				5FF3234A18B6BF3100906456 /* creatures-ipadhd.png in Resources */,
+				5F857ED318E8937A00446D32 /* mainscene.json in Resources */,
 				5F66FC351898715A00869EA4 /* Icon-Small@2x.png in Resources */,
 				5FD1EE0718BEB08700A4D411 /* fox.json in Resources */,
 				5F66FC271898715A00869EA4 /* Icon-72@2x.png in Resources */,
@@ -2074,6 +2095,7 @@
 				5FF3234E18B6BF3900906456 /* creatures.png in Resources */,
 				5F66FC211898715A00869EA4 /* Icon.png in Resources */,
 				5FC8580D18B52D5800F3BEE4 /* character-ipadhd.png in Resources */,
+				5F857ED218E8937A00446D32 /* mainscene-hd.json in Resources */,
 				5FD2017A18CB7563006C75CD /* Font16.fnt in Resources */,
 				5F542B9A18CBC7C8002D7CEA /* Font10.png in Resources */,
 				5FC8580518B52D4C00F3BEE4 /* character-hd.png in Resources */,
@@ -2169,6 +2191,7 @@
 				5F66FCFE1898715B00869EA4 /* CCSpriteFrame.m in Sources */,
 				5F66FC921898715A00869EA4 /* CCNodeColor.m in Sources */,
 				5F66FD6B1898715B00869EA4 /* TransformUtils.m in Sources */,
+				5FB03D3218DF204300FF7026 /* OpenUDID.m in Sources */,
 				5F66FD0C1898715B00869EA4 /* CCTextureCache.m in Sources */,
 				5F66FD371898715B00869EA4 /* CCAppDelegate.m in Sources */,
 				5F66FD3B1898715B00869EA4 /* CCDirectorMac.m in Sources */,
@@ -2373,6 +2396,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2390,6 +2414,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5C064182-6A00-45D3-9E6F-2A7B78B17E42";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2406,6 +2431,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2420,6 +2446,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "5C064182-6A00-45D3-9E6F-2A7B78B17E42";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

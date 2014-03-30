@@ -8,6 +8,8 @@
 
 #import "MetricManager.h"
 
+#import "OpenUDID.h"
+
 @implementation MetricManager
 
 static MetricManager* _sharedManager = nil;
@@ -57,7 +59,7 @@ static MetricManager* _sharedManager = nil;
 {
     NSString* data;
     NSString* encodedData;
-    NSString* userID = [NSString stringWithFormat:@"%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+    NSString* userID = [OpenUDID value];//[NSString stringWithFormat:@"%@", [[UIDevice currentDevice] uniqueIdentifier]];//[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
     NSError* error;
     
     NSData* jsonData =[NSJSONSerialization dataWithJSONObject:_metrics options:NSJSONWritingPrettyPrinted error:&error];

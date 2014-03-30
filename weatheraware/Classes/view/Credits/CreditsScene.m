@@ -11,6 +11,7 @@
 #import "AssetHandler.h"
 #import "CustomButton.h"
 #import "DeviceInformation.h"
+#import "OpenUDID.h"
 
 #import "CCDirector.h"
 #import "CCLabelBMFont.h"
@@ -55,6 +56,12 @@
     CustomButton *button = [CustomButton buttonWithTitle:@"Back" spriteFrame:[[AssetHandler sharedAssetHandler] getTextureWithName:@"Bar512x128.png"] andFont:fontName];
     [button setTarget:self selector:@selector(end)];
     [container addChild:button];
+    
+    label = [CCLabelBMFont labelWithString:@"" fntFile:fontName];
+    [container addChild:label];
+    
+    label = [CCLabelBMFont labelWithString:[NSString stringWithFormat:@"%@", [OpenUDID value]] fntFile:fontName];
+    [container addChild:label];
     
     label = [CCLabelBMFont labelWithString:@"" fntFile:fontName];
     [container addChild:label];
