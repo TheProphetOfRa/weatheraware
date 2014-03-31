@@ -67,11 +67,11 @@
     return self;
 }
 
-- (void) onEnterTransitionDidFinish
-{
-    [super onEnterTransitionDidFinish];
-    [self setPaused:NO];
-}
+//- (void) onEnterTransitionDidFinish
+//{
+//    [super onEnterTransitionDidFinish];
+//    [self setPaused:NO];
+//}
 
 - (void) initLocation
 {
@@ -229,6 +229,9 @@
     //give the weather controller something to call back to when the hrrp request completes
     [controller setDelegate:self];
     
+    [[MetricManager sharedManager] updateValue:[NSNumber numberWithFloat:_lastKnownLocation.location.coordinate.latitude] forKey:@":Latitude"];
+    [[MetricManager sharedManager] updateValue:[NSNumber numberWithFloat:_lastKnownLocation.location.coordinate.longitude] forKey:@"Longitude"];
+    
     //run the query
     [controller runQuery];
 
@@ -260,7 +263,7 @@
 
 - (void) newWeatherCondition:(NSString*)condition
 {
-    if ([condition isEqualToString:@"Rain"])
+    if ([condition isEqualToString:@"Rain"] || [condition isEqualToString:@"Mist"])
     {
         [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
         _weather = [[WeatherLayer alloc] initWithCondition:eRain];

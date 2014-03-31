@@ -50,6 +50,7 @@
 
 - (void) applicationDidBecomeActive:(UIApplication *)application
 {
+    [super applicationDidBecomeActive:application];
     int sessionStart = (int)time(NULL);
     [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:sessionStart] forKey:@"sessionstart"];
 }

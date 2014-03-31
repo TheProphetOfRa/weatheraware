@@ -92,6 +92,7 @@ static const int kRunChance = 45;
 - (void) feedButtonPressed
 {
     [_delegate buttonPressed:eFeed];
+    [self printLabelWithString:@"The creature eats happily."];
 }
 
 - (void) captureButtonPressed
