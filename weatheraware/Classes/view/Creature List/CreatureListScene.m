@@ -104,9 +104,9 @@
         [label setColor:[CCColor colorWithRed:255.0f green:0.0f blue:0.0f]];
     }
     
-    label = [CCLabelBMFont labelWithString:@"Bear" fntFile:fontName];
+    label = [CCLabelBMFont labelWithString:@"Polar Bear" fntFile:fontName];
     [container addChild:label];
-    if ([[CreatureTracker sharedTracker] haveCaughtCreature:@"Bear"])
+    if ([[CreatureTracker sharedTracker] haveCaughtCreature:@"Polar Bear"])
     {
         [label setColor:[CCColor colorWithRed:0.0f green:255.0f blue:0.0f]];
     }
