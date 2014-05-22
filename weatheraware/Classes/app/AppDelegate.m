@@ -59,14 +59,14 @@
 {
     [[CreatureTracker sharedTracker] saveList];
     int endTime = (int)time(NULL);
-    [[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:endTime] forKey:@"sessionend"];
-    [[MetricManager sharedManager] sendDataWithLat:[_scene lastKnownLocation].location.coordinate.latitude andLon:[_scene lastKnownLocation].location.coordinate.longitude];
+    //[[MetricManager sharedManager] updateValue:[NSNumber numberWithInt:endTime] forKey:@"sessionend"];
+    //[[MetricManager sharedManager] sendDataWithLat:[_scene lastKnownLocation].location.coordinate.latitude andLon:[_scene lastKnownLocation].location.coordinate.longitude];
     UILocalNotification *notification = [[UILocalNotification alloc]init];
     notification.repeatInterval = NSDayCalendarUnit;
     [notification setAlertBody:@"Come check out the weather today!"];
     [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:86400]];
     [notification setTimeZone:[NSTimeZone  defaultTimeZone]];
-    [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
+    //[application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
     [super applicationDidEnterBackground:application];
 }
 
