@@ -221,7 +221,7 @@
     _lastKnownLocation = location;
     
     //create query string
-    NSString *query = [NSString stringWithFormat:@"http://davidh.us-lot.org/cgi-bin/getweather.cgi?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
+    NSString *query = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f", _lastKnownLocation.location.coordinate.latitude, _lastKnownLocation.location.coordinate.longitude];
         
     //allocate a weather controller and hand it the query string
     WeatherController *controller = [[WeatherController alloc] initWithQuery:query];
@@ -263,11 +263,6 @@
 
 - (void) newWeatherCondition:(NSString*)condition
 {
-    [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
-    _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
-    [self addChild:_weather z:2];
-    _condition = eSnow;
-    return;
     
     if ([condition isEqualToString:@"Rain"] || [condition isEqualToString:@"Mist"])
     {

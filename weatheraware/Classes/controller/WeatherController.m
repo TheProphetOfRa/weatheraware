@@ -43,7 +43,7 @@
         return;
     }
     
-    NSString *weather = [dataArray objectForKey:@"weather"];
+    NSDictionary *weather = [dataArray objectForKey:@"weather"];
     
     if (!weather)
     {
@@ -51,8 +51,26 @@
         [_delegate newWeatherCondition:_condition];
         return;
     }
+    
+    NSArray *conditionArray = [weather valueForKey:@"main"];
+    
+    if (!conditionArray)
+    {
+        _condition = [self generateRandomCondition];
+        [_delegate newWeatherCondition:_condition];
+        return;
+    }
+    
+    NSString *currentCondition = [conditionArray objectAtIndex:0];
+    
+    if (!currentCondition)
+    {
+        _condition = [self generateRandomCondition];
+        [_delegate newWeatherCondition:_condition];
+        return;
+    }
 
-    _condition = weather;
+    _condition = currentCondition;
     
     [_delegate newWeatherCondition:_condition];
 }
