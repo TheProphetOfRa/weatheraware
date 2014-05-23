@@ -140,10 +140,10 @@
 -(void)update:(CCTime)delta
 {
     
-    if ((int)time(NULL) > (_sessionStart + 900))
-    {
-        [_locationManager startUpdates];
-    }
+//    if ((int)time(NULL) > (_sessionStart + 900))
+//    {
+//        [_locationManager startUpdates];
+//    }
     
     if ([_ui menuOpen] == true)
     {
@@ -263,6 +263,12 @@
 
 - (void) newWeatherCondition:(NSString*)condition
 {
+    [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
+    _weather = [[WeatherLayer alloc] initWithCondition:eSnow];
+    [self addChild:_weather z:2];
+    _condition = eSnow;
+    return;
+    
     if ([condition isEqualToString:@"Rain"] || [condition isEqualToString:@"Mist"])
     {
         [[MetricManager sharedManager] updateValue:[NSNumber numberWithBool:NO] forKey:@"Spoofed Data"];
